@@ -785,8 +785,15 @@
     document.querySelectorAll(".logo b").forEach(function (el) { el.textContent = nm; });
   }
   if (ph) {
-    setAll("[data-phone]", ph);
-    document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.href = "tel:" + ph.replace(/[^\d+]/g, ""); });
+    var tel = ph.replace(/[^\d+]/g, "");
+    document.querySelectorAll("[data-phone]").forEach(function (el) {
+      el.href = "tel:" + tel;
+      if (el.classList.contains("btn")) return;      /* кнопку «Позвонить» не переименовываем */
+      var extra = el.querySelector("span, small");   /* часы работы под номером сохраняем */
+      el.textContent = ph;
+      if (extra) el.appendChild(extra);
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.href = "tel:" + tel; });
   }
   if (ad) setAll("[data-addr]", ad);
   if (q.get("clean") === "1") {

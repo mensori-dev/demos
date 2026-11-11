@@ -582,6 +582,7 @@
       document.querySelectorAll("[data-phone]").forEach(function (el) {
         if (el.tagName === "A") {
           el.href = "tel:" + tel;
+          if (el.classList.contains("btn")) return;
           var small = el.querySelector("small");
           el.textContent = p;
           if (small) el.appendChild(small);
