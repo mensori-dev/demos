@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.className+=' js';</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Гараж 12 — автосервис и шиномонтаж в Йошкар-Оле</title>
 <meta name="description" content="Ремонт, ТО и шиномонтаж в Йошкар-Оле. Цена известна до начала работ, гарантия 12 месяцев, запись на сегодня. Переобувка за 40 минут.">
@@ -315,6 +316,17 @@
   @media (max-width:480px){
     .svcbar{font-size:12px;padding:7px 12px}
   }
+
+  /* ---------- hero: появление и счётчики на чистом CSS ---------- */
+  .js [data-a]{opacity:0}
+  .js [data-a].rise{animation:rise .72s cubic-bezier(.2,.7,.25,1) both;animation-delay:calc(var(--i,0) * 70ms + 80ms)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .js .dot{animation:dotpulse 1s ease-in-out 1.2s infinite alternate}
+  @keyframes dotpulse{from{transform:scale(1);opacity:1}to{transform:scale(1.35);opacity:.55}}
+  @media (prefers-reduced-motion:reduce){
+    .js [data-a]{opacity:1!important;animation:none!important}
+    .js .dot{animation:none!important}
+  }
 </style>
 <link rel="canonical" href="https://mensori-dev.github.io/demos/auto/">
 <meta property="og:site_name" content="MENSORIDEV">
@@ -348,35 +360,35 @@
 <section class="hero" id="top">
   <div class="wrap hero__grid">
     <div>
-      <p class="eyebrow">Йошкар-Ола · 8 лет на одном месте</p>
-      <h1>Ремонт авто <em>с ценой до</em> начала работ</h1>
-      <p class="lead">Посмотрели, назвали сумму, согласовали — и только потом берём ключи.
+      <p class="eyebrow" data-a>Йошкар-Ола · 8 лет на одном месте</p>
+      <h1 data-a>Ремонт авто <em>с ценой до</em> начала работ</h1>
+      <p class="lead" data-a>Посмотрели, назвали сумму, согласовали — и только потом берём ключи.
         Никаких «вскрыли, а там ещё на десять тысяч». Гарантия 12 месяцев, старые детали отдаём вам.</p>
-      <div class="hero__cta">
+      <div class="hero__cta" data-a>
         <a class="btn btn--primary" href="#book">Записаться на сегодня</a>
         <a class="btn btn--ghost" href="#services">Смотреть цены</a>
       </div>
-      <p class="hero__note"><span class="dot"></span> Свободные окна на сегодня: 14:00 и 17:30</p>
+      <p class="hero__note" data-a><span class="dot"></span> Свободные окна на сегодня: 14:00 и 17:30</p>
 
       <div class="strip">
-        <div><b>4.9</b>рейтинг на 2ГИС</div>
-        <div><b>1 800+</b>машин за год</div>
-        <div><b>40 мин</b>переобувка</div>
-        <div><b>12 мес</b>гарантия</div>
+        <div data-a><b data-count="4.9" data-dec="1">4.9</b>рейтинг на 2ГИС</div>
+        <div data-a><b data-count="1800" data-suffix="+">1 800+</b>машин за год</div>
+        <div data-a><b data-count="40" data-suffix=" мин">40 мин</b>переобувка</div>
+        <div data-a><b data-count="12" data-suffix=" мес">12 мес</b>гарантия</div>
       </div>
     </div>
 
-    <aside class="pricecard">
+    <aside class="pricecard" data-a>
       <div class="pricecard__top">
         <span class="tag">Ноябрь</span>
         <span class="tag tag--ghost">цена на сайте</span>
       </div>
       <h3>Переобувка на зиму</h3>
       <p class="muted">Комплект 4 колеса: снять, смонтировать, отбалансировать, поставить.</p>
-      <div class="pline"><span>R13–R15</span><b>1 600 ₽</b></div>
-      <div class="pline"><span>R16–R17</span><b>1 900 ₽</b></div>
-      <div class="pline"><span>R18–R20</span><b>2 300 ₽</b></div>
-      <div class="pline"><span>Датчики давления</span><b>+400 ₽</b></div>
+      <div class="pline" data-a><span>R13–R15</span><b>1 600 ₽</b></div>
+      <div class="pline" data-a><span>R16–R17</span><b>1 900 ₽</b></div>
+      <div class="pline" data-a><span>R18–R20</span><b>2 300 ₽</b></div>
+      <div class="pline" data-a><span>Датчики давления</span><b>+400 ₽</b></div>
       <a class="btn btn--primary btn--wide" href="#book">Записаться на переобувку</a>
       <p class="muted" style="margin:12px 0 0;font-size:13px">В очереди — 6 машин. Ближайшее окно: сегодня 17:30.</p>
     </aside>
@@ -916,6 +928,49 @@
       if (pinB) pinB.textContent = addr;
     }
   })();
+</script>
+
+<script>
+/* Появление первого экрана и счётчики — без библиотек.
+   Класс js ставится в head; если скрипт не выполнился, контент просто виден. */
+(function () {
+  var root = document.documentElement;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('[data-a]');
+  var counters = document.querySelectorAll('[data-count]');
+  function fmt(el, v) {
+    var dec = +el.getAttribute('data-dec') || 0;
+    var suf = el.getAttribute('data-suffix') || '';
+    return (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('ru-RU')) + suf;
+  }
+  function plain() {
+    root.classList.remove('js');
+    Array.prototype.forEach.call(counters, function (el) {
+      el.textContent = fmt(el, +el.getAttribute('data-count'));
+    });
+  }
+  var t0 = 0, dur = 1300;
+  function count() {
+    t0 = performance.now() + 260;
+    function step(t) {
+      var p = Math.min(1, Math.max(0, (t - t0) / dur));
+      var e = 1 - Math.pow(1 - p, 3);
+      Array.prototype.forEach.call(counters, function (el) {
+        el.textContent = fmt(el, +el.getAttribute('data-count') * e);
+      });
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    if (reduce) { plain(); return; }
+    Array.prototype.forEach.call(items, function (el, i) {
+      el.style.setProperty('--i', i);
+      el.classList.add('rise');
+    });
+    count();
+  });
+})();
 </script>
 </body>
 </html>
