@@ -28,11 +28,12 @@
     --wrap:1080px;
   }
   * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+  html { scroll-behavior:smooth; overflow-x:clip; }
   body {
     margin:0; background:var(--bg); color:var(--ink);
     font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     font-size:17px; line-height:1.55; -webkit-text-size-adjust:100%;
+    overflow-x:clip;
   }
   img { max-width:100%; display:block; }
   a { color:inherit; }
@@ -190,7 +191,8 @@
   .chips input { position:absolute; opacity:0; width:1px; height:1px; }
   .chips span {
     display:inline-block; padding:10px 14px; border:1px solid var(--line); border-radius:999px;
-    font-size:14px; color:var(--ink); background:var(--bg); cursor:pointer; transition:all .12s ease;
+    font-size:14px; color:var(--ink); background:var(--bg); cursor:pointer;
+    transition:background-color .12s ease, border-color .12s ease, color .12s ease;
   }
   .chips input:checked + span { background:var(--accent); border-color:var(--accent); color:#fff; }
   .chips input:focus-visible + span { outline:2px solid var(--accent-2); outline-offset:2px; }
