@@ -26,6 +26,16 @@
           background:transparent; color:var(--fg); border:1px solid var(--line); font:inherit; font-size:14px; }
   .copy:active { background:#1a1a1c; }
   .copy.ok { border-color:var(--wa); color:var(--wa); }
+  .demo { font-size:13px; color:var(--dim); margin:10px 0 8px; }
+  .demo a { color:var(--fg); }
+  .copy2 { background:#111113; border:1px solid var(--line); color:var(--dim); border-radius:8px;
+           padding:4px 8px; font:inherit; font-size:12px; cursor:pointer; }
+  .copy2.ok { border-color:var(--wa); color:var(--wa); }
+  .ans { border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px; }
+  .ans-t { margin:0 0 6px; font-size:14px; font-weight:600; }
+  .ans-x { margin:0 0 10px; font-size:14px; color:var(--dim); }
+  .day.plain { position:static; }
+  .mark button[data-ch="call"].on { border-color:#8f8f98; color:#f4f3ef; background:rgba(255,255,255,.06); }
   .tglink { display:block; text-align:center; padding:12px; margin:0 0 10px; border-radius:10px; font-size:14px;
             text-decoration:none; color:var(--tg); border:1px solid #1d3a4d; }
   .mark { display:flex; gap:6px; margin:10px 0 12px; }
@@ -61,7 +71,7 @@
 <body>
 <h1>Обход 18–25 ноября</h1>
 <p class="sub">61 адрес в WhatsApp и 14 телефонов для звонка · норма 6–7 WhatsApp в день. По каждому: сначала t.me, есть аккаунт — пиши в Telegram, нет — WhatsApp. Отметки живут в этом браузере.</p>
-<nav class="days"><a href="#d1">18 ноября <span>7</span></a><a href="#d2">19 ноября <span>7</span></a><a href="#d3">Второй заход 19–20.11 <span>7</span></a><a href="#d4">20 ноября · Чебоксары <span>7</span></a><a href="#d5">21 ноября · Чебоксары <span>7</span></a><a href="#d6">22 ноября · Чебоксары <span>7</span></a><a href="#d7">23 ноября · Чебоксары <span>7</span></a><a href="#d8">24 ноября · Чебоксары <span>7</span></a><a href="#d9">25 ноября · Чебоксары <span>5</span></a><a href="#d10">Звонки · городские <span>14</span></a></nav>
+<nav class="days"><a href="#answers">Ответы <span>6</span></a><a href="#d1">18 ноября <span>7</span></a><a href="#d2">19 ноября <span>7</span></a><a href="#d3">Второй заход 19–20.11 <span>7</span></a><a href="#d4">20 ноября · Чебоксары <span>7</span></a><a href="#d5">21 ноября · Чебоксары <span>7</span></a><a href="#d6">22 ноября · Чебоксары <span>7</span></a><a href="#d7">23 ноября · Чебоксары <span>7</span></a><a href="#d8">24 ноября · Чебоксары <span>7</span></a><a href="#d9">25 ноября · Чебоксары <span>5</span></a><a href="#d10">Звонки · городские <span>14</span></a></nav>
 <div class="tool">
   <p id="stat" class="stat"></p>
   <div>
@@ -69,6 +79,39 @@
     <button id="reset">Сбросить отметки</button>
   </div>
 </div>
+<section id="answers">
+<h2 class="day plain">Ответы на ходу <span>6</span></h2>
+<div class="ans">
+  <p class="ans-t">Сколько стоит</p>
+  <p class="ans-x">3 000 ₽ под ключ. Одна страница: услуги, цены, фото, форма заявки, мобильная версия. Домен и хостинг оформляем на вас, это ваша собственность. Половина вперёд, половина после того, как покажу готовый. Два рабочих дня с момента, когда дадите тексты и фото.</p>
+  <button class="copy2" data-copy="3 000 ₽ под ключ. Одна страница: услуги, цены, фото, форма заявки, мобильная версия. Домен и хостинг оформляем на вас, это ваша собственность. Половина вперёд, половина после того, как покажу готовый. Два рабочих дня с момента, когда дадите тексты и фото.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: автосервис</p>
+  <p class="ans-x">Вот пример, как это выглядит для автосервиса: https://mensori-dev.github.io/demos/auto/ — название и телефон там уже ваши. Это шаблон, город и адрес будут ваши. Откройте с телефона и скажите, что поменять.</p>
+  <button class="copy2" data-copy="Вот пример, как это выглядит для автосервиса: https://mensori-dev.github.io/demos/auto/ — название и телефон там уже ваши. Это шаблон, город и адрес будут ваши. Откройте с телефона и скажите, что поменять.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: барбершоп</p>
+  <p class="ans-x">Пример для барбершопа: https://mensori-dev.github.io/demos/barber/ — название и телефон уже ваши, это шаблон, город и адрес будут ваши. Посмотрите с телефона, что бы добавили?</p>
+  <button class="copy2" data-copy="Пример для барбершопа: https://mensori-dev.github.io/demos/barber/ — название и телефон уже ваши, это шаблон, город и адрес будут ваши. Посмотрите с телефона, что бы добавили?">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: цветы</p>
+  <p class="ans-x">Пример для цветочной: https://mensori-dev.github.io/demos/flowers/ — с вашим названием и номером. Это шаблон, город и адрес будут ваши. Что бы поменяли под свой магазин?</p>
+  <button class="copy2" data-copy="Пример для цветочной: https://mensori-dev.github.io/demos/flowers/ — с вашим названием и номером. Это шаблон, город и адрес будут ваши. Что бы поменяли под свой магазин?">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Не надо</p>
+  <p class="ans-x">Понял, спасибо. Если понадобится — я на связи.</p>
+  <button class="copy2" data-copy="Понял, спасибо. Если понадобится — я на связи.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Сколько вам лет</p>
+  <p class="ans-x">Мне шестнадцать. Поэтому и цена три тысячи, а не тридцать: я работаю сам, без студии и без наценки за офис. Я самозанятый, чек выдам. Если из-за возраста неудобно — скажите прямо, я не обижусь.</p>
+  <button class="copy2" data-copy="Мне шестнадцать. Поэтому и цена три тысячи, а не тридцать: я работаю сам, без студии и без наценки за офис. Я самозанятый, чек выдам. Если из-за возраста неудобно — скажите прямо, я не обижусь.">Скопировать</button>
+</div>
+</section>
 <section id="d1">
 <h2 class="day">18 ноября <span>7</span></h2>
 <article class="card wa" data-key="79278824573">
@@ -83,6 +126,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС — ремонт и пошив одежды, телефон и адрес есть, сайта нет.
 
 Обычно человек с вопросом «сколько будет ушить куртку» звонит и слушает гудки. Если бы это было написано на странице вместе с фото похожих работ, часть людей пришла бы уже готовой.
@@ -104,6 +148,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел ваше ателье в 2ГИС — карточка с телефоном, сайта нет.
 
 Ремонт одежды ищут по конкретной задаче: заменить молнию, подшить брюки, ушить платье. На такую страницу человек попадает из поиска и сразу понимает, берётесь ли вы за это и сколько стоит.
@@ -125,6 +170,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на «Белую орхидею» в 2ГИС — телефон и адрес есть, а сайта нет.
 
 Если человек ищет ателье впервые, он сравнивает по фотографиям и ценам. Название у вас хорошее и запоминается — жалко, что в поиске по нему некуда прийти.
@@ -146,6 +192,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС по ателье — карточка есть, а сайта, где видно работы, нет.
 
 Когда мастер работает под своим именем, страница с портфолио работает лучше любой рекламы: видно посадку, стиль, сложность вещей. Сейчас это всё живёт только в переписке и в памяти клиентов.
@@ -167,6 +214,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Видел ваше ателье детской одежды в 2ГИС — телефон есть, сайта нет.
 
 У детской одежды своя специфика: родители ищут «подшить школьную форму», «удлинить рукава», и им важно понимать сроки — форма нужна к конкретному дню.
@@ -188,6 +236,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел «Свою портниху» в 2ГИС — телефон и адрес есть, сайта нет.
 
 Название у вас хорошее и редкое: «своя» — это про доверие, к одной мастерице ходят годами. Жалко, что в интернете по нему некуда прийти, только карточка в справочнике.
@@ -209,6 +258,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл «ПодоСферу» в 2ГИС — телефон и адрес есть, сайта нет.
 
 В маникюре решают глаза: человек смотрит на чужие ногти и понимает, стоит ли к вам идти. В справочнике фото мало и они мелкие, а по запросу «маникюр Йошкар-Ола» вас не найти.
@@ -233,6 +283,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вашу швейную мастерскую в 2ГИС — адрес и телефон есть, сайта нет.
 
 Люди редко звонят в первое же ателье: сначала смотрят, что делают, как выглядит работа и сколько это стоит. Без страницы в этот список вы просто не попадаете.
@@ -254,6 +305,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на ваше ателье в 2ГИС — карточка заполнена, своего сайта нет.
 
 Типичная история: человеку нужно ушить или подшить вещь, он ищет в телефоне и звонит по первым ссылкам. Карточка в 2ГИС помогает только тем, кто уже знает название.
@@ -275,6 +327,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Видел ваше ателье в 2ГИС — телефон и адрес есть, сайта нет.
 
 Вопрос «а вы возьмётесь за такую вещь» каждый раз отнимает время по телефону. На странице он снимается один раз: список услуг, примерные цены, фото похожих работ, адрес.
@@ -296,6 +349,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел «Лагуну» в 2ГИС: адрес, телефон, отзывы — всё есть, сайта нет.
 
 Парикмахерская держится на постоянных: человек раз нашёл мастера и ходит к нему годами. Но в первый раз он выбирает по фотографиям работ и по цене стрижки, а в справочнике этого не видно.
@@ -317,6 +371,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на парикмахерскую «Мария» в 2ГИС — телефон есть, сайта нет.
 
 Почти каждый новый клиент начинает с двух вопросов: сколько стоит стрижка и можно ли записаться сейчас. Если ответа в интернете нет, остаётся звонок, а часть людей просто не звонит.
@@ -338,6 +393,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел «Джульетту» в 2ГИС: телефон, адрес, а сайта нет.
 
 Букет чаще ищут с телефона и часа за два до события. В этот момент важно сразу увидеть, что есть в наличии и сколько стоит — иначе остаётся звонить в незнакомый салон, а на звонок не всегда есть время.
@@ -359,6 +415,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл «Кухни и не только» в 2ГИС — телефон и адрес есть, сайта нет.
 
 Кухню не заказывают в один вечер: человек неделю смотрит варианты, материалы, цены и отзывы. Всё это время он сравнивает сайты, и если вашего в списке нет, вы из него просто выпадаете.
@@ -383,6 +440,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Писал вам в понедельник про сайт — видимо, потерялось. Скажите одним словом: интересно или нет? Если нет — больше не напишу, без обид.</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -398,6 +456,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Это я писал на днях насчёт сайта для ателье. Не хочу навязываться, поэтому коротко: сайт нужен или нет? Ответа «нет» тоже достаточно — просто закрою вопрос.</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -413,6 +472,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Писал вам про сайт, ответа не было. Может, не вовремя. Один вопрос: вам это вообще нужно? Если да — расскажу, что и за сколько. Если нет — не буду больше писать.</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -428,6 +488,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Писал вам пару дней назад про сайт. Сейчас сезон, люди ищут шиномонтаж заранее — если хотите, покажу, как это выглядит на примере, бесплатно и без обязательств. Скажите только «покажите» или «не надо».</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -443,6 +504,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Это снова я, писал про сайт для мастерской. Понимаю, что могли просто не дойти руки до ответа. Скажите коротко: надо или нет? Больше не побеспокою.</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -458,6 +520,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Писал вам на днях насчёт сайта. Не буду тянуть: если интересно — покажу пример и назову цену, если нет — так и скажите, и я отстану.</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -473,6 +536,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Привет! Писал вам в телеграм 17-го про сайт, ответа не было. Может, не до этого. Скажите одно слово: интересно или нет? Если нет — больше не напишу.</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -491,6 +555,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС: ремонт квартир, своего сайта нет. Перед ремонтом люди почти всегда ищут подрядчика в интернете, и без сайта эти заявки уходят другим. Я делаю простые сайты: услуги, примеры работ, форма заявки. Скажите, вам это интересно?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -506,6 +571,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D0%B5%D0%BB%D0%B8%D1%8F&amp;p=%2B7+953+015-00-15" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D0%B5%D0%BB%D0%B8%D1%8F&amp;p=%2B7+953+015-00-15">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС — цветы, своего сайта нет. Букеты на заказ ищут в интернете, часто с телефона и часто в день праздника. Страница с фото и кнопкой «написать» забирает часть этих заказов. Скажите, интересно?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -521,6 +587,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%90%D0%9C-%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81&amp;p=%2B7+908+309-32-36" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%90%D0%9C-%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81&amp;p=%2B7+908+309-32-36">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю автосервисы в 2ГИС, у вас нет сайта. Водитель в чужом городе или на трассе ищет сервис в интернете, а не в справочнике. Простая страница с услугами и адресом это чинит. Интересно?</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -536,6 +603,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС — натяжные потолки, сайта нет. Потолки заказывают после того, как посчитают цену за метр, а считать негде. Страница с калькулятором или хотя бы с ценой «от» это решает. Интересно?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -551,6 +619,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%9E%D0%BF%D0%B0%D1%81%D0%BA%D0%B0&amp;p=%2B7+993+554-00-48" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%9E%D0%BF%D0%B0%D1%81%D0%BA%D0%B0&amp;p=%2B7+993+554-00-48">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС — барбершоп, сайта нет. Записаться можно только позвонив, а половина клиентов не звонит, а пишет. Страница с кнопкой «записаться» и ценами закрывает это. Интересно?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -566,6 +635,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел вашу карточку в 2ГИС — ремонт квартир, сайт не указан. У человека, который выбирает бригаду, первый вопрос «а кто это», и посмотреть негде. Могу собрать сайт-визитку: работы, услуги, связь. Ответьте одним словом: интересно или нет?</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -581,6 +651,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=%D0%9B%D1%8E%D0%B1%D0%BB%D1%8E&amp;p=%2B7+999+756-90-44" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=%D0%9B%D1%8E%D0%B1%D0%BB%D1%8E&amp;p=%2B7+999+756-90-44">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Вижу вашу карточку в 2ГИС, сайта у вас нет. У цветочных это обычно значит, что заказы идут только от тех, кто уже знает адрес. Могу сделать простой сайт с букетами и ценой «от». Вам это надо или нет?</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -599,6 +670,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%9F%D1%80%D0%BE%D0%A4%D0%B8%D0%BA%D1%81+%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+952+020-60-98" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%9F%D1%80%D0%BE%D0%A4%D0%B8%D0%BA%D1%81+%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+952+020-60-98">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта. Автосервису сайт нужен не для красоты: цены, запись, «работаем в субботу» — всё это ищут до звонка. Делаю такие сайты. Вам надо?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -614,6 +686,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта. Люди сравнивают потолки по цене за квадрат и по фото — без сайта вы в этом сравнении не участвуете. Могу сделать страницу с примерами и заявкой. Надо?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -629,6 +702,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%98%D0%BC%D0%B8%D0%B4%D0%B6-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D0%95%D0%BB%D0%B5%D0%BD%D1%8B+%D0%A8%D0%B8%D1%80%D1%8F%D0%B5%D0%B2%D0%BE%D0%B9&amp;p=%2B7+937+398-91-84" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%98%D0%BC%D0%B8%D0%B4%D0%B6-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D0%95%D0%BB%D0%B5%D0%BD%D1%8B+%D0%A8%D0%B8%D1%80%D1%8F%D0%B5%D0%B2%D0%BE%D0%B9&amp;p=%2B7+937+398-91-84">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта. У мастеров с именем сайт работает как витрина: фото работ, услуги, запись. Могу сделать такую витрину. Скажите, надо?</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -644,6 +718,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на вас в 2ГИС, сайта у вас нет. У прорабов обычно работает сарафан, но он кончается ровно тогда, когда кончаются знакомые. Сайт даёт ещё один вход — из поиска. Делаю такие за пару дней. Скажите, надо?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -659,6 +734,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D1%8B+%D0%9C%D0%B5%D0%B6%D0%B4%D1%83+%D0%9D%D0%B0%D0%BC%D0%B8&amp;p=%2B7+900+332-61-02" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D1%8B+%D0%9C%D0%B5%D0%B6%D0%B4%D1%83+%D0%9D%D0%B0%D0%BC%D0%B8&amp;p=%2B7+900+332-61-02">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на вас в 2ГИС. Цветы выбирают глазами, а смотреть негде: карточка в справочнике и всё. Сайт с фотографиями решает ровно это. Интересно обсудить?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -674,6 +750,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%91%D0%9C%D0%92+%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81&amp;p=%2B7+962+321-07-01" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%91%D0%9C%D0%92+%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81&amp;p=%2B7+962+321-07-01">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС, сайта нет. У специализированных сервисов клиент придирчивый: перед звонком смотрит, что вы умеете и с какими марками работаете. Это как раз то, что показывает страница. Интересно посмотреть пример?</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -689,6 +766,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю натяжные потолки в Чебоксарах, у вас нет сайта. Тут решает картинка: человек хочет увидеть, как это выглядит в комнате. Сделаю сайт с фото работ. Интересно обсудить?</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -707,6 +785,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%9F%D1%80%D0%BE%D0%B1%D0%BE%D1%80&amp;p=%2B7+917+078-85-83" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%9F%D1%80%D0%BE%D0%B1%D0%BE%D1%80&amp;p=%2B7+917+078-85-83">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел вас в 2ГИС, сайта нет. Барбершопы люди ищут в интернете и смотрят на фото стрижек — иначе непонятно, к кому идти. Делаю сайты с галереей и записью. Вам это интересно?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -722,6 +801,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю 2ГИС по ремонту квартир в Чебоксарах, ваша карточка без сайта. Это не упрёк, просто вижу, что часть заявок проходит мимо: люди ищут в интернете, а не в справочнике. Могу сделать страницу с услугами и формой. Вам это нужно?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -737,6 +817,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=%D0%9C%D0%B8%D1%80+%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2&amp;p=%2B7+902+287-00-00" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=%D0%9C%D0%B8%D1%80+%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2&amp;p=%2B7+902+287-00-00">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваш магазин в 2ГИС без сайта, пишу поэтому. Перед праздниками люди ищут «цветы Чебоксары» и попадают к тем, у кого есть страница. Сделаю такую же, быстро и без подписки. Надо?</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -752,6 +833,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%9A%D0%BE%D1%80%D0%B4&amp;p=%2B7+996+852-99-42" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%9A%D0%BE%D1%80%D0%B4&amp;p=%2B7+996+852-99-42">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Вижу вас в 2ГИС без сайта. Шиномонтаж и ремонт — сезонная история: в сезон звонят те, кого нашли в поиске. Сайт с услугами и телефоном в шапке — два дня работы. Скажите, нужно?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -767,6 +849,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на вас в 2ГИС. Потолки — заказ на несколько дней, и перед ним люди читают и сравнивают. Страница с ценами за метр и формой замера даёт вам эти заявки. Вам это надо?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -782,6 +865,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%A1%D0%A1%D0%A1%D0%A0&amp;p=%2B7+927+669-92-22" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%A1%D0%A1%D0%A1%D0%A0&amp;p=%2B7+927+669-92-22">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на ваш барбершоп в 2ГИС, сайта нет. Название запоминается, а найти вас в поиске нельзя — только в справочнике. Могу это исправить одной страницей. Надо?</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -797,6 +881,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС. Ремонт квартир — тема, где клиент сначала читает, а потом звонит. Без сайта читать нечего, и звонят тем, у кого он есть. Собираю простые сайты под ключ. Интересно посмотреть, как это выглядит?</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -815,6 +900,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=Darri.Flowers&amp;p=%2B7+902+287-55-55" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=Darri.Flowers&amp;p=%2B7+902+287-55-55">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел вас в 2ГИС, сайта нет, хотя название латиницей уже готово под домен. Сайт с букетами, доставкой и формой заказа — это два дня работы. Скажите, вам это интересно?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -830,6 +916,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%9B%D0%B5%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+987+739-70-96" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%9B%D0%B5%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+987+739-70-96">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС, сайт не указан. Могу сделать страницу: что ремонтируете, сколько стоит, как записаться. Без наворотов и без ежемесячной платы. Вам это интересно?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -845,6 +932,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС, сайта нет. Рекламу не продаю, делаю сайты. Для потолков хватает одной страницы: примеры, цена за метр, кнопка «вызвать замерщика». Скажите, интересно?</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -860,6 +948,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%90%D0%B9%D1%85%D0%B0%D0%BC&amp;p=%2B7+900+333-39-52" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%90%D0%B9%D1%85%D0%B0%D0%BC&amp;p=%2B7+900+333-39-52">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС, сайт не указан. Клиенту перед записью важно увидеть цены и работы, иначе он идёт туда, где увидел. Сделаю простой сайт с этим. Интересно?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -875,6 +964,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта, пишу по этому поводу. Рекламу не продаю, делаю сайты: услуги, примеры работ, заявка. Один разговор на пять минут — и вы поймёте, надо оно вам или нет. Когда удобно?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -890,6 +980,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B5+%D1%81%D1%87%D0%B0%D1%81%D1%82%D1%8C%D0%B5&amp;p=%2B7+993+553-48-42" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/flowers/?n=%D0%A6%D0%B2%D0%B5%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B5+%D1%81%D1%87%D0%B0%D1%81%D1%82%D1%8C%D0%B5&amp;p=%2B7+993+553-48-42">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вашу точку в 2ГИС. Цветы на заказ почти всегда ищут в интернете, а у вас там только карточка с телефоном. Могу сделать страницу с фото букетов и заявкой. Ответьте, пожалуйста: интересно или нет?</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -905,6 +996,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=Samurai&amp;p=%2B7+996+138-58-81" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=Samurai&amp;p=%2B7+996+138-58-81">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Наткнулся на вас в 2ГИС — автосервис, сайта нет. Клиенты часто ищут по названию, и если не находят ничего, кроме карточки, идут к следующему. Простая страница это лечит. Надо?</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -923,6 +1015,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Увидел вас в 2ГИС без сайта. Замерщика зовут те, кто уже понял цену, а понять её из справочника нельзя. Страница с ценами и примерами приводит более готовых клиентов. Надо?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -938,6 +1031,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=City+Barber&amp;p=%2B7+987+737-17-92" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=City+Barber&amp;p=%2B7+987+737-17-92">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю барбершопы Чебоксар в 2ГИС, у вас сайта нет. Запись через сайт — это не про понты, а про то, что человек не будет звонить в незнакомое место. Могу сделать страницу с записью. Вам надо?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -953,6 +1047,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=100+%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+952+020-94-49" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=100+%D0%B0%D0%B2%D1%82%D0%BE&amp;p=%2B7+952+020-94-49">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю автосервисы Чебоксар в 2ГИС, у вас сайта нет. Не буду грузить: делаю сайты-визитки для сервисов, с услугами и записью. Если интересно — покажу пример, если нет — так и скажите.</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -968,6 +1063,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вашу компанию в 2ГИС, сайта нет. Потолки — конкурентная тема в Чебоксарах, а в поиске вас нет вообще. Простая страница с услугами и заявкой это меняет. Интересно посмотреть, как выглядит?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -983,6 +1079,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%9A%D0%B8%D0%BD%D0%B3+%D0%A1%D1%82%D0%B0%D0%B9%D0%BB&amp;p=%2B7+996+949-57-41" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%9A%D0%B8%D0%BD%D0%B3+%D0%A1%D1%82%D0%B0%D0%B9%D0%BB&amp;p=%2B7+996+949-57-41">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС без сайта. У барбершопов решает картинка и цена стрижки, а у вас в справочнике ни того, ни другого. Могу собрать сайт с фото и прайсом. Интересно посмотреть?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -998,6 +1095,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%93%D1%80%D1%83%D0%B7%D0%BE%D0%B2%D0%B8%D0%BA+21&amp;p=%2B7+937+388-80-78" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%93%D1%80%D1%83%D0%B7%D0%BE%D0%B2%D0%B8%D0%BA+21&amp;p=%2B7+937+388-80-78">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС. Грузовой сервис ищут по запросам вроде «ремонт грузовиков Чебоксары», и попадают на сайты, а не в справочник. Могу сделать такую страницу. Интересно?</textarea>
   <button class="copy" data-i="wa6">Скопировать текст</button>
 </article>
@@ -1013,6 +1111,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  
   <textarea class="txt" readonly rows="7">Здравствуйте! Смотрю потолочников в 2ГИС, у вас только карточка. Могу собрать сайт: примеры работ, цена за квадрат, заявка на замер. Без подписки и без ежемесячных платежей. Вам интересно?</textarea>
   <button class="copy" data-i="wa7">Скопировать текст</button>
 </article>
@@ -1031,6 +1130,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=Barbershop&amp;p=%2B7+919+972-27-07" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=Barbershop&amp;p=%2B7+919+972-27-07">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Вижу вашу точку в 2ГИС, своего сайта нет. Делаю сайты для барбершопов: фото, прайс, запись, карта. Два дня работы, домен оформляю на вас. Скажите одним словом: интересно или нет?</textarea>
   <button class="copy" data-i="wa1">Скопировать текст</button>
 </article>
@@ -1046,6 +1146,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%9C%D0%B0%D1%81%D1%82%D0%B5%D1%80&amp;p=%2B7+962+321-72-21" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%9C%D0%B0%D1%81%D1%82%D0%B5%D1%80&amp;p=%2B7+962+321-72-21">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта. Ремонт техники — это про доверие: человек хочет увидеть, кто он и где. Страница с адресом, услугами и отзывами закрывает этот вопрос. Скажите, актуально?</textarea>
   <button class="copy" data-i="wa2">Скопировать текст</button>
 </article>
@@ -1061,6 +1162,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=%D0%9C%D0%B0%D0%BD%D0%B8+%D0%B4%D0%B8+%D1%84%D0%B0%D1%82%D0%B0&amp;p=%2B7+995+635-72-93" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=%D0%9C%D0%B0%D0%BD%D0%B8+%D0%B4%D0%B8+%D1%84%D0%B0%D1%82%D0%B0&amp;p=%2B7+995+635-72-93">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Ваша карточка в 2ГИС без сайта. Название необычное — его ищут в интернете, а находят только справочник. Страница с услугами и записью это чинит. Вам интересно?</textarea>
   <button class="copy" data-i="wa3">Скопировать текст</button>
 </article>
@@ -1076,6 +1178,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/auto/?n=%D0%9A%D0%BE%D0%BD-%D0%90%D0%B2%D1%82%D0%BE&amp;p=%2B7+903+379-75-32" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/auto/?n=%D0%9A%D0%BE%D0%BD-%D0%90%D0%B2%D1%82%D0%BE&amp;p=%2B7+903+379-75-32">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Вижу вас в 2ГИС, сайта нет. Делаю сайты для автосервисов: одна страница, услуги, цены, запись. Два дня — и ссылку можно кидать клиенту в мессенджер. Вам это нужно?</textarea>
   <button class="copy" data-i="wa4">Скопировать текст</button>
 </article>
@@ -1091,6 +1194,7 @@
     <button data-s="sent" data-ch="tg">TG · ушло</button>
     <button data-s="no">нет аккаунта</button>
   </div>
+  <p class="demo">демо (пример, город в нём йошкар-олинский): <a href="https://mensori-dev.github.io/demos/barber/?n=Chiga+barbershop+club&amp;p=%2B7+995+298-54-42" target="_blank" rel="noreferrer">открыть</a> <button class="copy2" data-copy="https://mensori-dev.github.io/demos/barber/?n=Chiga+barbershop+club&amp;p=%2B7+995+298-54-42">скопировать ссылку</button></p>
   <textarea class="txt" readonly rows="7">Здравствуйте! Нашёл вас в 2ГИС, сайта нет. Барбершоп-клуб без страницы в интернете теряет новых клиентов: старые приходят, новые не находят. Могу сделать сайт. Надо?</textarea>
   <button class="copy" data-i="wa5">Скопировать текст</button>
 </article>
@@ -1313,6 +1417,17 @@ for (const b of document.querySelectorAll('.copy')) {
     b.textContent = 'Скопировано';
     b.classList.add('ok');
     setTimeout(() => { b.textContent = was; b.classList.remove('ok'); }, 1500);
+  });
+}
+
+for (const b of document.querySelectorAll('[data-copy]')) {
+  b.addEventListener('click', async () => {
+    const txt = b.dataset.copy;
+    try { await navigator.clipboard.writeText(txt); } catch { document.execCommand('copy'); }
+    const was = b.textContent;
+    b.textContent = 'скопировано';
+    b.classList.add('ok');
+    setTimeout(() => { b.textContent = was; b.classList.remove('ok'); }, 1400);
   });
 }
 
