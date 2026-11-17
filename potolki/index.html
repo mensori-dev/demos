@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Потолок — натяжные потолки в Чебоксарах</title>
+<meta name="description" content="Натяжные потолки в Чебоксарах: замер бесплатно, монтаж за один день, цена за метр известна до начала работ. Матовые, сатин, глянец, двухуровневые и парящие.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Потолок — натяжные потолки в Чебоксарах">
+<meta property="og:description" content="Замер бесплатно, монтаж за 2–3 часа, гарантия 10 лет. Посчитайте стоимость по площади комнаты.">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#0b0e12">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0e12'/><rect x='4' y='15' width='24' height='2' fill='%23e8d3a8'/></svg>">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  :root {
+    --bg:#f4f2ed;
+    --bg2:#eae6dd;
+    --ink:#14161a;
+    --muted:#5d6169;
+    --line:#d6d1c6;
+    --accent:#1d3f63;
+    --accent-2:#2b5c8f;
+    --dark:#0b0e12;
+    --light:#f6f2e8;
+    --warm:#e8d3a8;
+    --radius:14px;
+    --wrap:1080px;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size:17px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  img { max-width:100%; display:block; }
+  a { color:inherit; }
+  h1,h2,h3 { margin:0; line-height:1.06; letter-spacing:-.02em; font-weight:650; }
+  h1 { font-size:clamp(34px, 7.2vw, 76px); letter-spacing:-.035em; }
+  h2 { font-size:clamp(26px, 4.4vw, 44px); }
+  h3 { font-size:19px; letter-spacing:-.01em; }
+  p { margin:0 0 1em; }
+  .wrap { max-width:var(--wrap); margin:0 auto; padding:0 20px; }
+  .eyebrow {
+    margin:0 0 14px; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); font-weight:600;
+  }
+  .lead { font-size:clamp(16px, 2.1vw, 19px); color:var(--muted); max-width:56ch; }
+  section { padding:clamp(52px, 8vw, 96px) 0; }
+  .rule { height:1px; background:var(--line); border:0; margin:0; }
+
+  /* ---------- кнопки ---------- */
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:52px; padding:0 24px; border-radius:999px; border:1px solid transparent;
+    font:inherit; font-weight:600; font-size:16px; text-decoration:none; cursor:pointer;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:active { transform:translateY(1px); }
+  .btn--primary { background:var(--accent); color:#fff; }
+  .btn--primary:hover { background:var(--accent-2); }
+  .btn--ghost { border-color:rgba(246,242,232,.32); color:var(--light); background:transparent; }
+  .btn--ghost:hover { border-color:rgba(246,242,232,.7); }
+  .btn--dark-ghost { border-color:var(--line); color:var(--ink); }
+  .btn--wide { width:100%; }
+  :focus-visible { outline:2px solid var(--accent-2); outline-offset:3px; }
+
+  /* ---------- плашка демо ---------- */
+  .demo-bar {
+    background:var(--dark); color:var(--light); font-size:13px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    padding:9px 16px; text-align:center;
+  }
+  .demo-bar b { color:var(--warm); font-weight:600; }
+  .demo-bar a { color:var(--warm); text-decoration:none; border-bottom:1px solid rgba(232,211,168,.5); }
+  .demo-bar span { color:#9aa1a8; }
+
+  /* ---------- шапка ---------- */
+  .top {
+    position:absolute; left:0; right:0; top:0; z-index:5;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 20px; max-width:var(--wrap); margin:0 auto;
+  }
+  .logo { display:flex; align-items:center; gap:10px; color:var(--light); text-decoration:none; }
+  .logo i {
+    width:26px; height:26px; border:1.5px solid var(--warm); border-radius:6px;
+    display:block; position:relative;
+  }
+  .logo i::after { content:""; position:absolute; left:4px; right:4px; top:50%; height:1.5px; background:var(--warm); }
+  .logo span { font-weight:650; letter-spacing:-.01em; font-size:17px; line-height:1.15; }
+  .logo small { display:block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#9aa1a8; font-weight:500; }
+  .top__phone {
+    color:var(--light); text-decoration:none; font-weight:600; font-size:16px;
+    display:flex; flex-direction:column; align-items:flex-end; line-height:1.2;
+    white-space:nowrap;
+  }
+  .top__phone span { font-size:11px; font-weight:500; color:#9aa1a8; letter-spacing:.06em; text-transform:uppercase; }
+
+  /* ---------- первый экран: свет на плоскости ---------- */
+  .hero {
+    position:relative; min-height:100svh; display:flex; align-items:flex-end;
+    padding:0 0 clamp(28px, 5vw, 56px); overflow:hidden; background:var(--dark);
+    color:var(--light);
+  }
+  .scene { position:absolute; inset:0; overflow:hidden; }
+  /* шов потолка: тонкая светящаяся линия */
+  .seam {
+    position:absolute; left:-10%; right:-10%; top:26%; height:1px;
+    background:linear-gradient(90deg, transparent 0%, rgba(246,242,232,.10) 18%, rgba(255,244,220,.95) 50%, rgba(246,242,232,.10) 82%, transparent 100%);
+    box-shadow:0 0 70px 22px rgba(232,211,168,.22), 0 0 200px 90px rgba(232,211,168,.10);
+    animation:breathe 9s ease-in-out infinite alternate;
+  }
+  /* свет, который падает от шва вниз */
+  .pool {
+    position:absolute; left:50%; top:26%; width:150vmax; height:150vmax;
+    transform:translate(-50%,-42%);
+    background:radial-gradient(closest-side, rgba(232,211,168,.26), rgba(232,211,168,.07) 42%, transparent 68%);
+    animation:drift 22s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+  /* намёк на плоскость: редкие горизонтальные полосы */
+  .grain {
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,.028) 0 1px, transparent 1px 96px);
+    mask-image:linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+    -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+  }
+  .vignette {
+    position:absolute; inset:0;
+    background:radial-gradient(120% 90% at 50% 30%, transparent 30%, rgba(0,0,0,.55) 100%);
+  }
+  @keyframes breathe { from { opacity:.65; } to { opacity:1; } }
+  @keyframes drift {
+    from { transform:translate(-52%,-42%) scale(1); }
+    to { transform:translate(-48%,-39%) scale(1.06); }
+  }
+  .hero__in { position:relative; z-index:2; width:100%; }
+  .hero h1 { max-width:19ch; }
+  .hero h1 em { font-style:normal; color:var(--warm); }
+  .hero__lead {
+    margin:22px 0 30px; max-width:44ch; font-size:clamp(16px, 2.2vw, 19px);
+    color:#c9cdd2;
+  }
+  .hero__cta { display:flex; flex-wrap:wrap; gap:12px; }
+  .hero__meta {
+    margin:26px 0 0; font-size:13px; color:#8e959c; letter-spacing:.01em;
+    display:flex; flex-wrap:wrap; gap:6px 18px;
+  }
+  .hero__meta span { position:relative; }
+  .hero__meta span + span::before {
+    content:""; position:absolute; left:-10px; top:50%; width:3px; height:3px;
+    border-radius:50%; background:#5b6167;
+  }
+
+  /* ---------- калькулятор ---------- */
+  .calc {
+    display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px, 4vw, 48px);
+    align-items:start;
+  }
+  .calc__box {
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:clamp(20px, 3.4vw, 34px);
+  }
+  .calc__box label { display:block; font-size:14px; font-weight:600; margin:0 0 10px; }
+  .calc__box label b { color:var(--accent); font-weight:650; }
+  .calc__row { margin:0 0 26px; }
+  .calc__row:last-of-type { margin-bottom:18px; }
+  .calc__row select {
+    width:100%; min-height:48px; padding:0 14px; border:1px solid var(--line);
+    border-radius:10px; background:#fff; font:inherit; font-size:15px; color:var(--ink);
+  }
+  .calc__row select:focus { border-color:var(--accent); outline:none; }
+  input[type="range"] {
+    -webkit-appearance:none; appearance:none; width:100%; height:34px; background:transparent; cursor:pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track { height:4px; background:var(--bg2); border-radius:2px; }
+  input[type="range"]::-moz-range-track { height:4px; background:var(--bg2); border-radius:2px; }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance:none; width:26px; height:26px; border-radius:50%;
+    background:var(--accent); border:3px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,.25);
+    margin-top:-11px;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width:26px; height:26px; border-radius:50%; background:var(--accent);
+    border:3px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,.25);
+  }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .chips label { margin:0; font-weight:500; }
+  .chips input { position:absolute; opacity:0; width:1px; height:1px; }
+  .chips span {
+    display:inline-block; padding:10px 14px; border:1px solid var(--line); border-radius:999px;
+    font-size:14px; color:var(--ink); background:var(--bg); cursor:pointer; transition:all .12s ease;
+  }
+  .chips input:checked + span { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .chips input:focus-visible + span { outline:2px solid var(--accent-2); outline-offset:2px; }
+  .calc__out { display:flex; flex-direction:column; justify-content:center; }
+  .calc__sum {
+    font-size:clamp(40px, 7.5vw, 62px); font-weight:650; letter-spacing:-.035em;
+    line-height:1; color:var(--accent); margin:6px 0 10px;
+  }
+  .calc__break { font-size:14px; color:var(--muted); margin:0 0 20px; }
+  .calc__note { font-size:13px; color:var(--muted); margin:0; max-width:38ch; }
+  .calc__list { list-style:none; padding:0; margin:22px 0 0; font-size:14px; color:var(--muted); }
+  .calc__list li { padding:7px 0; border-top:1px solid var(--line); }
+  .calc__list li:first-child { border-top:0; }
+
+  /* ---------- цены ---------- */
+  .price-list { list-style:none; padding:0; margin:0; border-top:1px solid var(--line); }
+  .price-list li {
+    display:flex; align-items:baseline; gap:14px; padding:16px 0;
+    border-bottom:1px solid var(--line); font-size:clamp(15px, 2vw, 17px);
+  }
+  .price-list .dots { flex:1; border-bottom:1px dotted var(--line); transform:translateY(-4px); }
+  .price-list b { white-space:nowrap; font-weight:650; }
+  .price-list .free { color:var(--accent); }
+  .prices__note { margin:18px 0 0; font-size:14px; color:var(--muted); max-width:60ch; }
+
+  /* ---------- как проходит ---------- */
+  .steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; margin-top:36px; }
+  .step { position:relative; padding-top:22px; }
+  .step::before {
+    content:""; position:absolute; left:0; top:0; width:100%; height:1px;
+    background:var(--line);
+  }
+  .step::after {
+    content:""; position:absolute; left:0; top:-3px; width:7px; height:7px;
+    border-radius:50%; background:var(--accent);
+  }
+  .step h3 { margin:0 0 8px; }
+  .step p { margin:0; font-size:15px; color:var(--muted); }
+  .step em { display:block; font-style:normal; font-size:13px; letter-spacing:.06em;
+             text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px; }
+
+  /* ---------- цитата ---------- */
+  .quote { background:var(--bg2); }
+  blockquote {
+    margin:0; max-width:34ch; font-size:clamp(22px, 3.6vw, 34px);
+    line-height:1.3; letter-spacing:-.015em; font-weight:500;
+  }
+  blockquote::before { content:"«"; color:var(--accent); }
+  blockquote::after { content:"»"; color:var(--accent); }
+  .quote__by { margin:22px 0 0; font-size:15px; color:var(--muted); }
+  .quote__by b { color:var(--ink); font-weight:600; }
+
+  /* ---------- вопросы ---------- */
+  .faq { border-top:1px solid var(--line); margin-top:34px; }
+  .faq details { border-bottom:1px solid var(--line); }
+  .faq summary {
+    display:flex; justify-content:space-between; gap:16px; align-items:baseline;
+    padding:18px 0; cursor:pointer; font-weight:600; font-size:clamp(16px, 2.1vw, 18px);
+    list-style:none;
+  }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; color:var(--accent); font-weight:650; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:"−"; }
+  .faq details p { margin:0 0 20px; font-size:15px; color:var(--muted); max-width:66ch; }
+  .faq details p b { color:var(--ink); }
+
+  /* ---------- заявка ---------- */
+  .book__grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px, 5vw, 60px); }
+  #book h2 em { font-style:normal; color:var(--accent); }
+  .book__list { list-style:none; padding:0; margin:26px 0 0; font-size:15px; }
+  .book__list li { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-top:1px solid var(--line); }
+  .book__list li span:first-child { color:var(--muted); }
+  .book__list li span:last-child { text-align:right; }
+  form { display:grid; gap:14px; }
+  .field label { display:block; font-size:13px; color:var(--muted); margin:0 0 6px; }
+  .field input, .field select {
+    width:100%; min-height:52px; padding:0 14px; border:1px solid var(--line);
+    border-radius:10px; background:#fff; font:inherit; color:var(--ink);
+  }
+  .field input:focus, .field select:focus { border-color:var(--accent); outline:none; }
+  .field-error { display:none; margin:6px 0 0; font-size:13px; color:#b3402c; }
+  .field.is-bad input { border-color:#b3402c; }
+  .field.is-bad .field-error { display:block; }
+  .form-consent {
+    display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);
+    line-height:1.45; cursor:pointer; padding:2px 0;
+  }
+  .form-consent input { width:20px; height:20px; margin:1px 0 0; flex:none; accent-color:var(--accent); }
+  .form-consent a { color:var(--accent); }
+  .form-consent.is-bad { color:#b3402c; }
+  .form-note { margin:0; font-size:13px; color:var(--muted); }
+
+  /* ---------- контакты и подвал ---------- */
+  .contacts__grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px, 4vw, 40px); margin-top:30px; }
+  .card-soft { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:clamp(20px, 3vw, 30px); }
+  .contacts__map {
+    position:relative; min-height:240px; border-radius:var(--radius); overflow:hidden;
+    background:
+      repeating-linear-gradient(90deg, rgba(29,63,99,.10) 0 1px, transparent 1px 46px),
+      repeating-linear-gradient(180deg, rgba(29,63,99,.10) 0 1px, transparent 1px 46px),
+      var(--bg2);
+    border:1px solid var(--line);
+  }
+  .pin {
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px;
+    font-size:14px; box-shadow:0 6px 24px rgba(0,0,0,.10); text-align:center; min-width:180px;
+  }
+  .pin small { display:block; color:var(--muted); font-size:12px; margin-top:4px; }
+  footer { padding:36px 0 46px; border-top:1px solid var(--line); font-size:14px; color:var(--muted); }
+  .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .foot a { color:var(--accent); text-decoration:none; }
+  .demo-note { margin:18px 0 0; font-size:13px; line-height:1.5; max-width:74ch; color:var(--muted); }
+  .demo-note b { color:var(--ink); }
+
+  /* ---------- мобильная кнопка внизу ---------- */
+  .mob-cta {
+    display:none; position:fixed; left:0; right:0; bottom:0; z-index:20;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(244,242,237,.96); border-top:1px solid var(--line);
+    gap:8px; backdrop-filter:blur(8px);
+  }
+  .mob-cta .btn { flex:1; min-height:48px; font-size:15px; padding:0 12px; }
+  .mob-cta__note { display:none; }
+
+  /* ---------- появление ---------- */
+  html.js [data-a] { opacity:0; transform:translateY(14px); }
+  html.js [data-a].in { opacity:1; transform:none; transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .seam, .pool { animation:none; }
+    html.js [data-a] { opacity:1; transform:none; }
+    .btn, .chips span { transition:none; }
+  }
+
+  @media (max-width: 860px) {
+    .calc { grid-template-columns:1fr; }
+    .steps { grid-template-columns:1fr 1fr; }
+    .book__grid { grid-template-columns:1fr; }
+    .contacts__grid { grid-template-columns:1fr; }
+  }
+  @media (max-width: 640px) {
+    body { font-size:16px; }
+    .top { padding:14px 16px; }
+    .top__phone { font-size:15px; }
+    .logo span { font-size:16px; }
+    .logo small { font-size:10px; letter-spacing:.06em; }
+    .top__phone span { display:none; }
+    .hero { min-height:92svh; }
+    .seam { top:30%; }
+    .pool { top:30%; }
+    .hero__meta span + span::before { display:none; }
+    .hero__meta { gap:4px 14px; }
+    .steps { grid-template-columns:1fr; gap:26px; }
+    .mob-cta { display:flex; flex-wrap:wrap; }
+    .mob-cta__note {
+      display:none; order:-1; width:100%; text-align:center;
+      font-size:11px; color:var(--muted); margin:0 0 2px;
+    }
+    .mob-cta__note:not([hidden]) { display:block; }
+    .hero { padding-bottom:96px; }
+    body { padding-bottom:96px; }
+    footer { padding-bottom:24px; }
+    .demo-bar { font-size:12px; gap:6px; padding:8px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <b>демо</b> <span>·</span> сайт под ключ <b>3 000 ₽</b> <span>·</span>
+  <a href="https://wa.me/79020153104?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D0%B4%D0%B5%D0%BC%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D0%B0%D0%BC" target="_blank" rel="noopener">написать нам</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="scene" aria-hidden="true">
+    <div class="pool"></div>
+    <div class="seam"></div>
+    <div class="grain"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <div class="top">
+    <a class="logo" href="#top">
+      <i aria-hidden="true"></i>
+      <span>Потолок<small>натяжные потолки · Чебоксары</small></span>
+    </a>
+    <a class="top__phone" href="tel:+79000000000">+7 900 000-00-00<span>звонок или WhatsApp</span></a>
+  </div>
+
+  <div class="wrap hero__in">
+    <h1 data-a>Потолок за один день, без пыли и <em>переделок</em></h1>
+    <p class="hero__lead" data-a>Замер бесплатно. Кроим полотно под вашу комнату на производстве, монтируем за 2–3 часа и убираем за собой. Цена за метр известна до начала работ — считайте ниже.</p>
+    <div class="hero__cta" data-a>
+      <a class="btn btn--primary" href="#calc">Рассчитать стоимость</a>
+      <a class="btn btn--ghost" href="tel:+79000000000">Позвонить</a>
+    </div>
+    <p class="hero__meta" data-a>
+      <span>Чебоксары и Новочебоксарск</span>
+      <span>гарантия 10 лет на полотно и монтаж</span>
+      <span>без предоплаты</span>
+    </p>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <p class="eyebrow">Калькулятор</p>
+    <h2 style="max-width:22ch">Посчитайте сами, <br>без звонка и уговоров</h2>
+    <div class="calc" style="margin-top:36px">
+      <div class="calc__box">
+        <div class="calc__row">
+          <label for="c-area">Площадь потолка — <b id="c-area-val">18 м²</b></label>
+          <input id="c-area" type="range" min="10" max="60" step="1" value="18"
+                 aria-describedby="c-area-val">
+        </div>
+
+        <div class="calc__row">
+          <label>Полотно</label>
+          <div class="chips" role="radiogroup" aria-label="Тип полотна">
+            <label><input type="radio" name="mat" value="390" checked><span>Матовое · 390 ₽/м²</span></label>
+            <label><input type="radio" name="mat" value="450"><span>Сатин · 450 ₽/м²</span></label>
+            <label><input type="radio" name="mat" value="520"><span>Глянец · 520 ₽/м²</span></label>
+          </div>
+        </div>
+
+        <div class="calc__row">
+          <label>Форма</label>
+          <div class="chips" role="radiogroup" aria-label="Форма потолка">
+            <label><input type="radio" name="shape" value="0" checked><span>Одноуровневый</span></label>
+            <label><input type="radio" name="shape" value="90"><span>Двухуровневый +90</span></label>
+            <label><input type="radio" name="shape" value="150"><span>Парящий +150</span></label>
+          </div>
+        </div>
+
+        <div class="calc__row">
+          <label for="c-light">Светильники</label>
+          <select id="c-light">
+            <option value="0">Без светильников</option>
+            <option value="4" selected>4 светильника</option>
+            <option value="6">6 светильников</option>
+            <option value="8">8 светильников</option>
+          </select>
+        </div>
+
+        <ul class="calc__list">
+          <li>Замер, монтаж и вынос мусора — включены</li>
+          <li>Демонтаж старого полотна — 150 ₽/м², если нужно</li>
+          <li>Светильник с установкой — 450 ₽ за штуку</li>
+        </ul>
+      </div>
+
+      <div class="calc__out">
+        <p class="eyebrow" style="margin-bottom:0">Примерно</p>
+        <p class="calc__sum" id="c-total">0 ₽</p>
+        <p class="calc__break" id="c-break"></p>
+        <p class="calc__note">Это расчёт по площади. Точную цену скажем после замера: она зависит от углов, труб и кривизны стен. Замер бесплатный, отказываться после него не обязательно.</p>
+        <div style="margin-top:22px">
+          <a class="btn btn--primary" href="#book">Записаться на замер</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="prices">
+  <div class="wrap">
+    <p class="eyebrow">Цены</p>
+    <h2 style="max-width:20ch">Цена за метр, <br>без сюрпризов в конце</h2>
+    <ul class="price-list" style="margin-top:32px">
+      <li><span>Матовое полотно</span><span class="dots"></span><b>от 390 ₽/м²</b></li>
+      <li><span>Сатин — мягкий блеск, без бликов</span><span class="dots"></span><b>от 450 ₽/м²</b></li>
+      <li><span>Глянец — отражает, делает комнату выше</span><span class="dots"></span><b>от 520 ₽/м²</b></li>
+      <li><span>Второй уровень</span><span class="dots"></span><b>+90 ₽/м²</b></li>
+      <li><span>Парящий профиль с подсветкой</span><span class="dots"></span><b>+150 ₽/м²</b></li>
+      <li><span>Светильник с установкой</span><span class="dots"></span><b>450 ₽</b></li>
+      <li><span>Демонтаж старого полотна</span><span class="dots"></span><b>150 ₽/м²</b></li>
+      <li><span>Замер, монтаж, вынос мусора</span><span class="dots"></span><b class="free">включено</b></li>
+    </ul>
+    <p class="prices__note">Минимальный заказ — 6 000 ₽. Работаем без предоплаты: платите после монтажа, когда всё висит ровно.</p>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote data-a>Боялась, что будет пахнуть и придётся всё выносить. Приехали втроём, за два часа сделали, мебель даже не двигали — только накрыли. Шов у стены ровный, стыков не видно.</blockquote>
+    <p class="quote__by" data-a><b>Марина</b> · Новочебоксарск, кухня 11 м²</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">Как это проходит</p>
+    <h2 style="max-width:20ch">От звонка до готового потолка</h2>
+    <div class="steps">
+      <div class="step" data-a>
+        <em>20 минут</em>
+        <h3>Замер</h3>
+        <p>Приезжаем в удобное время, считаем площадь по факту и показываем образцы полотен. Бесплатно.</p>
+      </div>
+      <div class="step" data-a>
+        <em>1–2 дня</em>
+        <h3>Производство</h3>
+        <p>Полотно кроят под вашу комнату, а не под типовой размер — поэтому шов один и по краю.</p>
+      </div>
+      <div class="step" data-a>
+        <em>2–3 часа</em>
+        <h3>Монтаж</h3>
+        <p>Мебель накрываем плёнкой, работаем аккуратно. Пыли почти нет: сверлим только под профиль.</p>
+      </div>
+      <div class="step" data-a>
+        <em>сразу</em>
+        <h3>Уборка</h3>
+        <p>Увозим обрезки и упаковку. Показываем, как снять полотно, если понадобится доступ к проводке.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Вопросы</p>
+    <h2 style="max-width:22ch">Что обычно спрашивают до замера</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько времени занимает монтаж?</summary>
+        <p>Одна комната — <b>2–3 часа</b>, включая натяжку и установку светильников. Квартира целиком
+        обычно один рабочий день. Точное время скажем после замера: зависит от количества комнат
+        и углов.</p>
+      </details>
+      <details>
+        <summary>Будет пыль? Надо ли выносить мебель?</summary>
+        <p>Выносить не надо: накрываем плёнкой и работаем аккуратно. Сверлим только под профиль
+        по периметру, крупной пыли от этого нет. Обрезки и упаковку увозим с собой.</p>
+      </details>
+      <details>
+        <summary>Что будет, если соседи затопят?</summary>
+        <p>Полотно выдерживает воду и не рвётся: оно провисает, воду сливают через отверстие
+        светильника, полотно сушат и ставят обратно. Это дешевле, чем менять его целиком.</p>
+      </details>
+      <details>
+        <summary>Почему в калькуляторе одна цена, а после замера другая?</summary>
+        <p>Калькулятор считает по площади. На замере видно то, чего не видно по фото: количество
+        углов, обход труб, кривизну стен, необходимость демонтажа старого полотна. Если разница
+        больше 10%, мы говорим об этом до начала работ.</p>
+      </details>
+      <details>
+        <summary>Нужна предоплата? Какая гарантия?</summary>
+        <p>Предоплаты нет: платите после монтажа, когда потолок уже висит. Гарантия —
+        <b>10 лет</b> на полотно и монтаж, она записана в договоре. Если полотно провисло
+        или разошлось по шву — приезжаем и правим бесплатно.</p>
+      </details>
+      <details>
+        <summary>Можно ли мыть натяжной потолок?</summary>
+        <p>Да, мягкой тряпкой с обычным средством без абразива и спирта. Глянец протирают
+        по направлению шва, чтобы не оставалось разводов.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book__grid">
+    <div>
+      <p class="eyebrow">Заявка</p>
+      <h2>Оставьте заявку — <br>приедем на <em>замер</em></h2>
+      <p class="lead" style="margin-top:14px">Или напишите в WhatsApp: пришлите фото комнаты и примерную площадь — цену скажем сразу, без выезда.</p>
+      <ul class="book__list">
+        <li><span>Адрес</span><span>Чебоксары, ул. Примерная, 8</span></li>
+        <li><span>Телефон</span><span>+7 900 000-00-00</span></li>
+        <li><span>Часы</span><span>ежедневно 09:00–20:00</span></li>
+        <li><span>Оплата</span><span>наличные, карта, СБП</span></li>
+      </ul>
+    </div>
+
+    <form id="bookForm" novalidate>
+      <div class="field" data-field="name">
+        <label for="f-name">Как к вам обращаться</label>
+        <input id="f-name" name="name" type="text" placeholder="Имя" required autocomplete="name">
+        <p class="field-error">Напишите имя — чтобы знать, как к вам обращаться</p>
+      </div>
+      <div class="field" data-field="phone">
+        <label for="f-phone">Телефон</label>
+        <input id="f-phone" name="phone" type="tel" placeholder="+7 ___ ___-__-__" required autocomplete="tel" inputmode="tel">
+        <p class="field-error">Проверьте номер: нужно 10 цифр</p>
+      </div>
+      <div class="field">
+        <label for="f-svc">Что нужно</label>
+        <select id="f-svc" name="service">
+          <option>Замер и расчёт</option>
+          <option>Матовый потолок</option>
+          <option>Сатин</option>
+          <option>Глянцевый</option>
+          <option>Двухуровневый</option>
+          <option>Парящий с подсветкой</option>
+          <option>Ремонт: провисло или порвалось</option>
+        </select>
+      </div>
+      <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="f-lastname">Фамилия</label>
+        <input id="f-lastname" name="lastname" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="form-consent" id="consentBox" for="f-consent">
+        <input id="f-consent" type="checkbox" name="consent" required>
+        <span>Согласен с <a href="./privacy.html" target="_blank" rel="noopener">политикой обработки
+        персональных данных</a> — как это работает, там написано по-русски</span>
+      </label>
+      <button class="btn btn--primary btn--wide" type="submit">Записаться на замер</button>
+      <p class="form-note" id="formNote">Это демо-форма: заявка никуда не отправляется.</p>
+      <p class="form-note">Отвечаем в течение 2 часов с 09:00 до 20:00. Если позже — напишем утром.</p>
+    </form>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="contacts__grid">
+      <div class="card-soft">
+        <h3>Натяжные потолки «Потолок»</h3>
+        <p style="margin:10px 0 14px;color:var(--muted)">Чебоксары, ул. Примерная, 8<br>
+        Выезд по городу и в Новочебоксарск, работаем ежедневно</p>
+        <p style="margin:0 0 6px"><b>+7 900 000-00-00</b> — звонки и WhatsApp</p>
+        <p style="margin:0 0 18px;color:var(--muted)">ежедневно 09:00–20:00</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn--primary btn--sm" href="tel:+79000000000" style="min-height:46px;padding:0 20px;font-size:15px">Позвонить</a>
+          <a class="btn btn--dark-ghost btn--sm" href="https://wa.me/79000000000" target="_blank" rel="noopener" style="min-height:46px;padding:0 20px;font-size:15px">WhatsApp</a>
+        </div>
+      </div>
+      <div class="contacts__map" role="img" aria-label="Схема расположения — Чебоксары, ул. Примерная, 8">
+        <div class="pin">
+          <b>ул. Примерная, 8</b>
+          <small>выезд по городу бесплатно</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>© 2026 Натяжные потолки «Потолок» · Чебоксары</div>
+      <div><a href="#book">Записаться на замер</a></div>
+    </div>
+    <p style="margin:14px 0 0"><a href="./privacy.html" style="color:var(--muted);text-decoration:none">Политика обработки персональных данных</a></p>
+    <p class="demo-note">
+      <b>Это демонстрационная страница.</b> Компания, цены и отзыв вымышлены — страница показывает,
+      как может выглядеть сайт вашей компании по натяжным потолкам: калькулятор по площади, цены,
+      сроки работ и заявка. Такой сайт делается за 2 дня.
+    </p>
+  </div>
+</footer>
+
+<div class="mob-cta">
+  <span class="mob-cta__note" hidden>номер демонстрационный</span>
+  <a class="btn btn--dark-ghost" href="tel:+79000000000">Позвонить</a>
+  <a class="btn btn--primary" href="#calc">Рассчитать</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Натяжные потолки «Потолок»",
+  "description": "Натяжные потолки в Чебоксарах: замер бесплатно, монтаж за один день.",
+  "telephone": "+7-900-000-00-00",
+  "priceRange": "от 390 ₽/м²",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Примерная, 8",
+    "addressLocality": "Чебоксары",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 09:00-20:00"
+}
+</script>
+
+<script>
+/* Калькулятор: площадь × цена полотна + форма + светильники */
+(function () {
+  var area = document.getElementById('c-area');
+  var areaVal = document.getElementById('c-area-val');
+  var light = document.getElementById('c-light');
+  var total = document.getElementById('c-total');
+  var brk = document.getElementById('c-break');
+  if (!area || !total) return;
+
+  function money(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
+  function pick(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? Number(el.value) : 0;
+  }
+  function pickLabel(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    if (!el) return '';
+    var span = el.parentNode.querySelector('span');
+    return span ? span.textContent.split('·')[0].replace(/\+.*/, '').trim() : '';
+  }
+
+  function calc() {
+    var s = Number(area.value);
+    var mat = pick('mat');
+    var shape = pick('shape');
+    var lights = Number(light.value);
+    var sum = Math.round((s * (mat + shape) + lights * 450) / 10) * 10;
+
+    areaVal.textContent = s + ' м²';
+    total.textContent = money(sum);
+
+    var parts = [s + ' м²', pickLabel('mat').toLowerCase()];
+    if (shape > 0) parts.push(pickLabel('shape').toLowerCase());
+    if (lights > 0) parts.push(lights + ' ' + (lights === 4 ? 'светильника' : 'светильников'));
+    brk.textContent = parts.join(' · ');
+  }
+
+  area.addEventListener('input', calc);
+  light.addEventListener('change', calc);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="mat"], input[name="shape"]'), function (el) {
+    el.addEventListener('change', calc);
+  });
+  calc();
+})();
+
+/* Форма: проверки на месте, без отправки */
+(function () {
+  var form = document.getElementById('bookForm');
+  var note = document.getElementById('formNote');
+  if (!form) return;
+
+  function mark(field, bad) {
+    var box = form.querySelector('[data-field="' + field + '"]');
+    if (box) box.classList.toggle('is-bad', bad);
+    var input = form.querySelector('[name="' + field + '"]');
+    if (input) input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var hp = form.querySelector('[name="lastname"]');
+    if (hp && hp.value) return; /* ловушка для спам-ботов */
+
+    var name = form.querySelector('[name="name"]').value.trim();
+    var phone = form.querySelector('[name="phone"]').value.trim();
+    var consent = form.querySelector('[name="consent"]');
+    var box = document.getElementById('consentBox');
+    var badName = name.length < 2;
+    var badPhone = phone.replace(/\D/g, '').length < 10;
+    var badConsent = !consent || !consent.checked;
+    mark('name', badName);
+    mark('phone', badPhone);
+    if (box) box.classList.toggle('is-bad', badConsent);
+
+    if (badName || badPhone || badConsent) {
+      var msgs = [];
+      if (badName) msgs.push('не хватает имени');
+      if (badPhone) msgs.push('проверьте номер телефона — нужно 10 цифр');
+      if (badConsent) msgs.push('нужна галочка согласия на обработку данных');
+      note.textContent = 'Заявка не ушла: ' + msgs.join(', ') + '.';
+      note.style.color = '#b3402c';
+      var first = badName ? '[name="name"]' : (badPhone ? '[name="phone"]' : '[name="consent"]');
+      form.querySelector(first).focus();
+      return;
+    }
+
+    note.textContent = 'Спасибо, ' + name + '! В демо заявка не уходит, но на реальном сайте мы бы уже звонили.';
+    note.style.color = '#1d3f63';
+    form.reset();
+  });
+
+  Array.prototype.forEach.call(form.querySelectorAll('input'), function (el) {
+    el.addEventListener('input', function () { mark(el.name, false); });
+  });
+
+  var consentEl = form.querySelector('[name="consent"]');
+  if (consentEl) {
+    consentEl.addEventListener('change', function () {
+      var b = document.getElementById('consentBox');
+      if (b) b.classList.remove('is-bad');
+    });
+  }
+})();
+
+/* Появление блоков: без библиотек, уважает reduced-motion */
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('[data-a]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+})();
+
+/* Персонализация макета под конкретного клиента:
+   ?n=Название&p=+7...&a=адрес&clean=1 */
+(function () {
+  var q = new URLSearchParams(location.search);
+  var name = q.get('n'), phone = q.get('p'), addr = q.get('a');
+  /* параметры приходят из ссылки — вырезаем теги, иначе это дырка для <img onerror=…> */
+  var clean = function (s) { return (s || '').replace(/[<>"'`]/g, '').slice(0, 70); };
+  name = clean(name); phone = clean(phone); addr = clean(addr);
+
+  /* без ?p= номер демонстрационный — подписываем честно */
+  if (!phone) {
+    Array.prototype.forEach.call(document.querySelectorAll('.mob-cta__note'), function (e) { e.hidden = false; });
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function (a) {
+      a.removeAttribute('href');
+      a.title = 'номер демонстрационный';
+      a.setAttribute('aria-disabled', 'true');
+    });
+    var coldWa = 'https://wa.me/79020153104?text=' + encodeURIComponent(
+      'Здравствуйте! Смотрел демо сайта по натяжным потолкам — хочу такой же для своего бизнеса');
+    Array.prototype.forEach.call(document.querySelectorAll('a[href*="wa.me"]:not(.demo-bar a)'), function (a) {
+      a.href = coldWa;
+      a.dataset.src = 'demo_cold_wa';
+    });
+  }
+
+  if (q.get('clean') === '1') {
+    Array.prototype.forEach.call(document.querySelectorAll('.demo-note, .demo-bar'), function (el) { el.remove(); });
+  }
+
+  if (name) {
+    document.title = name + ' — натяжные потолки в Чебоксарах';
+    Array.prototype.forEach.call(document.querySelectorAll('.logo span'), function (el) {
+      var small = el.querySelector('small');
+      el.textContent = name;
+      if (small) el.appendChild(small);
+    });
+    var h3 = document.querySelector('#contacts h3');
+    if (h3) h3.textContent = 'Натяжные потолки «' + name + '»';
+    var foot = document.querySelector('.foot div');
+    if (foot) foot.textContent = '© 2026 Натяжные потолки «' + name + '» · Чебоксары';
+  }
+
+  if (phone) {
+    var digits = phone.replace(/[^\d+]/g, '');
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function (a) { a.href = 'tel:' + digits; });
+    Array.prototype.forEach.call(document.querySelectorAll('a[href*="wa.me"]:not(.demo-bar a)'), function (a) {
+      a.href = 'https://wa.me/' + digits.replace(/\D/g, '');
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.top__phone'), function (a) {
+      var sp = a.querySelector('span');
+      a.textContent = phone;
+      if (sp) a.appendChild(sp);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.book__list li'), function (li) {
+      var k = li.querySelector('span');
+      if (k && /Телефон/.test(k.textContent)) li.lastElementChild.textContent = phone;
+    });
+    var inCard = document.querySelector('#contacts .card-soft p b');
+    if (inCard) inCard.textContent = phone;
+  }
+
+  if (addr) {
+    Array.prototype.forEach.call(document.querySelectorAll('.book__list li'), function (li) {
+      var k = li.querySelector('span');
+      if (k && /Адрес/.test(k.textContent)) li.lastElementChild.textContent = addr;
+    });
+    var pinB = document.querySelector('.pin b');
+    if (pinB) pinB.textContent = addr;
+  }
+})();
+</script>
+</body>
+</html>
