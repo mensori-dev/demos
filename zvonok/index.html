@@ -47,6 +47,22 @@ a{color:inherit;text-decoration:none}
 }
 .top__reset:hover{border-color:var(--ink);color:var(--ink)}
 
+.jump{
+  position:sticky;top:54px;z-index:9;background:rgba(10,10,11,.96);
+  border-bottom:1px solid var(--rule-2);backdrop-filter:blur(6px);
+}
+.jump__in{
+  display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;
+  max-width:720px;margin:0 auto;padding:0 18px;height:46px;align-items:center;
+}
+.jump__in::-webkit-scrollbar{display:none}
+.jump a{
+  font:600 11px/1 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  white-space:nowrap;padding:16px 0;flex:none;
+}
+.jump a:hover,.jump a:active{color:var(--ink)}
+
 .hero{padding-top:34px;padding-bottom:30px;border-bottom:1px solid var(--rule-2)}
 .hero h1{
   font-size:clamp(26px,7vw,40px);font-weight:500;letter-spacing:.01em;
@@ -54,7 +70,8 @@ a{color:inherit;text-decoration:none}
 }
 .hero p{color:var(--muted);font-size:15px;line-height:1.6;margin:14px 0 0;max-width:46ch}
 
-.sec{padding:34px 0 6px}
+.sec{padding:34px 0 6px;scroll-margin-top:110px}
+.br{scroll-margin-top:120px}
 .sec__hd{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .sec__hd .mono{flex:none}
 .sec__hd .ln{flex:1;height:1px;background:var(--rule-2)}
@@ -106,6 +123,17 @@ a{color:inherit;text-decoration:none}
 .call.done .call__mark{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .call.done .call__num{color:var(--muted);text-decoration:line-through}
 
+.price{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding:16px 0}
+.price:first-of-type{border-top:0}
+.price__b{flex:1;min-width:0}
+.price__n{font-size:16px;line-height:1.45}
+.price__h{color:var(--muted);font-size:13.5px;line-height:1.5;margin:5px 0 0}
+.price__v{
+  font-size:16px;white-space:nowrap;font-variant-numeric:tabular-nums;
+  letter-spacing:.01em;color:var(--ink);
+}
+.price__v small{color:var(--muted);font-size:12.5px;letter-spacing:.02em}
+
 .foot{
   margin-top:34px;border-top:1px solid var(--rule-2);padding:18px 0 40px;
   color:var(--muted);font:600 10.5px/1.7 ui-monospace,"Cascadia Mono",Consolas,monospace;
@@ -124,6 +152,15 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<nav class="jump">
+  <div class="jump__in">
+    <a href="#frazy">фразы</a>
+    <a href="#est">сайт есть</a>
+    <a href="#ceny">цены</a>
+    <a href="#nomera">номера</a>
+  </div>
+</nav>
+
 <header class="shell hero">
   <p class="mono mono--red">18 ноября</p>
   <h1>Холодный звонок</h1>
@@ -140,7 +177,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="frazy">
     <div class="sec__hd"><p class="mono">что отвечать</p><span class="ln"></span></div>
 
     <div class="br">
@@ -152,12 +189,42 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <div class="br">
+    <div class="br" id="est">
       <p class="br__t">«Сайт есть»</p>
       <div class="say">
         <p class="say__t">А он вам клиентов приносит, или просто висит?</p>
-        <p class="say__t">Давно обновляли? Могу посмотреть и сказать, что там не так, — бесплатно, без обязательств.</p>
-        <p class="say__h">Вот здесь наша поддержка и переделка. Не вешай трубку только потому, что сайт есть.</p>
+        <p class="say__h">Почти всегда «висит». Не спорь — согласись: «у большинства так».</p>
+        <p class="say__t">Могу посмотреть и сказать, что там не так. Бесплатно, минут десять, пришлю список из пяти пунктов. Без обязательств.</p>
+        <p class="say__h">Это не продажа, это разбор. Разбор он прочитает — и это уже повод ответить.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">Что смотреть в чужом сайте</p>
+      <ul class="list list--yes">
+        <li>Открывается на телефоне? Половина людей смотрит с телефона.</li>
+        <li>Есть кнопка позвонить или написать в WhatsApp в один тап?</li>
+        <li>Цены и часы свежие?</li>
+        <li>Есть адрес и как добраться?</li>
+        <li>Грузится быстро на мобильном интернете?</li>
+        <li>Заявка с формы правда приходит?</li>
+        <li>Есть согласие на обработку данных? По закону нужно.</li>
+      </ul>
+    </div>
+
+    <div class="br">
+      <p class="br__t">Сайт правда хороший</p>
+      <div class="say">
+        <p class="say__t">Тогда честно: менять нечего, я вам не нужен. Если что-то понадобится — вот мой номер.</p>
+        <p class="say__h">Так возвращаются через полгода, когда сайт устарел. Это не потерянный звонок.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">Согласился на разбор</p>
+      <div class="say">
+        <p class="say__t">Тогда два варианта. Либо приведу в порядок всё, что нашёл, — полторы тысячи. Либо держу под рукой за тысячу в месяц: до трёх правок, проверяю, что сайт открывается и заявки доходят.</p>
+        <p class="say__h">Что входит в каждый вариант — ниже, в ценах.</p>
       </div>
     </div>
 
@@ -217,15 +284,68 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec__hd"><p class="mono">говорим только это</p><span class="ln"></span></div>
-    <ul class="list list--yes">
-      <li>3 000 ₽ под ключ, половина вперёд.</li>
-      <li>Два рабочих дня с того момента, как дали тексты и фото.</li>
-      <li>Домен и хостинг оформляем на вас.</li>
-      <li>Одна страница: услуги и цены, фото работ, адрес и часы, кнопка в WhatsApp.</li>
-      <li>Правки после сдачи — отдельно, по договорённости.</li>
-    </ul>
+  <section class="sec" id="ceny">
+    <div class="sec__hd"><p class="mono">цены</p><span class="ln"></span></div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Сайт под ключ</p>
+        <p class="price__h">Одна страница: услуги и цены, фото работ, адрес и часы, кнопка в WhatsApp. Домен и хостинг на вас. Половина вперёд, два рабочих дня с момента, как дали тексты и фото.</p>
+      </div>
+      <span class="price__v">3 000 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Правки по разбору</p>
+        <p class="price__h">Привожу в порядок то, что нашёл в чужом сайте: до пяти пунктов из списка выше.</p>
+      </div>
+      <span class="price__v">1 500 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Одна мелкая правка</p>
+        <p class="price__h">Текст, цены, часы, замена фото. Одна задача — одна правка.</p>
+      </div>
+      <span class="price__v">500 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Поддержка</p>
+        <p class="price__h">До трёх правок в месяц, проверяю, что сайт открывается и заявки доходят, держу резервную копию. Отказаться можно в любой месяц.</p>
+      </div>
+      <span class="price__v">1 000 ₽<small> /мес</small></span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Новый блок или страница</p>
+        <p class="price__h">Секция, отдельная страница услуги, форма заявки.</p>
+      </div>
+      <span class="price__v">1 500 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Переделка чужого сайта</p>
+        <p class="price__h">Когда проще сделать заново, чем чинить. Считается как новый сайт.</p>
+      </div>
+      <span class="price__v">3 000 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Домен и хостинг</p>
+        <p class="price__h">Оформляем на имя клиента, платит он сам по тарифу регистратора.</p>
+      </div>
+      <span class="price__v">на клиента</span>
+    </div>
+
+    <div class="say">
+      <p class="say__h">Не берём: сайты на самописной CMS без доступов, взломанные и те, что висят на чужом аккаунте. Там сначала надо вернуть контроль, а это не наша работа.</p>
+    </div>
   </section>
 
   <section class="sec">
@@ -238,7 +358,7 @@ a{color:inherit;text-decoration:none}
     </ul>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="nomera">
     <div class="sec__hd"><p class="mono">кому звонить</p><span class="ln"></span></div>
     <a class="call" href="tel:+79297331134" data-id="79297331134">
       <span class="call__n"><span class="call__num">+7 929 733-11-34</span><span class="call__who">Ателье, Чебоксары</span></span>
