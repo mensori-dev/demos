@@ -202,7 +202,7 @@ a{color:inherit;text-decoration:none}
     <a href="#konec">Как заканчивать</a>
     <a href="#ceny">Цены<small>8 строк</small></a>
     <a href="#net">Чего не говорим</a>
-    <a href="#nomera">Кому звонить<small>20 номеров</small></a>
+    <a href="#nomera">Кому звонить<small>по городам</small></a>
     <a href="#posle">После звонка</a>
     <div class="sheet__foot">
       <button id="reset" type="button">Сбросить отметки</button>
@@ -221,8 +221,8 @@ a{color:inherit;text-decoration:none}
   <section class="sec" id="pervaya">
     <div class="sec__hd"><p class="mono">первая фраза</p><span class="ln"></span></div>
     <div class="say">
-      <p class="say__t">Здравствуйте! Я вас нашёл в 2ГИС. У вас отзывы хорошие, видно, что работаете давно. Одного не хватает: вас в интернете почти нет. Сайт не делали?</p>
-      <p class="say__h">Про отзывы говори только если они правда есть в карточке. Нет отзывов — начни с «видно, что работаете давно». Спросил и замолчи, пусть ответят.</p>
+      <p class="say__t">Здравствуйте! Я делаю сайты для небольших бизнесов. Уточню один момент: у вас своего сайта нет?</p>
+      <p class="say__h">Не говори «вас не видно» — тебя поправят, и разговор кончится. Спроси про сайт и замолчи, пусть ответят.</p>
     </div>
   </section>
 
@@ -232,9 +232,27 @@ a{color:inherit;text-decoration:none}
     <div class="br">
       <p class="br__t">«Сайта нет»</p>
       <div class="say">
-        <p class="say__t">Понятно. А думали сделать, или пока не до этого?</p>
-        <p class="say__t">Я делаю небольшие сайты — ателье, салоны, автосервисы. Могу показать, как это выглядело бы для вас: скинуть в WhatsApp, посмотрите две минуты?</p>
+        <p class="say__t">А как сейчас люди вас находят?</p>
+        <p class="say__h">Это главный вопрос звонка. Ответ сразу скажет, есть ли о чём говорить.</p>
+        <p class="say__t">Могу показать пример — как это выглядело бы для вас. Скинуть в WhatsApp, посмотрите две минуты?</p>
         <p class="say__h">Дальше про себя не рассказывай. Договорился, что скинешь, — прощайся.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«У нас есть Телеграм / Авито / 2ГИС»</p>
+      <div class="say">
+        <p class="say__t">Понял. А вам этого хватает, или бывает, что клиенты не доходят?</p>
+        <p class="say__h">Скажет «хватает» — значит хватает: «тогда правда не надо, спасибо». Не спорь, это не поражение.</p>
+        <p class="say__t">Сайт — это чтобы вас находили в поиске по городу, когда ищут «цветы Чебоксары». Телеграм туда не попадает.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Не понял вопрос»</p>
+      <div class="say">
+        <p class="say__t">Извините, я быстро: я делаю сайты. У вас сайт есть или нет?</p>
+        <p class="say__h">Если и тут не понял — «ладно, извините за беспокойство» и всё. Не пересказывай по кругу.</p>
       </div>
     </div>
 
@@ -460,22 +478,50 @@ a{color:inherit;text-decoration:none}
       <span class="call__n"><span class="call__num">+7 835 238-04-56</span><span class="call__who">Respect · ремонт квартир</span></span>
       <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
     </a>
+    <a class="call" href="tel:+78352308136" data-id="78352308136">
+      <span class="call__n"><span class="call__num">+7 835 230-81-36</span><span class="call__who">Минерал · ремонт квартир</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+78352683114" data-id="78352683114">
+      <span class="call__n"><span class="call__num">+7 835 268-31-14</span><span class="call__who">Стройремсервис · ремонт квартир</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
 
     <div class="grp">Чебоксары · мобильные</div>
-    <a class="call" href="tel:+79297331134" data-id="79297331134">
-      <span class="call__n"><span class="call__num">+7 929 733-11-34</span><span class="call__who">Ателье · ателье</span></span>
-      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
-    </a>
-    <a class="call" href="tel:+79024337301" data-id="79024337301">
-      <span class="call__n"><span class="call__num">+7 902 433-73-01</span><span class="call__who">Своя портниха · ателье</span></span>
-      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
-    </a>
-    <a class="call" href="tel:+79530150015" data-id="79530150015">
-      <span class="call__n"><span class="call__num">+7 953 015-00-15</span><span class="call__who">Цветелия · цветы</span></span>
-      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
-    </a>
     <a class="call" href="tel:+79083093236" data-id="79083093236">
       <span class="call__n"><span class="call__num">+7 908 309-32-36</span><span class="call__who">АМ-Сервис · автосервис</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79968529942" data-id="79968529942">
+      <span class="call__n"><span class="call__num">+7 996 852-99-42</span><span class="call__who">Корд · автосервис</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79033797532" data-id="79033797532">
+      <span class="call__n"><span class="call__num">+7 903 379-75-32</span><span class="call__who">Кон-Авто · автосервис</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79022870000" data-id="79022870000">
+      <span class="call__n"><span class="call__num">+7 902 287-00-00</span><span class="call__who">Мир цветов · цветы</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79022875555" data-id="79022875555">
+      <span class="call__n"><span class="call__num">+7 902 287-55-55</span><span class="call__who">Darri.Flowers · цветы</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79373906094" data-id="79373906094">
+      <span class="call__n"><span class="call__num">+7 937 390-60-94</span><span class="call__who">Профессионал · натяжные потолки</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79373954871" data-id="79373954871">
+      <span class="call__n"><span class="call__num">+7 937 395-48-71</span><span class="call__who">Титан 21 · натяжные потолки</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79935540048" data-id="79935540048">
+      <span class="call__n"><span class="call__num">+7 993 554-00-48</span><span class="call__who">Опаска · барбершоп</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79170788583" data-id="79170788583">
+      <span class="call__n"><span class="call__num">+7 917 078-85-83</span><span class="call__who">Пробор · барбершоп</span></span>
       <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
     </a>
 
