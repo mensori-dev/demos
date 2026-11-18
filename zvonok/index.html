@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<title>Звонки — шпаргалка</title>
+<style>
+:root{
+  --bg:#0a0a0b; --bg-2:#151517; --ink:#f4f3ef; --ink-2:#d9d8d3;
+  --muted:#8c8c8e; --red:#ff4a35;
+  --rule:rgba(244,243,239,.16); --rule-2:rgba(244,243,239,.08);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{overflow-x:hidden}
+body{
+  margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font:400 16px/1.62 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ink);color:var(--bg)}
+
+.shell{max-width:720px;margin:0 auto;padding-left:18px;padding-right:18px}
+
+.mono{
+  font:600 11.5px/1 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.16em;text-transform:uppercase;color:#a5a5a7;margin:0;
+}
+.mono--red{color:var(--red)}
+.mono::before{content:"[ "}
+.mono::after{content:" ]"}
+
+.top{
+  position:sticky;top:0;z-index:10;background:rgba(10,10,11,.96);
+  border-bottom:1px solid var(--rule-2);backdrop-filter:blur(6px);
+}
+.top__in{display:flex;align-items:center;gap:14px;height:54px}
+.top__cnt{font:600 12px/1 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-left:auto;font-variant-numeric:tabular-nums}
+.top__cnt b{color:var(--ink);font-weight:600}
+.top__reset{
+  background:transparent;border:1px solid var(--rule);color:var(--muted);
+  font:600 10.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;
+  text-transform:uppercase;padding:10px 12px;cursor:pointer;
+}
+.top__reset:hover{border-color:var(--ink);color:var(--ink)}
+
+.hero{padding-top:34px;padding-bottom:30px;border-bottom:1px solid var(--rule-2)}
+.hero h1{
+  font-size:clamp(26px,7vw,40px);font-weight:500;letter-spacing:.01em;
+  text-transform:uppercase;line-height:1.08;margin:14px 0 0;text-wrap:balance;
+}
+.hero p{color:var(--muted);font-size:15px;line-height:1.6;margin:14px 0 0;max-width:46ch}
+
+.sec{padding:34px 0 6px}
+.sec__hd{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec__hd .mono{flex:none}
+.sec__hd .ln{flex:1;height:1px;background:var(--rule-2)}
+
+.say{border-top:1px solid var(--rule-2);padding:22px 0 20px}
+.say:first-of-type{border-top:0;padding-top:6px}
+.say__t{
+  font-size:21px;line-height:1.45;letter-spacing:-.005em;margin:12px 0 0;
+  color:var(--ink);text-wrap:pretty;
+}
+.say__t + .say__t{margin-top:14px}
+.say__h{color:var(--muted);font-size:14.5px;line-height:1.55;margin:12px 0 0}
+
+.br{border-top:1px solid var(--rule-2);padding:20px 0 4px}
+.br:first-of-type{border-top:0;padding-top:4px}
+.br__t{
+  font:600 11.5px/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 4px;
+}
+.br .say{border-top:0;padding:14px 0 12px}
+.br .say__t{font-size:19px;margin-top:0}
+
+.list{margin:0;padding:0;list-style:none}
+.list li{
+  border-top:1px solid var(--rule-2);padding:13px 0 13px 26px;position:relative;
+  font-size:15.5px;line-height:1.55;color:var(--ink-2);
+}
+.list li::before{
+  position:absolute;left:0;top:13px;font:600 13px/1.5 ui-monospace,Consolas,monospace;
+}
+.list--yes li::before{content:"+";color:var(--ink)}
+.list--no li::before{content:"—";color:var(--red)}
+.list--no li{color:var(--muted)}
+
+.call{
+  display:flex;align-items:center;gap:14px;min-height:64px;padding:14px 0;
+  border-top:1px solid var(--rule-2);
+}
+.call:first-of-type{border-top:0}
+.call:active{background:var(--bg-2)}
+.call__n{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.call__num{font-size:17.5px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.call__who{color:var(--muted);font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.call__mark{
+  flex:none;width:44px;height:44px;border:1px solid var(--rule);background:transparent;
+  color:transparent;font-size:15px;line-height:1;cursor:pointer;padding:0;
+}
+.call__mark:hover{border-color:var(--ink)}
+.call.done .call__mark{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.call.done .call__num{color:var(--muted);text-decoration:line-through}
+
+.foot{
+  margin-top:34px;border-top:1px solid var(--rule-2);padding:18px 0 40px;
+  color:var(--muted);font:600 10.5px/1.7 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="shell top__in">
+    <p class="mono">Звонки</p>
+    <span class="top__cnt">позвонил <b id="cnt">0</b>/8</span>
+    <button class="top__reset" id="reset" type="button">Сброс</button>
+  </div>
+</div>
+
+<header class="shell hero">
+  <p class="mono mono--red">18 ноября</p>
+  <h1>Холодный звонок</h1>
+  <p>Цель звонка одна — показать пример. Продать по телефону не нужно.</p>
+</header>
+
+<main class="shell">
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">первая фраза</p><span class="ln"></span></div>
+    <div class="say">
+      <p class="say__t">Здравствуйте! Я вас нашёл в 2ГИС. У вас отзывы хорошие, видно, что работаете давно. Одного не хватает: вас в интернете почти нет. Сайт не делали?</p>
+      <p class="say__h">Про отзывы говори только если они правда есть в карточке. Нет отзывов — начни с «видно, что работаете давно». Спросил и замолчи, пусть ответят.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">что отвечать</p><span class="ln"></span></div>
+
+    <div class="br">
+      <p class="br__t">«Сайта нет»</p>
+      <div class="say">
+        <p class="say__t">Понятно. А думали сделать, или пока не до этого?</p>
+        <p class="say__t">Я делаю небольшие сайты — ателье, салоны, автосервисы. Могу показать, как это выглядело бы для вас: скинуть в WhatsApp, посмотрите две минуты?</p>
+        <p class="say__h">Дальше про себя не рассказывай. Договорился, что скинешь, — прощайся.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Сайт есть»</p>
+      <div class="say">
+        <p class="say__t">А он вам клиентов приносит, или просто висит?</p>
+        <p class="say__t">Давно обновляли? Могу посмотреть и сказать, что там не так, — бесплатно, без обязательств.</p>
+        <p class="say__h">Вот здесь наша поддержка и переделка. Не вешай трубку только потому, что сайт есть.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Делали, не сложилось»</p>
+      <div class="say">
+        <p class="say__t">А почему не сложилось — дорого вышло или не понравилось?</p>
+        <p class="say__h">Самое ценное место звонка. Молчи и слушай: человек сам скажет, что ему мешает.</p>
+        <p class="say__t">А какая цена была бы нормальной, если сайт понравится?</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Сколько стоит?»</p>
+      <div class="say">
+        <p class="say__t">Три тысячи, вместе с доменом и хостингом на ваше имя. Но сначала посмотрите пример — подойдёт ли.</p>
+        <p class="say__h">Цену не размазывай и не оправдывай. Она и так низкая.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«А вы кто, откуда номер?»</p>
+      <div class="say">
+        <p class="say__t">Меня зовут <span style="color:var(--red)">…</span>, я из Йошкар-Олы, делаю сайты для небольших бизнесов. Нашёл вас в 2ГИС: там телефон и адрес, а сайта нет.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Пришлите на почту»</p>
+      <div class="say">
+        <p class="say__t">Скину в WhatsApp, там сразу можно ответить. Этот номер у вас в WhatsApp?</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">«Нам не надо»</p>
+      <div class="say">
+        <p class="say__t">Хорошо, спасибо. Если понадобится — я на этом же номере в WhatsApp.</p>
+        <p class="say__h">Всё. Не уговаривай. Это нормальный исход, а не провал.</p>
+      </div>
+    </div>
+
+    <div class="br">
+      <p class="br__t">Взял не владелец</p>
+      <div class="say">
+        <p class="say__t">А когда его можно застать? Я по поводу сайта, это на две минуты.</p>
+        <p class="say__h">Секретарю ничего не рассказывай и не продавай.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">как заканчивать</p><span class="ln"></span></div>
+    <div class="say">
+      <p class="say__t">Скину пример в WhatsApp — посмотрите две минуты. Если похоже на то, что вам нужно, созвонимся вечером.</p>
+      <p class="say__h">Не «купите», а «посмотрите». Закрываем на времени, а не на деньгах.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">говорим только это</p><span class="ln"></span></div>
+    <ul class="list list--yes">
+      <li>3 000 ₽ под ключ, половина вперёд.</li>
+      <li>Два рабочих дня с того момента, как дали тексты и фото.</li>
+      <li>Домен и хостинг оформляем на вас.</li>
+      <li>Одна страница: услуги и цены, фото работ, адрес и часы, кнопка в WhatsApp.</li>
+      <li>Правки после сдачи — отдельно, по договорённости.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">не говорим</p><span class="ln"></span></div>
+    <ul class="list list--no">
+      <li>«Сайт приведёт вам клиентов» — не проверено, такого клиента у нас ещё нет.</li>
+      <li>«У меня двадцать работ» — враньё, вскроется на первом вопросе.</li>
+      <li>«Сделаю за час».</li>
+      <li>«Окупится за месяц».</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">кому звонить</p><span class="ln"></span></div>
+    <a class="call" href="tel:+79297331134" data-id="79297331134">
+      <span class="call__n"><span class="call__num">+7 929 733-11-34</span><span class="call__who">Ателье, Чебоксары</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79024337301" data-id="79024337301">
+      <span class="call__n"><span class="call__num">+7 902 433-73-01</span><span class="call__who">Своя портниха</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79278713545" data-id="79278713545">
+      <span class="call__n"><span class="call__num">+7 927 871-35-45</span><span class="call__who">Гараж</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79027383200" data-id="79027383200">
+      <span class="call__n"><span class="call__num">+7 902 738-32-00</span><span class="call__who">Тамам</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79613343953" data-id="79613343953">
+      <span class="call__n"><span class="call__num">+7 961 334-39-53</span><span class="call__who">Ателье (996) 334-39-53</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79278720115" data-id="79278720115">
+      <span class="call__n"><span class="call__num">+7 927 872-01-15</span><span class="call__who">Швейная (927) 872-01-15</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79961157889" data-id="79961157889">
+      <span class="call__n"><span class="call__num">+7 996 115-78-89</span><span class="call__who">Экспресс ателье</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+    <a class="call" href="tel:+79027387264" data-id="79027387264">
+      <span class="call__n"><span class="call__num">+7 902 738-72-64</span><span class="call__who">Марина</span></span>
+      <button class="call__mark" type="button" aria-label="Дозвонился">✓</button>
+    </a>
+  </section>
+
+  <section class="sec">
+    <div class="sec__hd"><p class="mono">после звонка</p><span class="ln"></span></div>
+    <ul class="list list--yes">
+      <li>Одна строчка в заметки: дозвонился или нет, что ответили, интересно или нет.</li>
+      <li>Если сказали «пришлите» — отправить в тот же вечер.</li>
+      <li>Если «не надо» — больше не звонить и не писать.</li>
+    </ul>
+  </section>
+
+  <p class="foot">Шпаргалка студии · не для клиентов<br>отметки хранятся в браузере этого телефона</p>
+
+</main>
+
+<script>
+(function () {
+  var KEY = 'zvonok-18-11';
+  var calls = [].slice.call(document.querySelectorAll('.call'));
+  var cnt = document.getElementById('cnt');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+
+  function paint() {
+    var n = 0;
+    calls.forEach(function (a) {
+      var on = !!saved[a.getAttribute('data-id')];
+      a.classList.toggle('done', on);
+      if (on) n++;
+    });
+    cnt.textContent = n;
+  }
+
+  calls.forEach(function (a) {
+    a.querySelector('.call__mark').addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var id = a.getAttribute('data-id');
+      if (saved[id]) { delete saved[id]; } else { saved[id] = 1; }
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (err) {}
+      paint();
+    });
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    saved = {};
+    try { localStorage.removeItem(KEY); } catch (err) {}
+    paint();
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>
