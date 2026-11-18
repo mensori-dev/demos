@@ -13,9 +13,9 @@
   --rule:rgba(244,243,239,.16); --rule-2:rgba(244,243,239,.08);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{overflow-x:hidden}
+html{overflow-x:clip}
 body{
-  margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+  margin:0;background:var(--bg);color:var(--ink);overflow-x:clip;
   font:400 16px/1.62 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
@@ -47,21 +47,50 @@ a{color:inherit;text-decoration:none}
 }
 .top__reset:hover{border-color:var(--ink);color:var(--ink)}
 
-.jump{
-  position:sticky;top:54px;z-index:9;background:rgba(10,10,11,.96);
-  border-bottom:1px solid var(--rule-2);backdrop-filter:blur(6px);
+.top__menu{
+  display:flex;align-items:center;gap:10px;background:transparent;
+  border:1px solid var(--rule);color:var(--ink-2);cursor:pointer;
+  padding:0 12px;height:44px;flex:none;
 }
-.jump__in{
-  display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;
-  max-width:720px;margin:0 auto;padding:0 18px;height:46px;align-items:center;
+.top__menu:hover{border-color:var(--ink);color:var(--ink)}
+.top__menu span{
+  font:600 10.5px/1 ui-monospace,"Cascadia Mono",Consolas,monospace;
+  letter-spacing:.12em;text-transform:uppercase;
 }
-.jump__in::-webkit-scrollbar{display:none}
-.jump a{
-  font:600 11px/1 ui-monospace,"Cascadia Mono",Consolas,monospace;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  white-space:nowrap;padding:16px 0;flex:none;
+.bars{display:flex;flex-direction:column;gap:4px;width:16px}
+.bars i{display:block;height:1.5px;background:currentColor}
+
+.sheet{
+  position:fixed;inset:0;z-index:60;background:var(--bg);
+  overflow-y:auto;overscroll-behavior:contain;padding:0 18px 40px;
 }
-.jump a:hover,.jump a:active{color:var(--ink)}
+.sheet[hidden]{display:none}
+.sheet__in{max-width:720px;margin:0 auto}
+.sheet__hd{
+  display:flex;align-items:center;gap:12px;height:54px;
+  border-bottom:1px solid var(--rule-2);position:sticky;top:0;
+  background:var(--bg);
+}
+.sheet__close{
+  margin-left:auto;background:transparent;border:1px solid var(--rule);
+  color:var(--ink-2);font:600 10.5px/1 ui-monospace,Consolas,monospace;
+  letter-spacing:.12em;text-transform:uppercase;padding:0 12px;height:44px;cursor:pointer;
+}
+.sheet a{
+  display:flex;align-items:center;min-height:62px;font-size:19px;
+  border-bottom:1px solid var(--rule-2);
+}
+.sheet a:active{background:var(--bg-2)}
+.sheet a small{
+  margin-left:auto;color:var(--muted);font:600 10.5px/1 ui-monospace,Consolas,monospace;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.sheet__foot{margin-top:26px}
+.sheet__foot button{
+  background:transparent;border:1px solid var(--rule);color:var(--muted);
+  font:600 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;
+  text-transform:uppercase;padding:0 14px;height:44px;cursor:pointer;
+}
 
 .hero{padding-top:34px;padding-bottom:30px;border-bottom:1px solid var(--rule-2)}
 .hero h1{
@@ -148,18 +177,31 @@ a{color:inherit;text-decoration:none}
   <div class="shell top__in">
     <p class="mono">Звонки</p>
     <span class="top__cnt">позвонил <b id="cnt">0</b>/8</span>
-    <button class="top__reset" id="reset" type="button">Сброс</button>
+    <button class="top__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="bars"><i></i><i></i><i></i></span><span>меню</span>
+    </button>
   </div>
 </div>
 
-<nav class="jump">
-  <div class="jump__in">
-    <a href="#frazy">фразы</a>
-    <a href="#est">сайт есть</a>
-    <a href="#ceny">цены</a>
-    <a href="#nomera">номера</a>
+<div class="sheet" id="menu" hidden>
+  <div class="sheet__in">
+    <div class="sheet__hd">
+      <p class="mono">куда прыгнуть</p>
+      <button class="sheet__close" id="menuClose" type="button">закрыть</button>
+    </div>
+    <a href="#pervaya">Первая фраза</a>
+    <a href="#frazy">Что отвечать<small>8 веток</small></a>
+    <a href="#est">Сайт уже есть<small>поддержка</small></a>
+    <a href="#konec">Как заканчивать</a>
+    <a href="#ceny">Цены<small>8 строк</small></a>
+    <a href="#net">Чего не говорим</a>
+    <a href="#nomera">Кому звонить<small>8 номеров</small></a>
+    <a href="#posle">После звонка</a>
+    <div class="sheet__foot">
+      <button id="reset" type="button">Сбросить отметки</button>
+    </div>
   </div>
-</nav>
+</div>
 
 <header class="shell hero">
   <p class="mono mono--red">18 ноября</p>
@@ -169,7 +211,7 @@ a{color:inherit;text-decoration:none}
 
 <main class="shell">
 
-  <section class="sec">
+  <section class="sec" id="pervaya">
     <div class="sec__hd"><p class="mono">первая фраза</p><span class="ln"></span></div>
     <div class="say">
       <p class="say__t">Здравствуйте! Я вас нашёл в 2ГИС. У вас отзывы хорошие, видно, что работаете давно. Одного не хватает: вас в интернете почти нет. Сайт не делали?</p>
@@ -223,7 +265,7 @@ a{color:inherit;text-decoration:none}
     <div class="br">
       <p class="br__t">Согласился на разбор</p>
       <div class="say">
-        <p class="say__t">Тогда два варианта. Либо приведу в порядок всё, что нашёл, — полторы тысячи. Либо держу под рукой за тысячу в месяц: до трёх правок, проверяю, что сайт открывается и заявки доходят.</p>
+        <p class="say__t">Тогда два варианта. Либо поправлю то, что нашёл, — от пятисот рублей за правку. Либо возьму сайт на присмотр — полторы тысячи в месяц: слежу, что он открывается, делаю бэкап, обновляю, раз в месяц присылаю отчёт.</p>
         <p class="say__h">Что входит в каждый вариант — ниже, в ценах.</p>
       </div>
     </div>
@@ -276,7 +318,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="konec">
     <div class="sec__hd"><p class="mono">как заканчивать</p><span class="ln"></span></div>
     <div class="say">
       <p class="say__t">Скину пример в WhatsApp — посмотрите две минуты. Если похоже на то, что вам нужно, созвонимся вечером.</p>
@@ -297,42 +339,50 @@ a{color:inherit;text-decoration:none}
 
     <div class="price">
       <div class="price__b">
-        <p class="price__n">Правки по разбору</p>
-        <p class="price__h">Привожу в порядок то, что нашёл в чужом сайте: до пяти пунктов из списка выше.</p>
+        <p class="price__n">Правки на сайте</p>
+        <p class="price__h">Тексты, цены, фото, вёрстка на телефоне. Работаю и с чужим кодом.</p>
       </div>
-      <span class="price__v">1 500 ₽</span>
+      <span class="price__v">от 500 ₽</span>
     </div>
 
     <div class="price">
       <div class="price__b">
-        <p class="price__n">Одна мелкая правка</p>
-        <p class="price__h">Текст, цены, часы, замена фото. Одна задача — одна правка.</p>
+        <p class="price__n">Присмотр</p>
+        <p class="price__h">Сайт открывается, бэкап раз в неделю, домен и SSL, обновления, отчёт раз в месяц.</p>
       </div>
-      <span class="price__v">500 ₽</span>
+      <span class="price__v">1 500 ₽<small> /мес</small></span>
     </div>
 
     <div class="price">
       <div class="price__b">
         <p class="price__n">Поддержка</p>
-        <p class="price__h">До трёх правок в месяц, проверяю, что сайт открывается и заявки доходят, держу резервную копию. Отказаться можно в любой месяц.</p>
+        <p class="price__h">Всё из присмотра плюс два часа правок в месяц.</p>
       </div>
-      <span class="price__v">1 000 ₽<small> /мес</small></span>
+      <span class="price__v">2 500 ₽<small> /мес</small></span>
     </div>
 
     <div class="price">
       <div class="price__b">
-        <p class="price__n">Новый блок или страница</p>
-        <p class="price__h">Секция, отдельная страница услуги, форма заявки.</p>
+        <p class="price__n">Разовая задача</p>
+        <p class="price__h">Любая работа без подписки, минимум один час.</p>
       </div>
-      <span class="price__v">1 500 ₽</span>
+      <span class="price__v">800 ₽<small> /час</small></span>
     </div>
 
     <div class="price">
       <div class="price__b">
-        <p class="price__n">Переделка чужого сайта</p>
-        <p class="price__h">Когда проще сделать заново, чем чинить. Считается как новый сайт.</p>
+        <p class="price__n">Перенос сайта</p>
+        <p class="price__h">Новый хостинг, домен, SSL, почта, бэкапы. Без простоя.</p>
       </div>
-      <span class="price__v">3 000 ₽</span>
+      <span class="price__v">от 2 000 ₽</span>
+    </div>
+
+    <div class="price">
+      <div class="price__b">
+        <p class="price__n">Аудит безопасности</p>
+        <p class="price__h">Формы, доступы, бэкапы, SSL, персональные данные. Список, что править первым.</p>
+      </div>
+      <span class="price__v">2 500 ₽</span>
     </div>
 
     <div class="price">
@@ -348,7 +398,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="net">
     <div class="sec__hd"><p class="mono">не говорим</p><span class="ln"></span></div>
     <ul class="list list--no">
       <li>«Сайт приведёт вам клиентов» — не проверено, такого клиента у нас ещё нет.</li>
@@ -394,7 +444,7 @@ a{color:inherit;text-decoration:none}
     </a>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="posle">
     <div class="sec__hd"><p class="mono">после звонка</p><span class="ln"></span></div>
     <ul class="list list--yes">
       <li>Одна строчка в заметки: дозвонился или нет, что ответили, интересно или нет.</li>
@@ -440,6 +490,29 @@ a{color:inherit;text-decoration:none}
     saved = {};
     try { localStorage.removeItem(KEY); } catch (err) {}
     paint();
+  });
+
+  var menu = document.getElementById('menu');
+  var btn = document.getElementById('menuBtn');
+
+  function openMenu() {
+    menu.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    document.documentElement.style.overflow = '';
+  }
+
+  btn.addEventListener('click', openMenu);
+  document.getElementById('menuClose').addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) closeMenu();
   });
 
   paint();
