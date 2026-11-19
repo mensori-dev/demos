@@ -352,6 +352,9 @@
   .consent.is-bad{color:var(--danger)}
   .consent.is-bad a{color:var(--danger)}
   .form__note{font-size:12.5px;color:var(--muted);margin:0}
+  .form__del{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+  .form__del a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:2px}
+  .form__del a:focus-visible{outline:2px solid var(--copper);outline-offset:3px;border-radius:4px}
 
   /* ---------- вопросы ---------- */
   .faq{border-top:1px solid var(--line)}
@@ -720,6 +723,7 @@
 
         <button class="btn btn--primary" type="submit" id="f-submit">Забронировать</button>
         <p class="form__note" id="f-note">Демо-страница: заявка никуда не отправляется.</p>
+        <p class="form__del">Передумали? <a href="privacy.html#delete">Удалить мои данные</a></p>
       </form>
     </div>
   </section>
