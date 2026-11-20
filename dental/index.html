@@ -1,0 +1,3574 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Дента — стоматология в Йошкар-Оле</title>
+    <meta
+      name="description"
+      content="Стоматология «Дента» в Йошкар-Оле: осмотр и снимок бесплатно, цена в плане лечения до начала работы. Терапия, гигиена, имплантация. Запись на приём онлайн."
+    />
+    <link rel="canonical" href="https://mensori-dev.github.io/demos/dental/" />
+    <meta
+      property="og:url"
+      content="https://mensori-dev.github.io/demos/dental/"
+    />
+    <meta
+      property="og:image"
+      content="https://mensori-dev.github.io/demos/dental/img/og.jpg"
+    />
+    <meta property="og:title" content="Дента — стоматология в Йошкар-Оле" />
+    <meta
+      property="og:description"
+      content="Осмотр и снимок бесплатно. Цену называем до начала лечения и не меняем по ходу."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#eef1ec" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Дента",
+        "image": "https://mensori-dev.github.io/demos/dental/img/og.jpg",
+        "url": "https://mensori-dev.github.io/demos/dental/",
+        "telephone": "+7 900 000-00-00",
+        "priceRange": "2000-35000 ₽",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Первомайская, 100",
+          "addressLocality": "Йошкар-Ола",
+          "addressCountry": "RU"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "15:00"
+          }
+        ]
+      }
+    </script>
+    <script>
+      document.documentElement.className += " js";
+    </script>
+    <style>
+      :root {
+        --paper: #eef1ec;
+        --paper-2: #e6ebe5;
+        --ink: #0c211e;
+        --ink-2: #16332f;
+        --petrol: #0d4a43;
+        --petrol-2: #0a3a34;
+        --mint: #a4d3c6;
+        --mute: #4a5f59;
+        --line: #cdd8d2;
+        --line-2: #b3c3bc;
+        --danger: #b23a2b;
+        --sans:
+          "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial,
+          sans-serif;
+        --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: clip;
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        scroll-padding-top: 84px;
+      }
+      body {
+        margin: 0;
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font: 400 17px/1.6 var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+      }
+      ::selection {
+        background: var(--petrol);
+        color: var(--paper);
+      }
+      :focus-visible {
+        outline: 2px solid var(--petrol);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: var(--petrol);
+        color: var(--paper);
+        padding: 10px 16px;
+        z-index: 100;
+      }
+      .skip:focus {
+        left: 12px;
+        top: 12px;
+      }
+      .wrap {
+        width: min(1120px, 100% - 40px);
+        margin-inline: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: -0.035em;
+        line-height: 1.04;
+      }
+      h1 {
+        font-size: clamp(38px, 6.4vw, 74px);
+        line-height: 0.99;
+      }
+      h2 {
+        font-size: clamp(30px, 4.4vw, 54px);
+      }
+      h3 {
+        font-size: clamp(19px, 2vw, 23px);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      p {
+        margin: 0;
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font: 500 11px/1 var(--mono);
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--petrol);
+      }
+      .kicker::before,
+      .kicker::after {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: var(--line-2);
+      }
+      .kicker--left::before {
+        display: none;
+      }
+      .kicker--left::after {
+        display: none;
+      }
+      .mono {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      /* ---------- плашка «это демо» ---------- */
+      .svcbar {
+        display: block;
+        background: var(--petrol);
+        color: var(--paper);
+        text-align: center;
+        font: 600 13px/1.4 var(--sans);
+        padding: 9px 16px;
+        text-decoration: none;
+      }
+      .svcbar b {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .svcbar__short {
+        display: none;
+      }
+      /* ---------- шапка ---------- */
+      .top {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid transparent;
+        transition:
+          background-color 0.3s,
+          border-color 0.3s;
+      }
+      .top.is-stuck {
+        background: var(--paper);
+        border-bottom-color: var(--line);
+      }
+      .top__in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 72px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        text-decoration: none;
+      }
+      .logo svg {
+        width: 26px;
+        height: 26px;
+        flex: none;
+      }
+      .logo b {
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        line-height: 1;
+      }
+      .logo span {
+        display: block;
+        font: 400 10px/1.35 var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mute);
+        margin-top: 3px;
+      }
+      .nav {
+        display: flex;
+        gap: 26px;
+        font-size: 15px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: var(--ink-2);
+        padding: 6px 0;
+        border-bottom: 1px solid transparent;
+      }
+      .nav a:hover {
+        border-bottom-color: var(--petrol);
+      }
+      .top__phone {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 1.2;
+      }
+      .top__phone span {
+        font: 400 10px/1.4 var(--mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mute);
+        font-weight: 400;
+      }
+      /* ---------- первый экран ---------- */
+      .hero {
+        position: relative;
+        padding: clamp(44px, 7vw, 84px) 0 clamp(40px, 6vw, 70px);
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(13, 74, 67, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(13, 74, 67, 0.055) 1px, transparent 1px);
+        background-size: 64px 64px;
+        -webkit-mask-image: radial-gradient(
+          ellipse 70% 60% at 50% 30%,
+          #000 20%,
+          transparent 78%
+        );
+        mask-image: radial-gradient(
+          ellipse 70% 60% at 50% 30%,
+          #000 20%,
+          transparent 78%
+        );
+      }
+      .hero__in {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 22px 0 0;
+        max-width: 20ch;
+      }
+      .js .hero h1 {
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+          opacity 0.9s 0.05s cubic-bezier(0.2, 0.6, 0.2, 1),
+          transform 1s 0.05s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .js .hero h1.is-in {
+        opacity: 1;
+        transform: none;
+      }
+      .hero__lead {
+        max-width: 52ch;
+        margin: 22px 0 0;
+        color: var(--mute);
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.55;
+      }
+      .hero__cta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 30px;
+      }
+      .hero__facts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 28px;
+        margin-top: 26px;
+        font: 400 11px/1.4 var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .hero__facts li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+      }
+      .hero__facts li::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--mint);
+        flex: none;
+      }
+      .hero__facts ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 28px;
+        margin: 0;
+        padding: 0;
+      }
+      /* ---------- кнопки ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 52px;
+        padding: 0 26px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font: 600 15px/1 var(--sans);
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.18s,
+          background-color 0.18s,
+          border-color 0.18s,
+          color 0.18s;
+      }
+      .btn--solid {
+        background: var(--petrol);
+        color: var(--paper);
+      }
+      .btn--solid:hover {
+        background: var(--petrol-2);
+        transform: translateY(-2px);
+      }
+      .btn--line {
+        border-color: var(--line-2);
+        color: var(--ink);
+      }
+      .btn--line:hover {
+        border-color: var(--petrol);
+        transform: translateY(-2px);
+      }
+      .btn--wide {
+        width: 100%;
+      }
+      .btn__arrow {
+        font-family: var(--mono);
+        font-size: 15px;
+      }
+      /* ---------- чертёж ---------- */
+      .draw {
+        position: relative;
+        margin-top: clamp(30px, 4vw, 48px);
+        width: min(760px, 100%);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.55),
+          rgba(255, 255, 255, 0)
+        );
+        padding: 14px 14px 10px;
+      }
+      .draw__stage {
+        position: relative;
+        aspect-ratio: 560/400;
+        margin-inline: auto;
+        width: min(100%, 560px);
+      }
+      .tooth {
+        width: 100%;
+        height: 100%;
+      }
+      .tooth .ln {
+        fill: none;
+        stroke: var(--petrol);
+        stroke-width: 2.4;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+      .tooth .ln--2 {
+        stroke-width: 1.6;
+        stroke-dasharray: 4 5;
+        opacity: 0.55;
+      }
+      .tooth .ln--3 {
+        stroke-width: 1.4;
+        fill: rgba(13, 74, 67, 0.12);
+        stroke-dasharray: none;
+      }
+      .tooth .ln--canal {
+        fill: none;
+        stroke: rgba(13, 74, 67, 0.5);
+        stroke-width: 1.6;
+      }
+      .calls g {
+        transition: opacity 0.25s;
+        cursor: pointer;
+      }
+      .calls g:focus-visible {
+        outline: 2px solid var(--petrol);
+        outline-offset: 4px;
+      }
+      .tooth.is-focus .calls g:not(.is-on) {
+        opacity: 0.25;
+      }
+      .tooth .dot {
+        fill: var(--petrol);
+      }
+      .calls line {
+        stroke: var(--petrol);
+        stroke-width: 1.1;
+        opacity: 0.5;
+      }
+      .calls circle {
+        fill: var(--petrol);
+        stroke: none;
+      }
+      .calls text {
+        font: 600 12.5px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        fill: var(--petrol);
+      }
+      .calls g:hover text,
+      .calls g.is-on text {
+        fill: var(--ink);
+      }
+      .draw__cap,
+      .draw__tag {
+        position: absolute;
+        font: 400 10px/1.4 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .draw__cap {
+        left: 18px;
+        top: 14px;
+      }
+      .draw__tag {
+        right: 18px;
+        bottom: 14px;
+      }
+      /* ---------- секции ---------- */
+      .sec {
+        padding: clamp(56px, 8.5vw, 104px) 0;
+      }
+      .sec--tight {
+        padding: clamp(40px, 6vw, 72px) 0;
+      }
+      .head {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .head--mid {
+        align-items: center;
+        text-align: center;
+      }
+      .head p {
+        max-width: 56ch;
+        color: var(--mute);
+      }
+      .head--mid p {
+        margin-inline: auto;
+      }
+      /* ---------- прайс ---------- */
+      .spec {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: clamp(28px, 4vw, 44px);
+        font-size: 16px;
+      }
+      .spec caption {
+        text-align: left;
+        padding: 30px 0 10px;
+        font: 500 11px/1 var(--mono);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--petrol);
+      }
+      .spec caption:first-of-type {
+        padding-top: 0;
+      }
+      .spec th,
+      .spec td {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: baseline;
+      }
+      .spec thead th {
+        padding: 0 0 10px;
+        border-bottom: 1px solid var(--line-2);
+        font: 400 10px/1 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mute);
+        font-weight: 400;
+      }
+      .spec thead th:last-child,
+      .spec td:last-child {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .spec thead th:nth-child(2),
+      .spec td:nth-child(2) {
+        width: 120px;
+        text-align: right;
+        white-space: nowrap;
+        color: var(--mute);
+        font-size: 13px;
+      }
+      .spec tbody th {
+        font-weight: 500;
+        font-size: 16px;
+      }
+      .spec tbody th small {
+        display: block;
+        font: 400 13px/1.4 var(--sans);
+        color: var(--mute);
+        margin-top: 3px;
+      }
+      .spec td:last-child {
+        font-family: var(--mono);
+        font-size: 15px;
+        letter-spacing: -0.01em;
+      }
+      .spec__note {
+        margin-top: 20px;
+        font-size: 13.5px;
+        color: var(--mute);
+        max-width: 62ch;
+      }
+      /* ---------- приём: тёмная полоса ---------- */
+      .band {
+        background: var(--petrol);
+        color: var(--paper);
+        --line: rgba(238, 241, 236, 0.16);
+        --line-2: rgba(238, 241, 236, 0.3);
+        --mute: #d3e5df;
+      }
+      .band .kicker {
+        color: var(--mint);
+      }
+      .band .kicker::before,
+      .band .kicker::after {
+        background: rgba(238, 241, 236, 0.3);
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--line);
+        margin-top: clamp(30px, 4vw, 46px);
+        border-block: 1px solid var(--line);
+      }
+      .step {
+        background: var(--petrol);
+        padding: 26px 24px 30px;
+      }
+      .step__n {
+        font: 400 11px/1 var(--mono);
+        letter-spacing: 0.2em;
+        color: var(--mint);
+      }
+      .step h3 {
+        margin: 16px 0 8px;
+      }
+      .step p {
+        color: #c2d4cd;
+        font-size: 15px;
+      }
+      .band__foot {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 26px;
+        margin-top: 24px;
+        font: 400 11px/1.5 var(--mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #a9c2bb;
+      }
+      /* ---------- что в кабинете ---------- */
+      .kit {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border-block: 1px solid var(--line);
+        margin-top: clamp(28px, 4vw, 44px);
+      }
+      .kit__i {
+        background: var(--paper);
+        padding: 24px 20px 26px;
+      }
+      .kit__i b {
+        display: block;
+        font: 400 10px/1 var(--mono);
+        letter-spacing: 0.2em;
+        color: var(--petrol);
+        margin-bottom: 12px;
+      }
+      .kit__i p {
+        font-size: 14.5px;
+        color: var(--ink-2);
+      }
+      .kit__i span {
+        display: block;
+        font-size: 13px;
+        color: var(--mute);
+        margin-top: 6px;
+      }
+      /* ---------- вопросы ---------- */
+      .faq {
+        margin-top: clamp(24px, 3vw, 36px);
+        border-top: 1px solid var(--line);
+      }
+      .q {
+        border-bottom: 1px solid var(--line);
+      }
+      .q summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 20px 0;
+        cursor: pointer;
+        list-style: none;
+        font-weight: 500;
+        font-size: clamp(16px, 1.8vw, 19px);
+      }
+      .q summary::-webkit-details-marker {
+        display: none;
+      }
+      .q summary::after {
+        content: "+";
+        font: 400 20px/1 var(--mono);
+        color: var(--petrol);
+        flex: none;
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--line-2);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        transition:
+          transform 0.2s,
+          background-color 0.2s,
+          color 0.2s;
+      }
+      .q[open] summary::after {
+        content: "–";
+        background: var(--petrol);
+        color: var(--paper);
+        border-color: var(--petrol);
+      }
+      .q__a {
+        padding: 0 0 22px;
+        color: var(--mute);
+        max-width: 64ch;
+        font-size: 15.5px;
+        overflow: hidden;
+        transition: height 0.32s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      /* ---------- запись ---------- */
+      .book {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(28px, 4vw, 64px);
+        align-items: start;
+      }
+      .form {
+        margin-top: 26px;
+        display: grid;
+        gap: 14px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .field {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .field > label {
+        font: 400 10px/1 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .field input[type="text"],
+      .field input[type="tel"] {
+        height: 52px;
+        border: 1px solid var(--line-2);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 0 16px;
+        font: inherit;
+        font-size: 16px;
+        color: var(--ink);
+        width: 100%;
+      }
+      .field input:focus {
+        border-color: var(--petrol);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(13, 74, 67, 0.12);
+      }
+      .err {
+        display: none;
+        font-size: 12.5px;
+        color: var(--danger);
+      }
+      .field.is-bad input,
+      .field.is-bad .sel__btn {
+        border-color: var(--danger);
+      }
+      .field.is-bad .err {
+        display: block;
+      }
+      /* свои выпадашки */
+      .sel {
+        position: relative;
+      }
+      .sel__btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        height: 52px;
+        padding: 0 16px;
+        border: 1px solid var(--line-2);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.6);
+        font: inherit;
+        font-size: 16px;
+        color: var(--ink);
+        text-align: left;
+        cursor: pointer;
+      }
+      .sel__btn:hover {
+        border-color: var(--line-2);
+        background: #fff;
+      }
+      .sel__btn[aria-expanded="true"] {
+        border-color: var(--petrol);
+        background: #fff;
+      }
+      .sel__chev {
+        width: 8px;
+        height: 8px;
+        border-right: 1.5px solid var(--petrol);
+        border-bottom: 1.5px solid var(--petrol);
+        transform: rotate(45deg) translate(-2px, -2px);
+        flex: none;
+        transition: transform 0.2s;
+      }
+      .sel__btn[aria-expanded="true"] .sel__chev {
+        transform: rotate(-135deg) translate(-2px, -2px);
+      }
+      .sel__list {
+        position: absolute;
+        z-index: 30;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 6px;
+        list-style: none;
+        background: var(--petrol);
+        color: var(--paper);
+        border-radius: 14px;
+        box-shadow: 0 20px 44px rgba(12, 33, 30, 0.26);
+        display: grid;
+        grid-template-columns: repeat(var(--cols, 1), 1fr);
+        gap: 2px;
+        max-height: 268px;
+        overflow: auto;
+      }
+      .sel__list[hidden] {
+        display: none;
+      }
+      .sel__list--up {
+        top: auto;
+        bottom: calc(100% + 6px);
+      }
+      .sel__opt {
+        padding: 11px 12px;
+        border-radius: 9px;
+        cursor: pointer;
+        font-size: 14.5px;
+        white-space: nowrap;
+      }
+      .sel__opt:hover,
+      .sel__opt.is-act {
+        background: rgba(238, 241, 236, 0.12);
+      }
+      .sel__opt[aria-selected="true"] {
+        box-shadow: inset 0 0 0 1px var(--mint);
+        color: #fff;
+      }
+      .consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 4px;
+        font-size: 13px;
+        color: var(--mute);
+      }
+      .consent input {
+        appearance: none;
+        -webkit-appearance: none;
+        flex: none;
+        width: 20px;
+        height: 20px;
+        margin: 1px 0 0;
+        border: 1px solid var(--line-2);
+        border-radius: 5px;
+        background: #fff;
+        cursor: pointer;
+        position: relative;
+      }
+      .consent input:checked {
+        background: var(--petrol);
+        border-color: var(--petrol);
+      }
+      .consent input:checked::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(42deg);
+      }
+      .consent input:focus-visible {
+        outline: 2px solid var(--petrol);
+        outline-offset: 2px;
+      }
+      .consent a {
+        color: var(--ink-2);
+        text-underline-offset: 3px;
+      }
+      .consent.is-bad {
+        color: var(--danger);
+      }
+      .consent.is-bad input {
+        border-color: var(--danger);
+      }
+      .form__note {
+        font-size: 14px;
+        min-height: 22px;
+        line-height: 1.4;
+      }
+      .form__hp {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .visit {
+        margin-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+      .visit__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 15px;
+      }
+      .visit__row dt {
+        font: 400 10px/1.6 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mute);
+        margin: 0;
+        flex: none;
+      }
+      .visit__row dd {
+        margin: 0;
+        text-align: right;
+      }
+      .visit__note {
+        margin-top: 18px;
+        font-size: 13.5px;
+        color: var(--mute);
+      }
+      .visit__note a {
+        color: var(--ink-2);
+        text-underline-offset: 3px;
+      }
+      /* ---------- подвал ---------- */
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 34px 0 40px;
+        font-size: 13.5px;
+        color: var(--mute);
+      }
+      .foot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 14px 24px;
+      }
+      .foot a {
+        text-underline-offset: 3px;
+      }
+      /* ---------- появление ---------- */
+      .js .rv {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
+          transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .js .rv.is-in {
+        opacity: 1;
+        transform: none;
+      }
+      .js .draw__stage {
+        opacity: 0;
+        transform: scale(0.985);
+        transition:
+          opacity 0.9s 0.1s,
+          transform 1.1s 0.1s;
+      }
+      .js .draw__stage.is-in {
+        opacity: 1;
+        transform: none;
+      }
+      .draw__stage .ln {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
+      .draw__stage .ln--3 {
+        stroke-dashoffset: 0;
+      }
+      .draw__stage .ln--3 {
+        opacity: 0;
+      }
+      .js .draw__stage.is-in .ln {
+        animation: drawIn 1.5s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+      }
+      .js .draw__stage.is-in .ln--2 {
+        animation-delay: 0.35s;
+      }
+      .js .draw__stage.is-in .ln--3 {
+        animation: fillIn 0.8s 0.8s forwards;
+      }
+      .js .draw__stage.is-in .calls {
+        animation: fadeIn 0.6s 1.3s forwards;
+        opacity: 0;
+      }
+      .draw__stage .calls {
+        opacity: 1;
+      }
+      @keyframes drawIn {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes fillIn {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      /* ---------- прогресс чтения ---------- */
+      .prog {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 2px;
+        width: 0;
+        background: var(--petrol);
+        z-index: 60;
+        pointer-events: none;
+      }
+      /* ---------- слои на чертеже ---------- */
+      .draw__stage {
+        perspective: 900px;
+      }
+      .draw__tilt {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .tooth [data-l] {
+        transition:
+          opacity 0.25s,
+          stroke-width 0.25s;
+      }
+      .tooth.is-focus [data-l]:not(.is-on) {
+        opacity: 0.26;
+      }
+      .tooth [data-l].is-on {
+        stroke-width: 3.3;
+      }
+      .tooth .ln--2.is-on {
+        stroke-dasharray: none;
+        opacity: 1;
+      }
+      .tooth .ln--3.is-on {
+        opacity: 1;
+        fill: rgba(13, 74, 67, 0.2);
+      }
+      .draw__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 14px 0 0;
+        padding: 0;
+      }
+      .draw__tab {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 36px;
+        padding: 0 15px;
+        border-radius: 999px;
+        border: 1px solid var(--line-2);
+        background: transparent;
+        color: var(--ink-2);
+        cursor: pointer;
+        font: 500 10.5px/1 var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition:
+          background-color 0.18s,
+          color 0.18s,
+          border-color 0.18s;
+      }
+      .draw__tab::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--line-2);
+        transition: background-color 0.18s;
+        flex: none;
+      }
+      .draw__tab:hover {
+        border-color: var(--petrol);
+      }
+      .draw__tab[aria-pressed="true"] {
+        background: var(--petrol);
+        border-color: var(--petrol);
+        color: var(--paper);
+      }
+      .draw__tab[aria-pressed="true"]::before {
+        background: var(--mint);
+      }
+      .draw__desc {
+        max-width: 48ch;
+        margin: 14px auto 4px;
+        min-height: 46px;
+        font-size: 14.5px;
+        line-height: 1.5;
+        color: var(--mute);
+        text-align: center;
+        transition: opacity 0.2s;
+      }
+      .draw__desc b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      /* ---------- смета ---------- */
+      .calc {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: clamp(20px, 3.4vw, 44px);
+        margin-top: clamp(26px, 4vw, 40px);
+        align-items: start;
+      }
+      .picks {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+      }
+      .pick {
+        position: relative;
+        display: grid;
+        grid-template-columns: 22px 1fr auto;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 4px;
+        border-bottom: 1px solid var(--line);
+        cursor: pointer;
+        transition: padding-left 0.2s;
+      }
+      .pick:hover {
+        padding-left: 8px;
+      }
+      .pick input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .pick__box {
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--line-2);
+        border-radius: 6px;
+        position: relative;
+        background: #fff;
+        transition:
+          background-color 0.18s,
+          border-color 0.18s;
+        flex: none;
+      }
+      .pick__box::after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(42deg) scale(0);
+        transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .pick input:checked + .pick__box {
+        background: var(--petrol);
+        border-color: var(--petrol);
+      }
+      .pick input:checked + .pick__box::after {
+        transform: rotate(42deg) scale(1);
+      }
+      .pick input:focus-visible + .pick__box {
+        outline: 2px solid var(--petrol);
+        outline-offset: 2px;
+      }
+      .pick__t {
+        font-size: 16px;
+        transition: color 0.18s;
+      }
+      .pick__t small {
+        display: block;
+        font-size: 12.5px;
+        color: var(--mute);
+        margin-top: 2px;
+      }
+      .pick:hover .pick__t {
+        color: var(--petrol);
+      }
+      .pick__p {
+        font-family: var(--mono);
+        font-size: 14px;
+        white-space: nowrap;
+        color: var(--ink-2);
+      }
+      .receipt {
+        position: sticky;
+        top: 88px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px 22px 20px;
+        background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.28));
+        box-shadow: 0 18px 40px rgba(12, 33, 30, 0.06);
+      }
+      .receipt__head {
+        font: 400 10px/1 var(--mono);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .receipt__list {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        min-height: 46px;
+      }
+      .receipt__list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 7px 0;
+        font-size: 14.5px;
+        animation: lineIn 0.32s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .receipt__list li span:first-child {
+        color: var(--ink-2);
+      }
+      .receipt__list li span:last-child {
+        font-family: var(--mono);
+        font-size: 13.5px;
+        color: var(--mute);
+        white-space: nowrap;
+      }
+      .receipt__empty {
+        color: var(--mute);
+        font-size: 13.5px;
+        display: block !important;
+        animation: none !important;
+      }
+      .receipt__sum {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        border-top: 1px solid var(--line-2);
+        margin-top: 8px;
+        padding-top: 14px;
+      }
+      .receipt__sum span {
+        font: 400 10px/1 var(--mono);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .receipt__sum b {
+        display: inline-block;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+      }
+      .receipt__sum b.is-bump {
+        animation: bump 0.34s cubic-bezier(0.3, 1.4, 0.5, 1);
+      }
+      .receipt__time {
+        margin: 6px 0 18px;
+        font: 400 10.5px/1.4 var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .receipt .btn {
+        min-height: 48px;
+      }
+      .receipt .btn[disabled] {
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .receipt__note {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.45;
+        color: var(--mute);
+      }
+      @keyframes lineIn {
+        from {
+          opacity: 0;
+          transform: translateX(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes bump {
+        50% {
+          transform: scale(1.07);
+        }
+      }
+      /* ---------- строки прайса ---------- */
+      .spec tbody tr {
+        transition: background-color 0.18s;
+      }
+      .spec tbody tr:hover {
+        background: rgba(13, 74, 67, 0.045);
+      }
+      .spec tbody tr:hover th {
+        color: var(--petrol);
+      }
+      .spec tbody tr.is-flash {
+        animation: rowFlash 1.5s ease-out;
+      }
+      @keyframes rowFlash {
+        0%,
+        40% {
+          background: rgba(164, 211, 198, 0.55);
+        }
+        100% {
+          background: transparent;
+        }
+      }
+      /* ---------- цифры ---------- */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-block: 1px solid var(--line);
+      }
+      .stat {
+        padding: clamp(24px, 3.4vw, 36px) 22px;
+        border-left: 1px solid var(--line);
+      }
+      .stat:first-child {
+        border-left: 0;
+        padding-left: 0;
+      }
+      .stat b {
+        display: block;
+        font-size: clamp(34px, 5vw, 62px);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .stat b i {
+        font-style: normal;
+        font-size: 0.42em;
+        letter-spacing: 0;
+        margin-left: 4px;
+        color: var(--mute);
+        font-weight: 400;
+      }
+      .stat > span {
+        display: block;
+        margin-top: 10px;
+        font: 400 10.5px/1.5 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      /* ---------- чипы ---------- */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0 16px;
+        border: 1px solid var(--line-2);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink-2);
+        font: 500 13.5px/1 var(--sans);
+        cursor: pointer;
+        transition:
+          background-color 0.18s,
+          color 0.18s,
+          border-color 0.18s,
+          transform 0.18s;
+      }
+      .chip:hover {
+        border-color: var(--petrol);
+        background: var(--petrol);
+        color: var(--paper);
+        transform: translateY(-1px);
+      }
+      /* ---------- появление шагов ---------- */
+      .js .steps .step {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.6s cubic-bezier(0.2, 0.6, 0.2, 1),
+          transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .js .steps.is-in .step {
+        opacity: 1;
+        transform: none;
+      }
+      .js .steps.is-in .step:nth-child(2) {
+        transition-delay: 0.12s;
+      }
+      .js .steps.is-in .step:nth-child(3) {
+        transition-delay: 0.24s;
+      }
+      /* ---------- типографика: крупно и контрастно ---------- */
+      h1,
+      h2,
+      h3 {
+        font-family: Bahnschrift, "Segoe UI", system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      h1 {
+        font-size: clamp(46px, 6.6vw, 92px);
+        line-height: 0.94;
+      }
+      h2 {
+        font-size: clamp(32px, 4.3vw, 56px);
+        line-height: 1;
+      }
+      h3 {
+        font-size: clamp(20px, 2.1vw, 25px);
+        letter-spacing: -0.02em;
+      }
+      body {
+        font-size: 17.5px;
+        line-height: 1.62;
+        color: #0c211e;
+      }
+      .kicker {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+      .mono {
+        font-size: 12.5px;
+      }
+      .hero__lead {
+        font-size: clamp(18px, 1.7vw, 21px);
+        color: #33473f;
+      }
+      .hero__facts {
+        font-size: 12px;
+        color: var(--mute);
+      }
+      .draw__cap,
+      .draw__tag {
+        font-size: 11px;
+        color: var(--mute);
+      }
+      .calls text {
+        font-size: 12.5px;
+        letter-spacing: 0.1em;
+        opacity: 1;
+      }
+      .draw__desc {
+        font-size: 15.5px;
+        color: #33473f;
+        text-align: left;
+      }
+      .draw__tab {
+        font-size: 11px;
+      }
+      .spec {
+        font-size: 17px;
+      }
+      .spec caption {
+        font-family: Bahnschrift, "Segoe UI", system-ui, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-transform: none;
+        text-align: left;
+        color: var(--ink);
+        padding-bottom: 14px;
+      }
+      .spec thead th {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: var(--mute);
+      }
+      .spec tbody th {
+        font-size: 17px;
+      }
+      .spec td:nth-child(2) {
+        font-size: 14.5px;
+        color: var(--mute);
+      }
+      .spec td:last-child {
+        font-size: 16px;
+      }
+      .spec__note {
+        font-size: 14.5px;
+        color: #33473f;
+      }
+      .stat > span {
+        font-size: 12px;
+        color: var(--mute);
+      }
+      .pick__t {
+        font-size: 17px;
+      }
+      .pick__t small {
+        font-size: 13.5px;
+        color: var(--mute);
+      }
+      .receipt__note {
+        font-size: 13.5px;
+        color: var(--mute);
+      }
+      .receipt__list li {
+        font-size: 15.5px;
+      }
+      .receipt__list li span:last-child {
+        font-size: 14.5px;
+        color: #33473f;
+      }
+      .step p {
+        color: #d8e7e1;
+        font-size: 16px;
+      }
+      .band__foot {
+        font-size: 12px;
+        color: #bdd2cb;
+      }
+      .kit__i p {
+        font-size: 16px;
+      }
+      .kit__i span {
+        font-size: 14px;
+        color: var(--mute);
+      }
+      .q__a {
+        font-size: 16.5px;
+        color: #33473f;
+      }
+      .field > label {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: var(--mute);
+      }
+      .consent {
+        font-size: 14px;
+        color: #33473f;
+      }
+      .visit__row {
+        font-size: 16px;
+      }
+      .visit__note {
+        font-size: 14.5px;
+        color: #33473f;
+      }
+      footer {
+        font-size: 14.5px;
+        color: var(--mute);
+      }
+      .chip {
+        font-size: 14.5px;
+      }
+      .sel__opt {
+        font-size: 15.5px;
+      }
+      .btn {
+        font-size: 15.5px;
+      }
+      /* ---------- мобильная кнопка ---------- */
+      .fab {
+        display: none;
+      }
+      @media (max-width: 960px) {
+        .nav {
+          display: none;
+        }
+        .book,
+        .calc {
+          grid-template-columns: 1fr;
+        }
+        .receipt {
+          position: static;
+        }
+        .kit {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        .top__phone span {
+          display: none;
+        }
+        .spec td:nth-child(2),
+        .spec th:nth-child(2) {
+          display: none;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .calls {
+          display: none;
+        }
+        .draw__stage {
+          width: min(100%, 320px);
+        }
+        .fab {
+          display: flex;
+          position: fixed;
+          left: 16px;
+          right: 16px;
+          bottom: calc(14px + env(safe-area-inset-bottom));
+          z-index: 50;
+          align-items: center;
+          justify-content: center;
+          min-height: 52px;
+          border-radius: 999px;
+          background: var(--petrol);
+          color: var(--paper);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 15px;
+          box-shadow: 0 14px 34px rgba(12, 33, 30, 0.28);
+        }
+        footer {
+          padding-bottom: 88px;
+        }
+      }
+      @media (max-width: 520px) {
+        .svcbar__full {
+          display: none;
+        }
+        .svcbar__short {
+          display: inline;
+        }
+        .hero__cta .btn {
+          flex: 1 1 100%;
+        }
+        .row {
+          grid-template-columns: 1fr;
+        }
+        .kit {
+          grid-template-columns: 1fr;
+        }
+        .logo span > span {
+          display: none;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+        }
+        .stat {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 18px 0;
+        }
+        .stat:first-child {
+          border-top: 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .js .rv,
+        .js .draw__stage {
+          opacity: 1;
+          transform: none;
+        }
+        .draw__stage .ln {
+          stroke-dashoffset: 0;
+        }
+        .draw__stage .ln--3,
+        .draw__stage .calls {
+          opacity: 1;
+        }
+        .js .draw__stage.is-in .ln,
+        .js .draw__stage.is-in .ln--3,
+        .js .draw__stage.is-in .calls {
+          animation: none;
+        }
+        .btn {
+          transition: none;
+        }
+      }
+      /* ---------- контраст: границы полей и своих контролов ---------- */
+      .field input[type="text"],
+      .field input[type="tel"],
+      .sel__btn {
+        border-color: #6f8a83;
+        background: #fff;
+      }
+      .field input[type="text"]:focus,
+      .field input[type="tel"]:focus {
+        border-color: var(--petrol);
+        box-shadow: 0 0 0 3px rgba(13, 74, 67, 0.16);
+      }
+      .pick__box {
+        border: 1.5px solid #6f8a83;
+      }
+      .pick:hover .pick__box {
+        border-color: var(--petrol);
+      }
+      .consent input {
+        border: 1.5px solid #6f8a83;
+        background: #fff;
+      }
+      .receipt .btn[disabled] {
+        opacity: 1;
+        background: #d9e2dc;
+        color: #3c534d;
+        border-color: #bccdc5;
+        cursor: default;
+      }
+      /* ---------- тёмная секция записи: светлые поля и текст ---------- */
+      .band .field > label {
+        color: #cfe3dc;
+      }
+      .band .field input[type="text"],
+      .band .field input[type="tel"],
+      .band .sel__btn {
+        background: var(--paper);
+        border-color: var(--paper);
+        color: var(--ink);
+      }
+      .band .sel__btn:hover,
+      .band .sel__btn[aria-expanded="true"],
+      .band .field input:hover,
+      .band .field input:focus {
+        background: #fff;
+        border-color: #fff;
+      }
+      .band .sel__chev {
+        border-color: var(--petrol);
+      }
+      .band .sel__list {
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .band .sel__opt:hover,
+      .band .sel__opt.is-act {
+        background: rgba(13, 74, 67, 0.1);
+      }
+      .band .sel__opt[aria-selected="true"] {
+        box-shadow: inset 0 0 0 1.5px var(--petrol);
+        color: var(--ink);
+      }
+      .band .consent {
+        color: #d6e6e0;
+      }
+      .band .consent a {
+        color: #fff;
+      }
+      .band .consent input {
+        background: var(--paper);
+        border-color: #a8c6bc;
+      }
+      .band .consent input:checked {
+        background: var(--mint);
+        border-color: var(--mint);
+      }
+      .band .consent input:checked::after {
+        border-color: var(--petrol);
+      }
+      .band .btn--solid {
+        background: var(--paper);
+        color: var(--petrol);
+      }
+      .band .btn--solid:hover {
+        background: #fff;
+      }
+      .band .visit__row dt {
+        color: #cfe3dc;
+      }
+      .band .visit__row dd {
+        color: #fff;
+      }
+      .band .visit__note,
+      .band .visit__note a {
+        color: #cfe2db;
+      }
+      .band .visit__note a {
+        text-decoration-color: rgba(255, 255, 255, 0.5);
+      }
+      .band :focus-visible {
+        outline-color: var(--mint);
+      }
+      .band .field.is-bad input,
+      .band .field.is-bad .sel__btn {
+        border-color: #f0b3a8;
+      }
+      /* ---------- мобильное меню ---------- */
+      .burger {
+        display: none;
+        width: 44px;
+        height: 44px;
+        flex: none;
+        padding: 0;
+        border: 1px solid #6f8a83;
+        border-radius: 12px;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+      }
+      .burger span {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--petrol);
+        transition:
+          transform 0.25s,
+          opacity 0.2s;
+      }
+      .burger span:first-child {
+        top: 16px;
+      }
+      .burger span:last-child {
+        top: 24px;
+      }
+      .burger[aria-expanded="true"] span:first-child {
+        transform: translateY(4px) rotate(45deg);
+      }
+      .burger[aria-expanded="true"] span:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+      }
+      .mnav {
+        border-top: 1px solid var(--line);
+        background: var(--paper);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        padding: 10px 16px 16px;
+      }
+      .mnav[hidden] {
+        display: none;
+      }
+      .mnav a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .mnav a:hover {
+        background: var(--paper-2);
+      }
+      .mnav a b {
+        font: 400 10.5px/1 var(--mono);
+        letter-spacing: 0.12em;
+        color: var(--mute);
+      }
+      @media (max-width: 960px) {
+        .burger {
+          display: block;
+        }
+      }
+      /* ---------- подписи: обычный шрифт вместо моно-капса ---------- */
+      .kicker {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 12.5px;
+        letter-spacing: 0.12em;
+      }
+      .logo span {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+      }
+      .field input::placeholder {
+        color: #55685f;
+        opacity: 1;
+      }
+      .top__phone span {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+      .hero__facts {
+        font: 500 14px/1.45 var(--sans);
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .stat > span {
+        font: 500 13.5px/1.4 var(--sans);
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .spec thead th {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+      .spec td:last-child,
+      .pick__p {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+      }
+      .step__n {
+        font: 500 12.5px/1 var(--mono);
+        letter-spacing: 0.1em;
+      }
+      .band__foot {
+        font: 600 12.5px/1.5 var(--sans);
+        letter-spacing: 0.04em;
+      }
+      .kit__i b {
+        font: 500 12px/1 var(--mono);
+        letter-spacing: 0.12em;
+      }
+      .receipt__head,
+      .receipt__sum span {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+      }
+      .receipt__time {
+        font: 500 12.5px/1.4 var(--sans);
+        letter-spacing: 0.01em;
+        text-transform: none;
+      }
+      .visit__row dt {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+      }
+      .field > label {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.01em;
+        text-transform: none;
+      }
+      .draw__tab {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 12.5px;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Перейти к содержанию</a>
+
+    <div class="prog" id="prog" aria-hidden="true"></div>
+    <a
+      class="svcbar"
+      href="https://wa.me/79020153104?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D0%B4%D0%B5%D0%BC%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D1%81%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B6%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0"
+      target="_blank"
+      rel="noopener"
+      data-src="demo_bar"
+    >
+      <span class="svcbar__full"
+        >Это демо-пример. Ваш сайт — 2 дня, 3 000 ₽. <b>Написать →</b>
+      </span>
+      <span class="svcbar__short"
+        >Демо. Ваш сайт — 3 000 ₽. <b>Написать →</b>
+      </span>
+    </a>
+    <header class="top" id="topbar">
+      <div class="wrap top__in">
+        <a class="logo" href="#main">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            fill="none"
+            stroke="#0d4a43"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 3.2c2.6 0 4.4 1.7 4.6 4.2.2 2-.6 3-1 4.5-.4 1.5 0 3.6-.6 5.6-.4 1.4-1.2 2.3-2 2.3-.6 0-.9-.6-.9-1.4v-3.1c0-.5-.5-.5-.5 0v3.1c0 .8-.4 1.4-.9 1.4-.8 0-1.6-.9-2-2.3-.6-2-.2-4.1-.6-5.6-.4-1.5-1.2-2.5-1-4.5C7.6 4.9 9.4 3.2 12 3.2Z"
+            />
+          </svg>
+          <span>
+            <b data-name>Дента</b>
+            <span>стоматология · Йошкар-Ола</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Разделы">
+          <a href="#smeta">Смета</a> <a href="#ceny">Цены</a>
+          <a href="#priem">Приём</a> <a href="#kabinet">Кабинет</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <a class="top__phone" href="tel:+79000000000" data-phone
+          >+7 900 000-00-00<span>запись на приём</span>
+        </a>
+        <button
+          class="burger"
+          type="button"
+          id="burger"
+          aria-label="Разделы сайта"
+          aria-expanded="false"
+          aria-controls="mnav"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav class="mnav" id="mnav" aria-label="Разделы" hidden>
+        <a href="#smeta"><b>01</b> Смета</a>
+        <a href="#ceny"><b>02</b> Цены</a>
+        <a href="#priem"><b>03</b> Приём</a>
+        <a href="#kabinet"><b>04</b> Кабинет</a>
+        <a href="#faq"><b>05</b> Вопросы</a>
+        <a href="#zapis"><b>06</b> Запись</a>
+      </nav>
+    </header>
+    <main id="main">
+      <!-- ============ первый экран ============ -->
+      <section class="hero">
+        <div class="wrap hero__in">
+          <span class="kicker">стоматология полного цикла</span>
+          <h1>Лечим зубы спокойно и по плану</h1>
+          <p class="hero__lead">
+            Осмотр и снимок — бесплатно. Цену называем до того, как вы сядете в
+            кресло, и не меняем её по ходу лечения.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--solid" href="#zapis"
+              >Записаться на приём <span class="btn__arrow">→</span>
+            </a>
+            <a class="btn btn--line" href="#ceny">Услуги и цены</a>
+          </div>
+          <div class="hero__facts">
+            <ul>
+              <li>Приём 40 минут</li>
+              <li>Без очередей</li>
+              <li>Гарантия по договору</li>
+            </ul>
+          </div>
+          <div class="draw" id="drawing">
+            <div class="draw__stage">
+              <div class="draw__tilt">
+                <svg class="tooth" viewBox="0 0 560 400" aria-hidden="true">
+<g transform="translate(125 24) scale(1.55)">
+<g transform="translate(100 130) scale(.88) translate(-100 -130)">
+<path class="ln ln--2" data-l="dentin" pathLength="1" d="M28 34C28 12 50 2 66 14C80 24 120 24 134 14C150 2 172 12 172 34C172 56 162 72 158 92C154 116 158 138 154 160C150 190 140 218 124 224C112 228 108 210 106 192C105 178 103 170 100 164C97 170 95 178 94 192C92 210 88 228 76 224C60 218 50 190 46 160C42 138 46 116 42 92C38 72 28 56 28 34Z"/>
+</g>
+<path class="ln" data-l="enamel" pathLength="1" d="M28 34C28 12 50 2 66 14C80 24 120 24 134 14C150 2 172 12 172 34C172 56 162 72 158 92C154 116 158 138 154 160C150 190 140 218 124 224C112 228 108 210 106 192C105 178 103 170 100 164C97 170 95 178 94 192C92 210 88 228 76 224C60 218 50 190 46 160C42 138 46 116 42 92C38 72 28 56 28 34Z"/>
+<path class="ln ln--3" data-l="pulp" pathLength="1" d="M100 52C116 52 122 74 119 96C117 112 110 118 106 130L94 130C90 118 83 112 81 96C78 74 84 52 100 52Z"/>
+<path class="ln ln--canal" data-l="pulp" pathLength="1" d="M106 130C110 158 112 178 111 198"/>
+<path class="ln ln--canal" data-l="pulp" pathLength="1" d="M94 130C90 158 88 178 89 198"/>
+</g>
+<g class="calls">
+<g data-c="enamel"><circle cx="378" cy="96" r="3"/><line x1="378" y1="96" x2="424" y2="96"/><text x="432" y="96" dominant-baseline="middle">эмаль</text></g>
+<g data-c="dentin"><circle cx="352" cy="250" r="3"/><line x1="352" y1="250" x2="424" y2="250"/><text x="432" y="250" dominant-baseline="middle">дентин</text></g>
+<g data-c="pulp"><circle cx="280" cy="148" r="3"/><line x1="280" y1="148" x2="176" y2="148"/><text x="168" y="148" text-anchor="end" dominant-baseline="middle">пульпа и канал</text></g>
+<g data-c="root"><circle cx="218" cy="326" r="3"/><line x1="218" y1="326" x2="176" y2="326"/><text x="168" y="326" text-anchor="end" dominant-baseline="middle">корень</text></g>
+</g>
+</svg>
+              </div>
+            </div>
+            <span class="draw__cap">рис. 1 · схема лечения</span>
+            <span class="draw__tag">зуб 36 · каналы</span>
+            <div class="draw__tabs" role="group" aria-label="Слои зуба">
+              <button
+                class="draw__tab"
+                type="button"
+                data-layer="enamel"
+                aria-pressed="true"
+              >
+                эмаль
+              </button>
+              <button
+                class="draw__tab"
+                type="button"
+                data-layer="dentin"
+                aria-pressed="false"
+              >
+                дентин
+              </button>
+              <button
+                class="draw__tab"
+                type="button"
+                data-layer="pulp"
+                aria-pressed="false"
+              >
+                пульпа и канал
+              </button>
+              <button
+                class="draw__tab"
+                type="button"
+                data-layer="root"
+                aria-pressed="false"
+              >
+                корень
+              </button>
+            </div>
+            <p class="draw__desc" id="draw-desc" aria-live="polite">
+              <b>Эмаль</b> — самая твёрдая ткань в организме. Сама не
+              восстанавливается: трещина или дырка только растут, поэтому кариес
+              лечат, пока он в эмали.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ============ цифры ============ -->
+      <section class="sec sec--tight" aria-label="Коротко о клинике">
+        <div class="wrap">
+          <div class="stats rv">
+            <div class="stat">
+              <b><span class="n" data-to="12">12</span><i>лет</i></b>
+              <span>На Первомайской</span>
+            </div>
+            <div class="stat">
+              <b><span class="n" data-to="4800">4 800</span><i>+</i></b>
+              <span>Пациентов</span>
+            </div>
+            <div class="stat">
+              <b><span class="n" data-to="98">98</span><i>%</i></b>
+              <span>Приходят снова</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ смета ============ -->
+      <section class="sec sec--tight" id="smeta">
+        <div class="wrap">
+          <div class="head rv">
+            <span class="kicker kicker--left">01 · смета</span>
+            <h2>Прикиньте стоимость заранее</h2>
+            <p>
+              Отметьте, что планируете, — покажем сумму и сколько времени это
+              займёт в кресле. Считаем по нижней границе прайса, без сюрпризов.
+            </p>
+          </div>
+          <div class="calc rv">
+            <ul class="picks">
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="3500"
+                    data-min="40"
+                    data-name="Лечение кариеса"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Лечение кариеса</span>
+                  <span class="pick__p">от 3 500 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="5500"
+                    data-min="60"
+                    data-name="Лечение каналов"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t"
+                    >Лечение каналов<small>с микроскопом</small>
+                  </span>
+                  <span class="pick__p">от 5 500 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="3200"
+                    data-min="50"
+                    data-name="Профессиональная чистка"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Профессиональная чистка</span>
+                  <span class="pick__p">3 200 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="4800"
+                    data-min="50"
+                    data-name="Пломба на передний зуб"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Пломба на передний зуб</span>
+                  <span class="pick__p">от 4 800 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="2500"
+                    data-min="30"
+                    data-name="Удаление зуба"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Удаление зуба</span>
+                  <span class="pick__p">от 2 500 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="14000"
+                    data-min="90"
+                    data-name="Коронка из циркония"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t"
+                    >Коронка из циркония<small>два визита</small>
+                  </span>
+                  <span class="pick__p">от 14 000 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="35000"
+                    data-min="60"
+                    data-name="Имплант с установкой"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Имплант с установкой</span>
+                  <span class="pick__p">от 35 000 ₽</span>
+                </label>
+              </li>
+              <li>
+                <label class="pick">
+                  <input
+                    type="checkbox"
+                    data-price="2000"
+                    data-min="40"
+                    data-name="Детский приём"
+                  />
+                  <span class="pick__box"> </span>
+                  <span class="pick__t">Детский приём</span>
+                  <span class="pick__p">от 2 000 ₽</span>
+                </label>
+              </li>
+            </ul>
+            <aside class="receipt" aria-label="Смета">
+              <p class="receipt__head">смета · черновик</p>
+              <ul class="receipt__list" id="rcList">
+                <li class="receipt__empty">Пока ничего не выбрано</li>
+              </ul>
+              <div class="receipt__sum">
+                <span>итого</span>
+                <b id="rcSum">0 ₽</b>
+              </div>
+              <p class="receipt__time" id="rcTime">и 0 минут в кресле</p>
+              <button
+                class="btn btn--solid btn--wide"
+                type="button"
+                id="rcGo"
+                disabled
+              >
+                Записаться со сметой
+              </button>
+              <p class="receipt__note">
+                Точную сумму назовём после осмотра и снимка. Осмотр и снимок —
+                бесплатно.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <!-- ============ цены ============ -->
+      <section class="sec" id="ceny">
+        <div class="wrap">
+          <div class="head rv">
+            <span class="kicker kicker--left">02 · прайс</span>
+            <h2>Полный прайс</h2>
+            <p>
+              Цены фиксируем в плане лечения. Если во время работы находится
+              что-то ещё, сначала спрашиваем, потом делаем.
+            </p>
+          </div>
+          <div class="chips rv" role="group" aria-label="Быстрый переход по прайсу">
+            <button type="button" class="chip" data-row="Лечение кариеса">
+              кариес
+            </button>
+            <button type="button" class="chip" data-row="Лечение каналов">
+              каналы
+            </button>
+            <button type="button" class="chip" data-row="Профессиональная чистка">
+              чистка
+            </button>
+            <button type="button" class="chip" data-row="Коронка из циркония">
+              коронка
+            </button>
+            <button type="button" class="chip" data-row="Имплант с установкой">
+              имплант
+            </button>
+            <button type="button" class="chip" data-row="Удаление зуба">
+              удаление
+            </button>
+          </div>
+          <table class="spec rv">
+            <caption>
+              Лечение
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Время</th>
+                <th scope="col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Консультация, осмотр, снимок<small
+                    >Снимок на 3D-томографе, план лечения на бумаге</small
+                  >
+                </th>
+                <td>20 мин</td>
+                <td>бесплатно</td>
+              </tr>
+              <tr>
+                <th scope="row">Лечение кариеса</th>
+                <td>40 мин</td>
+                <td>от 3 500 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Лечение каналов<small
+                    >С микроскопом, пломба и снимок включены</small
+                  >
+                </th>
+                <td>60 мин</td>
+                <td>от 5 500 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Повторное лечение, перепломбировка</th>
+                <td>50 мин</td>
+                <td>от 4 200 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="spec rv">
+            <caption>
+              Гигиена и эстетика
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Время</th>
+                <th scope="col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Профессиональная чистка<small
+                    >Ультразвук, полировка, фторирование</small
+                  >
+                </th>
+                <td>50 мин</td>
+                <td>3 200 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Отбеливание</th>
+                <td>90 мин</td>
+                <td>12 000 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Пломба на передний зуб</th>
+                <td>50 мин</td>
+                <td>от 4 800 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="spec rv">
+            <caption>
+              Хирургия и протезирование
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Время</th>
+                <th scope="col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Удаление зуба</th>
+                <td>30 мин</td>
+                <td>от 2 500 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Коронка из циркония</th>
+                <td>2 визита</td>
+                <td>от 14 000 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Имплант с установкой</th>
+                <td>60 мин</td>
+                <td>от 35 000 ₽</td>
+              </tr>
+              <tr>
+                <th scope="row">Детский приём и лечение</th>
+                <td>40 мин</td>
+                <td>от 2 000 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="spec__note rv">
+            «От» значит, что цена зависит от зуба и объёма работы. Точную сумму
+            пишем в плане после снимка — до начала лечения, а не после.
+          </p>
+        </div>
+      </section>
+      <!-- ============ приём ============ -->
+      <section class="sec band" id="priem">
+        <div class="wrap">
+          <div class="head rv">
+            <span class="kicker">03 · приём</span>
+            <h2>Как проходит первый визит</h2>
+            <p>
+              Сорок минут, из них лечение — по желанию в этот же день. Если
+              нужно подумать, уходите с планом и сметой на руках.
+            </p>
+          </div>
+          <div class="steps rv">
+            <div class="step">
+              <span class="step__n">01</span>
+              <h3>Осмотр и снимок</h3>
+              <p>
+                Смотрим все зубы, делаем снимок проблемного участка.
+                Рассказываем, что видно, простыми словами.
+              </p>
+            </div>
+            <div class="step">
+              <span class="step__n">02</span>
+              <h3>План и смета</h3>
+              <p>
+                Пишем на бумаге: какие зубы, что делаем, в каком порядке и
+                сколько стоит каждый этап.
+              </p>
+            </div>
+            <div class="step">
+              <span class="step__n">03</span>
+              <h3>Лечение</h3>
+              <p>
+                Начинаем с того, что беспокоит. Обезболивание подбираем по
+                состоянию, спрашиваем про аллергии.
+              </p>
+            </div>
+          </div>
+          <div class="band__foot">
+            <span>снимок и план — бесплатно</span> <span>оплата по этапам</span>
+            <span>рассрочка от 30 000 ₽</span>
+          </div>
+        </div>
+      </section>
+      <!-- ============ кабинет ============ -->
+      <section class="sec" id="kabinet">
+        <div class="wrap">
+          <div class="head rv">
+            <span class="kicker kicker--left">04 · кабинет</span>
+            <h2>Чем работаем</h2>
+            <p>
+              Оборудование — не ради строчки на сайте: от него зависит, сколько
+              зубов можно сохранить и сколько раз к нам возвращаться.
+            </p>
+          </div>
+          <div class="kit rv">
+            <div class="kit__i">
+              <b>01</b>
+              <p>3D-томограф</p>
+              <span
+                >Снимок всей челюсти за минуту, с низкой дозой облучения.</span
+              >
+            </div>
+            <div class="kit__i">
+              <b>02</b>
+              <p>Микроскоп</p>
+              <span
+                >Каналы видно в 25 раз крупнее, поэтому лечим без «на
+                глаз».</span
+              >
+            </div>
+            <div class="kit__i">
+              <b>03</b>
+              <p>Отдельный детский приём</p>
+              <span
+                >Свой кабинет и время, чтобы не сидеть в общей очереди.</span
+              >
+            </div>
+            <div class="kit__i">
+              <b>04</b>
+              <p>Стерилизация</p>
+              <span
+                >Каждый инструмент в отдельном крафт-пакете, вскрываем при
+                вас.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ вопросы ============ -->
+      <section class="sec sec--tight" id="faq">
+        <div class="wrap">
+          <div class="head rv">
+            <span class="kicker kicker--left">05 · вопросы</span>
+            <h2>Что обычно спрашивают</h2>
+          </div>
+          <div class="faq rv">
+            <details class="q">
+              <summary>Принимаете по ОМС?</summary>
+              <div class="q__a">
+                Нет, мы частная клиника и работаем только платно. Зато запись
+                обычно на завтра, а не через три недели, и лечит тот врач, к
+                которому вы записались.
+              </div>
+            </details>
+            <details class="q">
+              <summary>Больно ли лечить каналы?</summary>
+              <div class="q__a">
+                С обезболиванием — нет. Сначала делаем пробную анестезию и ждём,
+                пока подействует. Если по ходу становится чувствительно,
+                говорите сразу: добавим.
+              </div>
+            </details>
+            <details class="q">
+              <summary>Можно ли за один визит всё вылечить?</summary>
+              <div class="q__a">
+                Часть — да, если это пломба или чистка. Каналы и коронки обычно
+                требуют двух визитов: между ними зуб должен отдохнуть.
+              </div>
+            </details>
+            <details class="q">
+              <summary>Даёте гарантию?</summary>
+              <div class="q__a">
+                Да, по договору: на пломбы — год, на коронки и импланты —
+                больше. Если что-то пойдёт не так по нашей работе, переделываем
+                бесплатно.
+              </div>
+            </details>
+            <details class="q">
+              <summary>Есть рассрочка?</summary>
+              <div class="q__a">
+                Да, на лечение от 30 000 ₽ — на 6 месяцев без процентов.
+                Оформляем на приёме, нужен только паспорт.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- ============ запись ============ -->
+      <section class="sec band" id="zapis">
+        <div class="wrap book">
+          <div>
+            <div class="head rv">
+              <span class="kicker">06 · запись</span>
+              <h2>Записаться на приём</h2>
+              <p>
+                Оставьте имя и телефон — перезвоним в рабочее время и подберём
+                удобный час. Или напишите в WhatsApp, если так проще.
+              </p>
+            </div>
+            <form class="form rv" id="f" novalidate>
+              <div class="row">
+                <div class="field" id="fw-name">
+                  <label for="f-name">Как вас зовут</label>
+                  <input
+                    id="f-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Имя"
+                    required
+                  />
+                  <p class="err">Напишите имя, чтобы знать, как обращаться</p>
+                </div>
+                <div class="field" id="fw-phone">
+                  <label for="f-phone">Телефон</label>
+                  <input
+                    id="f-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="+7 ___ ___-__-__"
+                    required
+                  />
+                  <p class="err">Нужно 10 цифр</p>
+                </div>
+              </div>
+              <div class="field">
+                <label id="f-svc-label">Что беспокоит</label>
+                <div class="sel" data-sel style="--cols: 2">
+                  <button
+                    type="button"
+                    class="sel__btn"
+                    id="f-svc-btn"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="f-svc-list"
+                    aria-labelledby="f-svc-label f-svc-btn"
+                  >
+                    <span class="sel__val">Осмотр и консультация</span>
+                    <i class="sel__chev" aria-hidden="true"> </i>
+                  </button>
+                  <ul
+                    class="sel__list"
+                    role="listbox"
+                    id="f-svc-list"
+                    aria-labelledby="f-svc-label"
+                    hidden
+                  >
+                    <li
+                      class="sel__opt"
+                      role="option"
+                      data-v="Осмотр и консультация"
+                      aria-selected="true"
+                    >
+                      Осмотр и консультация
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Болит зуб">
+                      Болит зуб
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Лечение кариеса">
+                      Лечение кариеса
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Лечение каналов">
+                      Лечение каналов
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Чистка">
+                      Чистка
+                    </li>
+                    <li
+                      class="sel__opt"
+                      role="option"
+                      data-v="Коронка или имплант"
+                    >
+                      Коронка или имплант
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Детский приём">
+                      Детский приём
+                    </li>
+                    <li class="sel__opt" role="option" data-v="Другое">
+                      Другое
+                    </li>
+                  </ul>
+                  <input
+                    type="hidden"
+                    name="service"
+                    value="Осмотр и консультация"
+                  />
+                </div>
+                <noscript>
+                  <select name="service" aria-label="Что беспокоит">
+                    <option>Осмотр и консультация</option>
+                    <option>Болит зуб</option>
+                    <option>Лечение кариеса</option>
+                    <option>Лечение каналов</option>
+                    <option>Чистка</option>
+                    <option>Коронка или имплант</option>
+                    <option>Детский приём</option>
+                    <option>Другое</option>
+                  </select>
+                </noscript>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label id="f-day-label">День</label>
+                  <div class="sel" data-sel style="--cols: 1">
+                    <button
+                      type="button"
+                      class="sel__btn"
+                      id="f-day-btn"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="f-day-list"
+                      aria-labelledby="f-day-label f-day-btn"
+                    >
+                      <span class="sel__val">Завтра</span>
+                      <i class="sel__chev" aria-hidden="true"> </i>
+                    </button>
+                    <ul
+                      class="sel__list"
+                      role="listbox"
+                      id="f-day-list"
+                      aria-labelledby="f-day-label"
+                      hidden
+                    ></ul>
+                    <input type="hidden" name="day" value="" />
+                  </div>
+                  <noscript>
+                    <select name="day" aria-label="День">
+                      <option>Завтра</option>
+                      <option>Послезавтра</option>
+                    </select>
+                  </noscript>
+                </div>
+                <div class="field">
+                  <label id="f-time-label">Время</label>
+                  <div class="sel" data-sel style="--cols: 3">
+                    <button
+                      type="button"
+                      class="sel__btn"
+                      id="f-time-btn"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="f-time-list"
+                      aria-labelledby="f-time-label f-time-btn"
+                    >
+                      <span class="sel__val">10:00</span>
+                      <i class="sel__chev" aria-hidden="true"> </i>
+                    </button>
+                    <ul
+                      class="sel__list"
+                      role="listbox"
+                      id="f-time-list"
+                      aria-labelledby="f-time-label"
+                      hidden
+                    >
+                      <li class="sel__opt" role="option" data-v="09:00">
+                        09:00
+                      </li>
+                      <li
+                        class="sel__opt"
+                        role="option"
+                        data-v="10:00"
+                        aria-selected="true"
+                      >
+                        10:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="11:00">
+                        11:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="12:00">
+                        12:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="14:00">
+                        14:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="15:00">
+                        15:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="16:00">
+                        16:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="17:00">
+                        17:00
+                      </li>
+                      <li class="sel__opt" role="option" data-v="18:00">
+                        18:00
+                      </li>
+                    </ul>
+                    <input type="hidden" name="time" value="10:00" />
+                  </div>
+                  <noscript>
+                    <select name="time" aria-label="Время">
+                      <option>10:00</option>
+                      <option>12:00</option>
+                      <option>15:00</option>
+                    </select>
+                  </noscript>
+                </div>
+              </div>
+              <input
+                class="form__hp"
+                type="text"
+                name="lastname"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <label class="consent" id="f-consent-box">
+                <input type="checkbox" id="f-consent" name="consent" />
+                <span
+                  >Согласен с
+                  <a href="privacy.html" target="_blank" rel="noopener"
+                    >политикой обработки персональных данных</a
+                  >
+                </span>
+              </label>
+              <button class="btn btn--solid btn--wide" type="submit">
+                Отправить заявку
+              </button>
+              <p
+                class="form__note"
+                id="f-note"
+                role="status"
+                aria-live="polite"
+              ></p>
+              <p
+                class="form__del"
+                style="font-size: 12.5px; color: #c6dad2; margin: 0"
+              >
+                Передумали?
+                <a href="privacy.html#delete" style="color: #cfe1da"
+                  >Удалить мои данные</a
+                >
+              </p>
+            </form>
+          </div>
+          <div class="rv">
+            <dl class="visit">
+              <div class="visit__row">
+                <dt>Адрес</dt>
+                <dd data-addr>Йошкар-Ола, ул. Первомайская, 100</dd>
+              </div>
+              <div class="visit__row">
+                <dt>Пн–Пт</dt>
+                <dd>08:00 – 20:00</dd>
+              </div>
+              <div class="visit__row">
+                <dt>Сб</dt>
+                <dd>09:00 – 15:00</dd>
+              </div>
+              <div class="visit__row">
+                <dt>Вс</dt>
+                <dd>выходной</dd>
+              </div>
+              <div class="visit__row">
+                <dt>Телефон</dt>
+                <dd>
+                  <a href="tel:+79000000000" data-phone>+7 900 000-00-00</a>
+                </dd>
+              </div>
+            </dl>
+            <p class="visit__note">
+              Вход со двора, парковка перед домом.
+              <a
+                href="https://yandex.ru/maps/?text=%D0%99%D0%BE%D1%88%D0%BA%D0%B0%D1%80-%D0%9E%D0%BB%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BC%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%2C%20100"
+                target="_blank"
+                rel="noopener"
+                >Показать на карте →</a
+              >
+            </p>
+            <p class="visit__note">
+              Если болит сильно и срочно — звоните, постараемся принять в тот же
+              день.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <a class="fab" href="#zapis">Записаться на приём</a>
+    <footer>
+      <div class="wrap foot">
+        <span
+          >© 2026 Стоматология «<span data-name>Дента</span>» ·
+          <span data-addr>Йошкар-Ола, ул. Первомайская, 100</span>
+        </span>
+        <span>
+          <a href="privacy.html">Политика обработки данных</a> ·
+          <a href="https://wa.me/79020153104" target="_blank" rel="noopener"
+            >Написать в WhatsApp</a
+          >
+        </span>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        "use strict";
+        /* ---------- страховка: если скрипт упал, контент всё равно виден ---------- */
+        window.addEventListener("error", function () {
+          document
+            .querySelectorAll(".rv, .draw__stage, .hero h1")
+            .forEach(function (el) {
+              el.classList.add("is-in");
+            });
+        });
+        /* ---------- шапка ---------- */ var top =
+          document.getElementById("topbar");
+        function onScroll() {
+          if (window.scrollY > 8) top.classList.add("is-stuck");
+          else top.classList.remove("is-stuck");
+        }
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        /* ---------- мобильное меню ---------- */ (function mnav() {
+          var burger = document.getElementById("burger");
+          var panel = document.getElementById("mnav");
+          if (!burger || !panel) return;
+          function set(open) {
+            panel.hidden = !open;
+            burger.setAttribute("aria-expanded", open ? "true" : "false");
+          }
+          burger.addEventListener("click", function () {
+            set(panel.hidden);
+          });
+          panel.addEventListener("click", function (e) {
+            if (e.target.closest("a")) set(false);
+          });
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && !panel.hidden) {
+              set(false);
+              burger.focus();
+            }
+          });
+        })();
+        /* ---------- появление ---------- */ (function reveal() {
+          var items = [].slice.call(
+            document.querySelectorAll(".rv, .draw__stage"),
+          );
+          if (!("IntersectionObserver" in window)) {
+            items.forEach(function (el) {
+              el.classList.add("is-in");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                e.target.classList.add("is-in");
+                io.unobserve(e.target);
+              });
+            },
+            { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+          );
+          items.forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+        /* ---------- прогресс чтения ---------- */ (function progress() {
+          var bar = document.getElementById("prog");
+          if (!bar) return;
+          var job = 0;
+          function draw() {
+            job = 0;
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width =
+              (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + "%";
+          }
+          function queue() {
+            if (!job && window.requestAnimationFrame) job = requestAnimationFrame(draw);
+          }
+          draw();
+          window.addEventListener("scroll", queue, { passive: true });
+          window.addEventListener("resize", queue);
+        })();
+
+        /* ---------- появление заголовка ---------- */ (function headIn() {
+          var h1 = document.querySelector(".hero h1");
+          if (!h1) return;
+          requestAnimationFrame(function () {
+            h1.classList.add("is-in");
+          });
+          /* страховка: если кадр не пришёл, показать заголовок принудительно */
+          window.setTimeout(function () {
+            h1.classList.add("is-in");
+          }, 1200);
+        })();
+
+        /* ---------- наклон чертежа за курсором ---------- */ (function tilt() {
+          var draw = document.getElementById("drawing");
+          var box = draw && draw.querySelector(".draw__tilt");
+          if (!box) return;
+          if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          if (matchMedia("(hover: none)").matches) return;
+          draw.addEventListener("pointermove", function (e) {
+            var r = draw.getBoundingClientRect();
+            var x = (e.clientX - r.left) / r.width - 0.5;
+            var y = (e.clientY - r.top) / r.height - 0.5;
+            box.style.transform =
+              "rotateY(" +
+              (x * 7).toFixed(2) +
+              "deg) rotateX(" +
+              (-y * 6).toFixed(2) +
+              "deg)";
+          });
+          draw.addEventListener("pointerleave", function () {
+            box.style.transform = "";
+          });
+        })();
+
+        /* ---------- слои зуба ---------- */ (function layers() {
+          var svg = document.querySelector(".tooth");
+          var tabs = [].slice.call(document.querySelectorAll(".draw__tab"));
+          var desc = document.getElementById("draw-desc");
+          if (!svg || !tabs.length) return;
+          var text = {
+            enamel:
+              "<b>Эмаль</b> — самая твёрдая ткань в организме. Сама не восстанавливается: трещина или дырка только растут, поэтому кариес лечат, пока он в эмали.",
+            dentin:
+              "<b>Дентин</b> — слой под эмалью, мягче и пористее. Когда кариес дошёл сюда, зуб начинает ныть от холодного и сладкого.",
+            pulp:
+              "<b>Пульпа</b> — нерв и сосуды внутри. Если боль не проходит, воспаление уже здесь: нужны каналы, пломба сверху не поможет.",
+            root:
+              "<b>Корень</b> держит зуб в кости. Когда он трескается или уходит под десну, зуб уже не спасти — тогда говорим об удалении и импланте.",
+          };
+          function pick(layer) {
+            svg.classList.add("is-focus");
+            svg.querySelectorAll("[data-l]").forEach(function (p) {
+              p.classList.toggle("is-on", p.getAttribute("data-l") === layer);
+            });
+            svg.querySelectorAll(".calls g").forEach(function (g) {
+              g.classList.toggle(
+                "is-on",
+                g.getAttribute("data-c") === layer,
+              );
+            });
+            tabs.forEach(function (b) {
+              b.setAttribute(
+                "aria-pressed",
+                b.getAttribute("data-layer") === layer ? "true" : "false",
+              );
+            });
+            if (!desc || !text[layer]) return;
+            desc.style.opacity = "0";
+            setTimeout(function () {
+              desc.innerHTML = text[layer];
+              desc.style.opacity = "1";
+            }, 130);
+          }
+          tabs.forEach(function (b) {
+            b.addEventListener("click", function () {
+              pick(b.getAttribute("data-layer"));
+            });
+          });
+          svg.querySelectorAll(".calls g").forEach(function (g) {
+            g.setAttribute("role", "button");
+            g.setAttribute("tabindex", "0");
+            g.setAttribute("aria-label", g.textContent.trim());
+            g.addEventListener("click", function () {
+              pick(g.getAttribute("data-c"));
+            });
+            g.addEventListener("keydown", function (e) {
+              if (e.key !== "Enter" && e.key !== " ") return;
+              e.preventDefault();
+              pick(g.getAttribute("data-c"));
+            });
+          });
+          pick("enamel");
+        })();
+
+        /* ---------- цифры ---------- */ (function counters() {
+          var nums = [].slice.call(document.querySelectorAll(".n[data-to]"));
+          if (!nums.length) return;
+          var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+          function fmt(n) {
+            return n.toLocaleString("ru-RU");
+          }
+          function run(el) {
+            var to = Number(el.getAttribute("data-to")) || 0;
+            if (reduce || !window.requestAnimationFrame) {
+              el.textContent = fmt(to);
+              return;
+            }
+            var t0 = performance.now();
+            function step(now) {
+              var k = Math.min(1, (now - t0) / 1100);
+              el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - k, 3))));
+              if (k < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          if (!("IntersectionObserver" in window)) {
+            nums.forEach(run);
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (es) {
+              es.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                run(e.target);
+                io.unobserve(e.target);
+              });
+            },
+            { threshold: 0.5 },
+          );
+          nums.forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+
+        /* ---------- чипы прайса ---------- */ (function chips() {
+          var btns = [].slice.call(document.querySelectorAll(".chip[data-row]"));
+          if (!btns.length) return;
+          btns.forEach(function (b) {
+            b.addEventListener("click", function () {
+              var name = b.getAttribute("data-row");
+              var ths = [].slice.call(document.querySelectorAll(".spec tbody th"));
+              var row = null;
+              ths.forEach(function (th) {
+                if (row) return;
+                if (th.textContent.trim().indexOf(name) === 0) row = th.parentNode;
+              });
+              if (!row) return;
+              row.scrollIntoView({ behavior: "smooth", block: "center" });
+              row.classList.remove("is-flash");
+              void row.offsetWidth;
+              row.classList.add("is-flash");
+              window.setTimeout(function () {
+                row.classList.remove("is-flash");
+              }, 1600);
+            });
+          });
+        })();
+
+        /* ---------- смета ---------- */ (function calc() {
+          var picks = [].slice.call(document.querySelectorAll(".pick input"));
+          var list = document.getElementById("rcList");
+          var sum = document.getElementById("rcSum");
+          var time = document.getElementById("rcTime");
+          var go = document.getElementById("rcGo");
+          if (!picks.length || !list || !sum) return;
+
+          var shown = 0;
+          var job = 0;
+          function money(n) {
+            return n.toLocaleString("ru-RU") + " ₽";
+          }
+          function human(min) {
+            var h = Math.floor(min / 60);
+            var m = min % 60;
+            if (!h) return m + " мин";
+            return h + " ч" + (m ? " " + m + " мин" : "");
+          }
+          function total() {
+            var s = 0;
+            var t = 0;
+            var names = [];
+            picks.forEach(function (p) {
+              if (!p.checked) return;
+              s += Number(p.getAttribute("data-price")) || 0;
+              t += Number(p.getAttribute("data-min")) || 0;
+              names.push(p.getAttribute("data-name"));
+            });
+            return { s: s, t: t, names: names };
+          }
+          function render(animate) {
+            var d = total();
+            list.innerHTML = "";
+            if (!d.names.length) {
+              var empty = document.createElement("li");
+              empty.className = "receipt__empty";
+              empty.textContent = "Пока ничего не выбрано";
+              list.appendChild(empty);
+            } else {
+              picks.forEach(function (p) {
+                if (!p.checked) return;
+                var li = document.createElement("li");
+                var n = document.createElement("span");
+                var v = document.createElement("span");
+                n.textContent = p.getAttribute("data-name");
+                v.textContent = money(Number(p.getAttribute("data-price")));
+                li.appendChild(n);
+                li.appendChild(v);
+                list.appendChild(li);
+              });
+            }
+            if (time) time.textContent = "и " + human(d.t) + " в кресле";
+            if (go) go.disabled = !d.names.length;
+
+            if (!animate || !window.requestAnimationFrame) {
+              sum.textContent = money(d.s);
+              shown = d.s;
+              return;
+            }
+            var from = shown;
+            var to = d.s;
+            var t0 = performance.now();
+            cancelAnimationFrame(job);
+            function step(now) {
+              var k = Math.min(1, (now - t0) / 380);
+              sum.textContent = money(
+                Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3))),
+              );
+              if (k < 1) job = requestAnimationFrame(step);
+              else {
+                sum.textContent = money(to);
+                shown = to;
+              }
+            }
+            job = requestAnimationFrame(step);
+            sum.classList.remove("is-bump");
+            void sum.offsetWidth;
+            sum.classList.add("is-bump");
+          }
+
+          picks.forEach(function (p) {
+            p.addEventListener("change", function () {
+              render(true);
+            });
+          });
+          render(false);
+
+          if (go) {
+            go.addEventListener("click", function () {
+              var d = total();
+              var note = document.getElementById("f-note");
+              var form = document.getElementById("zapis");
+              if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+              window.setTimeout(function () {
+                if (!note) return;
+                note.textContent =
+                  "Смета: " +
+                  d.names.join(", ") +
+                  " — от " +
+                  money(d.s) +
+                  ". Осталось оставить имя и телефон.";
+                note.style.color = "var(--mint)";
+              }, 600);
+            });
+          }
+        })();
+
+        /* ---------- аккордеон с анимацией ---------- */ (function acc() {
+          var items = [].slice.call(document.querySelectorAll(".faq .q"));
+          if (!items.length) return;
+          var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+          items.forEach(function (d) {
+            var s = d.querySelector("summary");
+            var a = d.querySelector(".q__a");
+            if (!s || !a) return;
+            s.addEventListener("click", function (e) {
+              e.preventDefault();
+              if (reduce) {
+                d.open = !d.open;
+                return;
+              }
+              if (d.open) {
+                a.style.height = a.scrollHeight + "px";
+                requestAnimationFrame(function () {
+                  a.style.height = "0px";
+                });
+                a.addEventListener("transitionend", function done() {
+                  a.removeEventListener("transitionend", done);
+                  a.style.height = "";
+                  d.open = false;
+                });
+              } else {
+                items.forEach(function (o) {
+                  if (o === d || !o.open) return;
+                  var oa = o.querySelector(".q__a");
+                  o.open = false;
+                  if (oa) oa.style.height = "";
+                });
+                d.open = true;
+                a.style.height = "0px";
+                requestAnimationFrame(function () {
+                  a.style.height = a.scrollHeight + "px";
+                });
+                a.addEventListener("transitionend", function done() {
+                  a.removeEventListener("transitionend", done);
+                  a.style.height = "auto";
+                });
+              }
+            });
+          });
+        })();
+
+        /* ---------- дни для записи ---------- */ (function days() {
+          var list = document.getElementById("f-day-list");
+          if (!list) return;
+          var out = document.querySelector('input[name="day"]');
+          var val = document.querySelector("#f-day-btn .sel__val");
+          var wd = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+          var mo = [
+            "января",
+            "февраля",
+            "марта",
+            "апреля",
+            "мая",
+            "июня",
+            "июля",
+            "августа",
+            "сентября",
+            "октября",
+            "ноября",
+            "декабря",
+          ];
+          var base = new Date();
+          for (var i = 1; i <= 7; i++) {
+            var d = new Date(base.getTime() + i * 86400000);
+            if (d.getDay() === 0) continue;
+            var label =
+              wd[d.getDay()] + ", " + d.getDate() + " " + mo[d.getMonth()];
+            if (i === 1)
+              label = "Завтра, " + d.getDate() + " " + mo[d.getMonth()];
+            var li = document.createElement("li");
+            li.className = "sel__opt";
+            li.setAttribute("role", "option");
+            li.setAttribute("data-v", label);
+            li.textContent = label;
+            list.appendChild(li);
+            if (!out.value) {
+              out.value = label;
+              val.textContent = label;
+              li.setAttribute("aria-selected", "true");
+            }
+          }
+        })();
+        /* ---------- свои выпадашки ---------- */ (function selects() {
+          var boxes = [].slice.call(document.querySelectorAll("[data-sel]"));
+          if (!boxes.length) return;
+          var opened = null;
+          boxes.forEach(function (box) {
+            var btn = box.querySelector(".sel__btn");
+            var list = box.querySelector(".sel__list");
+            var out = box.querySelector("input[type=hidden]");
+            var val = box.querySelector(".sel__val");
+            var opts = [].slice.call(list.querySelectorAll(".sel__opt"));
+            var act = 0;
+            if (!opts.length) return;
+            opts.forEach(function (o, i) {
+              o.id = list.id + "-o" + i;
+              if (o.getAttribute("aria-selected") === "true") act = i;
+            });
+            function mark(i) {
+              if (i < 0) i = opts.length - 1;
+              if (i > opts.length - 1) i = 0;
+              act = i;
+              opts.forEach(function (o, j) {
+                o.classList.toggle("is-act", j === i);
+              });
+              btn.setAttribute("aria-activedescendant", opts[i].id);
+            }
+            function openSel() {
+              if (opened && opened !== api) opened.close();
+              list.hidden = false;
+              btn.setAttribute("aria-expanded", "true");
+              var r = list.getBoundingClientRect();
+              list.classList.toggle(
+                "sel__list--up",
+                r.bottom > window.innerHeight - 96,
+              );
+              mark(act);
+              opened = api;
+              document.addEventListener("pointerdown", outside, true);
+            }
+            function closeSel(back) {
+              list.hidden = true;
+              btn.setAttribute("aria-expanded", "false");
+              btn.removeAttribute("aria-activedescendant");
+              document.removeEventListener("pointerdown", outside, true);
+              if (opened === api) opened = null;
+              if (back) btn.focus();
+            }
+            function choose(i) {
+              act = i;
+              opts.forEach(function (o, j) {
+                o.setAttribute("aria-selected", j === i ? "true" : "false");
+              });
+              val.textContent = opts[i].getAttribute("data-v");
+              out.value = opts[i].getAttribute("data-v");
+              closeSel(true);
+            }
+            function outside(e) {
+              if (!box.contains(e.target)) closeSel(false);
+            }
+            var api = { box: box, close: closeSel };
+            btn.addEventListener("click", function () {
+              if (list.hidden) openSel();
+              else closeSel(true);
+            });
+            btn.addEventListener("keydown", function (e) {
+              var k = e.key;
+              if (k === "Escape") {
+                if (!list.hidden) {
+                  e.preventDefault();
+                  closeSel(true);
+                }
+                return;
+              }
+              if (k === "Tab") {
+                if (!list.hidden) closeSel(false);
+                return;
+              }
+              if (
+                k === "ArrowDown" ||
+                k === "ArrowUp" ||
+                k === "Enter" ||
+                k === " " ||
+                k === "Spacebar"
+              ) {
+                e.preventDefault();
+                var wasClosed = list.hidden;
+                if (wasClosed) {
+                  openSel();
+                  if (k === "ArrowDown") mark(act + 1);
+                  return;
+                }
+                if (k === "ArrowDown") mark(act + 1);
+                else if (k === "ArrowUp") mark(act - 1);
+                else choose(act);
+                return;
+              }
+              if (k === "Home") {
+                e.preventDefault();
+                if (list.hidden) openSel();
+                mark(0);
+                return;
+              }
+              if (k === "End") {
+                e.preventDefault();
+                if (list.hidden) openSel();
+                mark(opts.length - 1);
+              }
+            });
+            opts.forEach(function (o, i) {
+              o.addEventListener("click", function () {
+                choose(i);
+              });
+              o.addEventListener("pointerenter", function () {
+                if (!list.hidden) mark(i);
+              });
+            });
+          });
+        })();
+        /* ---------- форма ---------- */ var form =
+          document.getElementById("f");
+        if (form) {
+          var note = document.getElementById("f-note");
+          function mark(id, bad) {
+            var box = document.getElementById(id);
+            if (box) box.classList.toggle("is-bad", bad);
+            return bad;
+          }
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (form.querySelector('[name="lastname"]').value) return;
+            /* honeypot */ var name = form
+              .querySelector('[name="name"]')
+              .value.trim();
+            var phone = form.querySelector('[name="phone"]').value.trim();
+            var consent = document.getElementById("f-consent");
+            var box = document.getElementById("f-consent-box");
+            var badName = mark("fw-name", name.length < 2);
+            var badPhone = mark(
+              "fw-phone",
+              phone.replace(/\D/g, "").length < 10,
+            );
+            var badConsent = !consent.checked;
+            box.classList.toggle("is-bad", badConsent);
+            if (badName || badPhone || badConsent) {
+              var m = [];
+              if (badName) m.push("не хватает имени");
+              if (badPhone) m.push("проверьте телефон");
+              if (badConsent) m.push("нужна галочка согласия");
+              note.textContent = "Заявка не ушла: " + m.join(", ") + ".";
+              note.style.color = "#ffb3a6";
+              return;
+            }
+            note.textContent =
+              "Спасибо, " + name + "! Демо-страница: отправка отключена.";
+            note.style.color = "var(--mint)";
+            form.reset();
+            document.querySelectorAll("[data-sel]").forEach(function (b) {
+              var sel = b.querySelector(".sel__opt[aria-selected='true']");
+              if (sel) {
+                b.querySelector("input[type=hidden]").value =
+                  sel.getAttribute("data-v");
+                b.querySelector(".sel__val").textContent =
+                  sel.getAttribute("data-v");
+              }
+            });
+          });
+          form
+            .querySelectorAll("input[type=text],input[type=tel]")
+            .forEach(function (el) {
+              el.addEventListener("input", function () {
+                var field = el.closest(".field");
+                if (field) field.classList.remove("is-bad");
+              });
+            });
+          document
+            .getElementById("f-consent")
+            .addEventListener("change", function () {
+              document
+                .getElementById("f-consent-box")
+                .classList.remove("is-bad");
+            });
+        }
+        /* ---------- персонализация для рассылки: ?n=&p=&a=&clean=1 ---------- */ var q =
+          new URLSearchParams(location.search);
+        function setAll(sel, val) {
+          if (!val) return;
+          document.querySelectorAll(sel).forEach(function (el) {
+            el.textContent = val;
+          });
+        }
+        var nm = q.get("n"),
+          ph = q.get("p"),
+          ad = q.get("a");
+        if (nm) {
+          setAll("[data-name]", nm);
+          document.querySelectorAll(".logo b").forEach(function (el) {
+            el.textContent = nm;
+          });
+          document.title = nm + " — стоматология в Йошкар-Оле";
+          var og = document.querySelector('meta[property="og:title"]');
+          if (og)
+            og.setAttribute("content", nm + " — стоматология в Йошкар-Оле");
+        }
+        if (ph) {
+          var tel = ph.replace(/[^\d+]/g, "");
+          document.querySelectorAll("[data-phone]").forEach(function (el) {
+            el.href = "tel:" + tel;
+            if (el.classList.contains("btn")) return;
+            var extra = el.querySelector("span, small");
+            el.textContent = ph;
+            if (extra) el.appendChild(extra);
+          });
+          document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+            a.href = "tel:" + tel;
+          });
+        }
+        if (!ph) {
+          document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+            el.removeAttribute("href");
+            el.title = "номер демонстрационный";
+            el.setAttribute("aria-disabled", "true");
+          });
+        }
+        if (ad) setAll("[data-addr]", ad);
+        if (q.get("clean") === "1") {
+          var svc = document.querySelector(".svcbar");
+          if (svc) svc.remove();
+          var fab = document.querySelector(".fab");
+          if (fab) fab.remove();
+        }
+      })();
+    </script>
+  </body>
+</html>
