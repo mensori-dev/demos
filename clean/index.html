@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Клининг в Йошкар-Оле — «Чистовик», уборка квартир и офисов</title>
+<meta name="description" content="Уборка квартир в Йошкар-Оле: поддерживающая, генеральная, после ремонта. Цену считаем по площади и допам до начала работ, оплата после приёмки.">
+<meta name="theme-color" content="#eceff0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Клининг в Йошкар-Оле — «Чистовик»">
+<meta property="og:description" content="Уборка квартир в Йошкар-Оле. Двухкомнатная — два часа и 2 900 ₽. Цена до начала работ, оплата после приёмки.">
+<meta property="og:image" content="https://mensori-dev.github.io/demos/clean/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Чистовик — уборка квартир и офисов в Йошкар-Оле">
+<meta property="og:url" content="https://mensori-dev.github.io/demos/clean/">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%236b1f2d'/%3E%3Cpath d='M16 6c0 0-7 8-7 12a7 7 0 0 0 14 0c0-4-7-12-7-12z' fill='%23fff'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Чистовик",
+  "description": "Клининговая компания: уборка квартир, домов и офисов в Йошкар-Оле.",
+  "telephone": "+7 900 000-00-00",
+  "priceRange": "от 2 900 ₽",
+  "areaServed": ["Йошкар-Ола", "Волжск", "Медведево"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Йошкар-Ола",
+    "addressRegion": "Республика Марий Эл",
+    "addressCountry": "RU"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "22:00" }
+  ]
+}
+</script>
+<script>document.documentElement.className += " js";</script>
+<style>
+  @font-face{
+    font-family:"Onest";font-style:normal;font-weight:200 900;font-display:swap;
+    src:url("fonts/onest-cyrillic.woff2") format("woff2");
+    unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+  }
+  @font-face{
+    font-family:"Onest";font-style:normal;font-weight:200 900;font-display:swap;
+    src:url("fonts/onest-latin.woff2") format("woff2");
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:"Onest";font-style:normal;font-weight:200 900;font-display:swap;
+    src:url("fonts/onest-latin-ext.woff2") format("woff2");
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @property --w{syntax:"<number>";inherits:false;initial-value:0}
+  @property --p{syntax:"<number>";inherits:false;initial-value:0}
+  :root{
+    --bg:#eceff0;
+    --panel:#ffffff;
+    --panel-2:#f5f7f7;
+    --ink:#0f1618;
+    --ink-2:#24312f;
+    --mute:#46545a;
+    --cherry:#6b1f2d;
+    --cherry-2:#8b2a3b;
+    --glass:#cfe0e5;
+    --line:#bcc7c9;
+    --line-2:#97a5a8;
+    --danger:#b23a2b;
+    --r:22px;
+    --sans:"Onest","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --serif:var(--sans);
+    --mono:var(--sans);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;overflow-x:clip;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.62;font-variant-numeric:tabular-nums;
+    text-wrap:pretty;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,.glass:focus-visible{
+    outline:2px solid var(--cherry);outline-offset:3px;border-radius:8px;
+  }
+  h1,h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.035em;margin:0}
+  p{margin:0}
+  .wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+  .kicker{
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+    color:var(--cherry);display:flex;align-items:center;gap:10px;margin:0;
+  }
+  .dot{opacity:.4}
+
+  /* ---------- плашка «это демо» ---------- */
+  .svcbar{
+    display:block;background:var(--cherry);color:#fff;text-align:center;text-decoration:none;
+    font:600 13px/1.4 var(--sans);padding:9px 16px;
+  }
+  .svcbar b{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+  .svcbar__short{display:none}
+  @media (max-width:620px){
+    .svcbar__full{display:none}
+    .svcbar__short{display:inline}
+  }
+
+  /* ---------- капля-курсор: 20 точек, склеенных goo-фильтром ---------- */
+  .goo{
+    position:fixed;left:0;top:0;width:420px;height:420px;z-index:120;pointer-events:none;
+    filter:url(#goo);mix-blend-mode:difference;opacity:0;will-change:transform;
+    transition:opacity .35s ease;
+  }
+  .goo.on{opacity:1}
+  .goo span{
+    position:absolute;left:0;top:0;display:block;width:28px;height:28px;border-radius:50%;
+    background:#81d0c3;transform-origin:center center;
+    animation:gooMorph 5s ease-in-out infinite;
+  }
+  @keyframes gooMorph{
+    0%{border-radius:50% 50% 50% 50%/50% 50% 50% 50%}
+    25%{border-radius:52% 48% 49% 51%/51% 49% 52% 48%}
+    50%{border-radius:48% 52% 51% 49%/52% 48% 50% 50%}
+    75%{border-radius:51% 49% 48% 52%/49% 51% 49% 51%}
+    100%{border-radius:50% 50% 50% 50%/50% 50% 50% 50%}
+  }
+  @media (prefers-reduced-motion:reduce){.goo span{animation:none}}
+  @media (hover:none),(pointer:coarse),(max-width:600px){.goo{display:none}}
+
+  /* ---------- шапка ---------- */
+  .top{
+    position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;
+    background:rgba(236,239,240,.72);backdrop-filter:blur(14px) saturate(1.15);
+    transition:border-color .25s ease,background-color .25s ease;
+  }
+  .top.is-stuck{border-color:var(--line);background:rgba(236,239,240,.92)}
+  .top__in{display:flex;align-items:center;gap:26px;min-height:76px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+  .logo__txt{display:flex;flex-direction:column;line-height:1.1}
+  .logo__txt b{font-weight:700;font-size:20px;letter-spacing:-.02em}
+  .logo__txt i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);margin-top:3px}
+  .nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+  .nav a{text-decoration:none;color:var(--ink-2);padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+  .nav a:hover{color:var(--cherry);border-color:var(--cherry)}
+  .top__right{display:flex;align-items:center;gap:18px;flex:0 0 auto}
+  .top__tel{display:flex;flex-direction:column;text-decoration:none;text-align:right;line-height:1.2}
+  .top__tel span{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .top__tel i{font-style:normal;font-size:11.5px;color:var(--mute);letter-spacing:.02em}
+
+  /* ---------- кнопки ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:0 26px;border:1px solid var(--cherry);border-radius:12px;
+    background:var(--cherry);color:#fff;text-decoration:none;font:700 15.5px/1 var(--sans);
+    cursor:pointer;transition:background-color .22s ease,transform .22s ease,border-color .22s ease;
+  }
+  .btn:hover{background:var(--cherry-2);border-color:var(--cherry-2)}
+  .btn:active{transform:translateY(1px)}
+  .btn__ar{transition:transform .22s ease}
+  .btn:hover .btn__ar{transform:translateX(4px)}
+  .btn--line{
+    background:var(--panel);color:var(--ink);border-color:#bcc7c9;
+    box-shadow:inset 0 1px 0 #fff;
+  }
+  .btn--line:hover{background:#fff;border-color:var(--ink);box-shadow:inset 0 1px 0 #fff,0 2px 10px rgba(15,22,24,.07)}
+  .btn--sm{min-height:44px;padding:0 20px;font-size:14.5px}
+  .btn--wide{width:100%}
+
+  /* ---------- первый экран: bento ---------- */
+  .hero{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:14px;
+    padding:14px 0 22px;
+  }
+  .hero__copy{
+    grid-column:1/8;grid-row:1/3;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(26px,3.2vw,46px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;
+  }
+  .hero h1{
+    font-size:clamp(33px,4.4vw,57px);line-height:1.02;letter-spacing:-.045em;
+    margin:0;max-width:16ch;font-weight:800;
+  }
+  .hero__lead{color:var(--ink-2);font-size:clamp(16.5px,1.35vw,19px);line-height:1.55;max-width:44ch;margin-top:18px}
+  .hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .hero__facts{
+    list-style:none;display:flex;flex-wrap:wrap;gap:14px 34px;margin:0;padding:22px 0 0;
+    border-top:1px solid var(--line);
+  }
+  .hero__facts b{display:block;font-weight:700;font-size:23px;letter-spacing:-.03em;line-height:1.1}
+  .hero__facts span{font-size:13.5px;color:var(--mute)}
+
+  .hero__glass{grid-column:8/13;grid-row:1}
+  .hero__side{grid-column:8/13;grid-row:2;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  /* ---------- стекло ---------- */
+  .glass{
+    position:relative;isolation:isolate;overflow:hidden;border-radius:var(--r);
+    min-height:336px;border:1px solid var(--line);background:#fbfcfc;
+    touch-action:pan-y;user-select:none;-webkit-user-select:none;
+  }
+  .glass__clean{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(20px,2.4vw,34px);gap:12px;z-index:1;
+    background:
+      radial-gradient(120% 90% at 82% 8%,#ffffff 0%,rgba(255,255,255,0) 58%),
+      linear-gradient(160deg,#fbfdfd 0%,#eaf1f3 52%,#f7fafb 100%);
+  }
+  .glass__tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--mute);
+  }
+  .glass__word{
+    font-weight:800;font-size:clamp(52px,6.6vw,84px);line-height:.9;
+    letter-spacing:-.055em;color:var(--cherry);margin:0;
+    transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .glass__sub{font-size:14.5px;color:var(--ink-2);max-width:30ch;line-height:1.5}
+  .glass__fog{position:absolute;inset:0;width:100%;height:100%;z-index:2;transition:opacity .5s ease}
+  .glass.is-clean .glass__fog{opacity:0}
+  .glass.is-clean .glass__word{transform:translateY(-2px) scale(1.02)}
+  .glass__hint{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;
+    font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#46525a;
+    transition:opacity .35s ease;
+  }
+  .glass__hint i{
+    display:block;width:44px;height:44px;border-radius:50%;border:1px solid rgba(109,121,124,.45);
+    position:relative;
+  }
+  .glass__hint i::after{
+    content:"";position:absolute;inset:12px;border-radius:50%;border:1px solid rgba(109,121,124,.5);
+    animation:pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(.55);opacity:.9}
+    70%{transform:scale(1.35);opacity:0}
+    100%{opacity:0}
+  }
+  .glass.is-touched .glass__hint,.glass.is-clean .glass__hint{opacity:0}
+  .glass__bar{
+    position:absolute;left:14px;right:14px;bottom:14px;z-index:3;display:flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#54605f;
+  }
+  .glass__bar i{flex:1;height:2px;background:rgba(84,96,95,.25);border-radius:2px;overflow:hidden;display:block}
+  .glass__bar i::after{content:"";display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(var(--w,0));background:var(--cherry);transition:transform .18s linear}
+  .glass__bar b{font-weight:600;min-width:38px;text-align:right;font-variant-numeric:tabular-nums}
+
+  /* ---------- плитки hero справа ---------- */
+  .tile{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+    padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;
+  }
+  .tile--price{background:var(--cherry);border-color:var(--cherry);color:#fff}
+  .tile__cap{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .tile__big{font-family:var(--sans);font-weight:700;font-size:clamp(26px,2.6vw,34px);letter-spacing:-.04em;line-height:1.05;font-variant-numeric:tabular-nums}
+  .tile__big small{font-size:.52em;opacity:.85;letter-spacing:0}
+  .tile__note{font-size:14px;line-height:1.5;color:var(--ink-2)}
+  .tile--price .tile__note{color:#f3e9ea}
+  .tile__zones{display:grid;grid-template-columns:1fr 1fr;gap:7px 14px;margin-top:4px}
+  .tile__zones span{
+    display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;line-height:1.3;
+    color:var(--ink-2);padding:0;border:0;letter-spacing:0;text-transform:none;
+  }
+  .tile__zones span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cherry);flex:0 0 auto}
+
+  /* ---------- секции ---------- */
+  .sec{padding:clamp(56px,7vw,104px) 0}
+  .sec__head{max-width:62ch;display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,3.4vw,46px)}
+  .sec h2{font-size:clamp(29px,3.3vw,43px);line-height:1.06;letter-spacing:-.045em;font-weight:800}
+  .sec__head p{color:var(--ink-2);font-size:16.5px;max-width:56ch}
+
+  /* ---------- тарифы ---------- */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .plan{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.2vw,30px);
+    display:flex;flex-direction:column;gap:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .plan:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(20,26,28,.5);border-color:var(--line-2)}
+  .plan__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .plan h3{font-size:23px;letter-spacing:-.02em}
+  .plan__time{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+  .plan__price{font-family:var(--sans);font-weight:700;font-size:31px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+  .plan__price small{font-size:12.5px;letter-spacing:.01em;color:var(--ink-2);display:block;margin-top:3px;font-family:var(--sans);font-weight:500}
+  .plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
+  .plan li{display:grid;grid-template-columns:14px 1fr;gap:9px;align-items:start;line-height:1.45}
+  .plan li::before{
+    content:"";width:12px;height:12px;margin-top:5px;border-radius:50%;
+    border:1px solid var(--cherry);background:
+      radial-gradient(circle at 50% 50%,var(--cherry) 0 32%,transparent 33%);
+  }
+  .plan__cta{margin-top:auto;padding-top:6px}
+  .plan__cta a{font-size:15px;font-weight:600;color:var(--cherry);text-decoration:none;display:inline-flex;gap:7px;align-items:center;min-height:40px}
+  .plan__cta a:hover .ar{transform:translateX(3px)}
+  .ar{transition:transform .2s ease}
+  .note{
+    margin-top:14px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    background:#f2f5f5;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;font-size:15.5px;color:var(--ink-2);
+  }
+  .note b{font-weight:700;color:var(--ink)}
+  .note__i{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cherry)}
+
+  /* ---------- калькулятор ---------- */
+  .calc{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;align-items:start}
+  .calc__form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:26px}
+  .field{display:flex;flex-direction:column;gap:12px}
+  .field__top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .field__label,.field__top label{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+  .field__out{font-family:var(--mono);font-size:20px;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;cursor:pointer;margin:0;
+  }
+  input[type=range]::-webkit-slider-runnable-track{
+    height:4px;border-radius:4px;
+    background:linear-gradient(to right,var(--cherry) 0 var(--fill,25%),var(--line-2) var(--fill,25%) 100%);
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;
+    background:#fff;border:2px solid var(--cherry);margin-top:-11px;
+    box-shadow:0 4px 12px -4px rgba(20,26,28,.4);transition:transform .15s ease;
+  }
+  input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.07)}
+  input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:var(--line-2)}
+  input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:var(--cherry)}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--cherry)}
+  .scale{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mute)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    min-height:50px;padding:0 20px;border-radius:12px;border:1.5px solid var(--line-2);
+    background:var(--panel-2);color:var(--ink);font:700 15.5px/1 var(--sans);cursor:pointer;
+    transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;
+  }
+  .chip:hover{border-color:var(--cherry);background:#fff}
+  .chip.is-on{background:var(--cherry);border-color:var(--cherry);color:#fff;box-shadow:0 4px 14px -6px rgba(107,31,45,.65)}
+
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .check{
+    display:flex;align-items:center;gap:11px;min-height:52px;padding:10px 14px;cursor:pointer;
+    border:1.5px solid var(--line-2);border-radius:12px;background:var(--panel-2);
+    font-size:15.5px;font-weight:600;color:var(--ink);
+    transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease;
+  }
+  .check:hover{border-color:var(--cherry);background:#fff}
+  .check:has(input:checked){border-color:var(--cherry);background:#faedef;box-shadow:0 2px 10px -6px rgba(107,31,45,.5)}
+  .check input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;margin:0;border:2px solid #7d8d90;border-radius:7px;background:#fff;cursor:pointer;transition:background-color .15s ease,border-color .15s ease}
+  .check input:checked{
+    border-color:var(--cherry);background:var(--cherry) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.2 6.3 4.7 8.8 9.8 3.4' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat;
+  }
+  .check b{margin-left:auto;font-family:var(--sans);font-size:14.5px;font-weight:700;color:var(--ink)}
+
+  .calc__out{
+    position:relative;background:var(--ink);color:#f3f1ee;border-radius:var(--r);
+    padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;
+  }
+  .calc__cap{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+  .calc__price{font-family:var(--sans);font-weight:700;font-size:clamp(42px,4.6vw,58px);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:8px}
+  .calc__price i{font-size:.42em;font-style:normal;opacity:.7;letter-spacing:0}
+  .calc__time{font-size:14.5px;opacity:.88}
+  .calc__time b{font-family:var(--mono);font-weight:600;opacity:1}
+  .calc__out .btn{margin-top:6px}
+  .calc__out .btn--line{color:#f3f1ee;border-color:rgba(243,241,238,.35)}
+  .calc__out .btn--line:hover{background:rgba(243,241,238,.1);border-color:#f3f1ee}
+  .calc__fine{margin-top:auto;padding-top:16px;border-top:1px solid rgba(243,241,238,.2);font-size:13px;line-height:1.5;opacity:.85}
+
+  /* ---------- свои выпадашки ---------- */
+  .sel{position:relative}
+  .sel__btn{
+    width:100%;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:0 16px;background:var(--panel-2);border:1.5px solid var(--line-2);border-radius:12px;
+    font:600 15.5px/1 var(--sans);color:var(--ink);cursor:pointer;text-align:left;
+    transition:border-color .18s ease,background-color .18s ease;
+  }
+  .sel__btn:hover{border-color:var(--cherry);background:#fff}
+  .sel.is-open .sel__btn{border-color:var(--cherry);box-shadow:0 0 0 3px rgba(107,31,45,.1)}
+  .sel__val{font-family:var(--mono);font-size:14px;letter-spacing:-.01em}
+  .sel__ar{width:9px;height:9px;border-right:1.5px solid var(--mute);border-bottom:1.5px solid var(--mute);transform:rotate(45deg) translateY(-2px);transition:transform .2s ease;flex:0 0 auto}
+  .sel.is-open .sel__ar{transform:rotate(-135deg) translateY(-2px)}
+  .sel__list{
+    position:absolute;z-index:20;left:0;right:0;top:calc(100% + 8px);margin:0;padding:6px;list-style:none;
+    background:#1b2224;border-radius:14px;box-shadow:0 24px 48px -24px rgba(15,20,21,.65);
+    display:none;max-height:280px;overflow:auto;
+  }
+  .sel.is-open .sel__list{display:block}
+  .sel__list--up{top:auto;bottom:calc(100% + 8px)}
+  .sel__list [role=option]{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:11px 12px;border-radius:9px;color:#e8ebec;font-size:14.5px;cursor:pointer;
+    border:1px solid transparent;
+  }
+  .sel__list [role=option]:hover,.sel__list [role=option].is-act{background:rgba(255,255,255,.07)}
+  .sel__list [role=option][aria-selected=true]{border-color:var(--cherry-2);color:#fff;background:rgba(139,42,59,.28)}
+  .sel__list em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:#9fb0b0}
+  .sel__native{display:none}
+
+  /* ---------- шаги ---------- */
+  .steps{position:relative;padding-top:8px}
+  .steps__rail{position:absolute;left:6px;right:6px;top:23px;height:1px;background:var(--line-2)}
+  .steps__rail i{display:block;height:1px;background:var(--cherry);width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .15s linear}
+  .steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+  .steps li{display:flex;flex-direction:column;gap:10px;padding-right:10px}
+  .steps__n{
+    width:46px;height:46px;border-radius:50%;background:var(--bg);border:1px solid var(--line-2);
+    display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;color:var(--mute);
+    transition:border-color .3s ease,color .3s ease,background-color .3s ease;
+  }
+  .steps li.is-in .steps__n{border-color:var(--cherry);color:var(--cherry);background:var(--panel)}
+  .steps h3{font-size:19px;letter-spacing:-.01em;margin-top:2px}
+  .steps p{font-size:15.5px;line-height:1.5;color:var(--ink-2);max-width:32ch}
+
+  /* ---------- входит / не входит ---------- */
+  .scope{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .scope__col{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.2vw,30px)}
+  .scope__col--no{background:var(--panel-2)}
+  .scope h3{font-size:21px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .scope h3 span{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .scope ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15.5px;color:var(--ink-2)}
+  .scope li{display:grid;grid-template-columns:18px 1fr;gap:11px;line-height:1.45}
+  .scope li::before{content:"";width:18px;height:18px;margin-top:3px;border-radius:5px;border:1.5px solid #7d8d90;background:#fff}
+  .scope__col--yes li::before{
+    border-color:var(--cherry);background:var(--cherry) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.2 6.3 4.7 8.8 9.8 3.4' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;
+  }
+  .scope__col--no li::before{
+    border-color:#7d8d90;
+    background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.2 3.2 8.8 8.8' stroke='%23647478' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/12px no-repeat;
+  }
+
+  /* ---------- вопросы ---------- */
+  .faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;
+    font-family:var(--sans);font-weight:600;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+    border-right:1.5px solid var(--mute);border-bottom:1.5px solid var(--mute);
+    transform:translateY(-70%) rotate(45deg);transition:transform .25s ease;
+  }
+  .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+  .faq p{padding:0 44px 26px 0;color:var(--ink-2);font-size:15.5px;line-height:1.6;max-width:76ch}
+
+  /* ---------- форма ---------- */
+  .form-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,60px);align-items:start}
+  .form-head{display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+  .form-head h2{font-size:clamp(28px,3.4vw,44px);line-height:1.06;letter-spacing:-.03em}
+  .form-head p{color:var(--ink-2);max-width:40ch}
+  .form-head ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--ink-2)}
+  .form-head li{display:grid;grid-template-columns:16px 1fr;gap:9px;line-height:1.45}
+  .form-head li::before{content:"—";color:var(--cherry);font-family:var(--mono);font-size:12px;line-height:1.7}
+
+  .form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;gap:16px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .inp{display:flex;flex-direction:column;gap:7px}
+  .inp>span{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+  .inp>span i{font-style:normal;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:11.5px;opacity:.8}
+  .inp input,.inp textarea{
+    width:100%;min-height:52px;padding:13px 14px;border:1.5px solid var(--line-2);border-radius:12px;
+    background:var(--panel-2);font:500 15.5px/1.4 var(--sans);color:var(--ink);transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;
+  }
+  .inp textarea{min-height:88px;resize:vertical}
+  .inp input::placeholder,.inp textarea::placeholder{color:#5e6b6e}
+  .inp input:focus,.inp textarea:focus{outline:none;border-color:var(--cherry);background:#fff;box-shadow:0 0 0 3px rgba(107,31,45,.14)}
+  .inp.has-err input,.inp.has-err textarea{border-color:var(--danger)}
+  .err{font-style:normal;font-size:12.5px;color:var(--danger);min-height:0}
+  .inp .err{display:none}
+  .inp.has-err .err{display:block}
+
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .agree{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);line-height:1.45;cursor:pointer}
+  .agree input{
+    appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+    border:2px solid #7d8d90;border-radius:7px;background:#fff;cursor:pointer;
+    transition:background-color .15s ease,border-color .15s ease;
+  }
+  .agree input:checked{
+    border-color:var(--cherry);background:var(--cherry) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.2 6.3 4.7 8.8 9.8 3.4' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;
+  }
+  .agree input.has-err{border-color:var(--danger)}
+  .agree a{color:var(--cherry);text-underline-offset:2px}
+  .form__fine{font-size:12px;color:var(--mute);line-height:1.5}
+  .form__from{
+    margin:0;padding:12px 14px;border:1px solid #e8d2d7;border-radius:12px;
+    background:#f9edef;font-size:14.5px;line-height:1.45;color:#4a2229;
+  }
+  .form__from b{font-weight:700}
+  .thanks{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:12px}
+  .thanks h3{font-size:26px}
+  .thanks p{color:var(--ink-2);font-size:15.5px;max-width:44ch}
+  .thanks__acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .thanks__acts .btn{flex:0 1 auto}
+
+  /* ---------- подвал ---------- */
+  .foot{padding:clamp(40px,5vw,64px) 0 0;border-top:1px solid var(--line);margin-top:clamp(40px,5vw,64px)}
+  .foot__in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px;padding-bottom:36px}
+  .foot h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:500;margin:0 0 12px}
+  .foot p,.foot a{font-size:15px;color:var(--ink-2);text-decoration:none}
+  .foot a:hover{color:var(--cherry)}
+  .foot__list{display:flex;flex-direction:column;gap:8px}
+  .foot__bottom{
+    display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;
+    padding:18px 0 26px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mute);
+  }
+  .foot__bottom a{font-size:12.5px;color:var(--mute);text-decoration:underline;text-underline-offset:2px}
+
+  /* ---------- появление ---------- */
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv-d1{transition-delay:.07s}
+  .js .rv-d2{transition-delay:.14s}
+  .js .rv-d3{transition-delay:.21s}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+    .js .rv{opacity:1;transform:none}
+    .glass__fog{opacity:.3}
+  }
+
+  /* ---------- адаптив ---------- */
+  @media (max-width:1080px){
+    .nav{display:none}
+    .hero__copy{grid-column:1/8}
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .hero__copy,.hero__glass,.hero__side{grid-column:1/auto;grid-row:auto}
+    .hero__copy{padding:26px 22px}
+    .hero h1{max-width:none}
+    .glass{min-height:300px}
+    .plans{grid-template-columns:1fr}
+    .calc{grid-template-columns:1fr}
+    .steps ol{grid-template-columns:1fr 1fr;gap:18px}
+    .steps__rail{display:none}
+    .scope{grid-template-columns:1fr}
+    .form-wrap{grid-template-columns:1fr}
+    .form-head{position:static}
+    .foot__in{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:620px){
+    body{font-size:16px}
+    .wrap{width:min(1240px,100% - 28px)}
+    .top__in{min-height:66px;gap:12px}
+    .top__tel{display:none}
+    .logo__txt i{display:none}
+    .hero{padding-top:10px}
+    .hero__side{grid-template-columns:1fr}
+    .hero__facts{gap:14px 22px}
+    .hero__facts b{font-size:19px}
+    .checks{grid-template-columns:1fr}
+    .row2{grid-template-columns:1fr}
+    .steps ol{grid-template-columns:1fr}
+    .foot__in{grid-template-columns:1fr}
+    .btn{width:100%}
+    .hero__cta,.plan__cta,.calc__out .btn{width:100%}
+    .hero__cta .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur"/>
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 32 -14" result="goo"/>
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+  </filter>
+</svg>
+
+<a class="svcbar" href="https://wa.me/79020153104?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%92%D0%B8%D0%B4%D0%B5%D0%BB%20%D0%B4%D0%B5%D0%BC%D0%BE-%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D0%B0%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B6%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%B5%D0%BB%D0%B0" target="_blank" rel="noopener" data-src="demo_clean">
+  <span class="svcbar__full">Это демо-пример. Свой сайт — 2 дня, 3 000 ₽. <b>Написать →</b></span>
+  <span class="svcbar__short">Демо. Свой сайт — 3 000 ₽. <b>Написать →</b></span>
+</a>
+
+<header class="top" id="topbar">
+  <div class="wrap top__in">
+    <a class="logo" href="#top">
+      <span class="logo__txt"><b data-name>Чистовик</b><i>клининг · йошкар-ола</i></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#tarify">Тарифы</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#kak">Как это работает</a>
+      <a href="#voprosy">Вопросы</a>
+    </nav>
+    <div class="top__right">
+      <a class="top__tel" href="tel:+79000000000" data-phone><span>+7 900 000-00-00</span><i>ежедневно, 8:00–22:00</i></a>
+      <a class="btn btn--sm" href="#zayavka">Оставить заявку</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap" aria-labelledby="h1">
+    <div class="hero__copy">
+      <div>
+        <h1 id="h1">Уборка квартир и офисов в Йошкар-Оле</h1>
+        <p class="hero__lead">Двухкомнатная квартира — 2 900 ₽ и около двух часов работы. Своя химия и инвентарь, фотоотчёт до и после, оплата на приёмке.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#calc">Посчитать уборку <span class="btn__ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--line" href="#tarify">Тарифы</a>
+        </div>
+      </div>
+      <ul class="hero__facts">
+        <li><b>2 ч</b><span>средняя уборка двухкомнатной</span></li>
+        <li><b>0 ₽</b><span>предоплата</span></li>
+        <li><b>4</b><span>зоны на выбор</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__glass glass" id="glass" tabindex="0" role="button" aria-label="Стекло с налётом. Проведите пальцем или курсором, чтобы стереть и увидеть надпись">
+      <div class="glass__clean">
+        <span class="glass__tag">после уборки</span>
+        <p class="glass__word">чисто</p>
+        <p class="glass__sub">Налёт стёрли за пару движений. Двухкомнатную убираем около двух часов.</p>
+      </div>
+      <svg class="glass__fog" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="fogGrad" x1="0" y1="0" x2=".85" y2="1">
+            <stop offset="0" stop-color="#cfdadd"/>
+            <stop offset=".45" stop-color="#b9c9ce"/>
+            <stop offset="1" stop-color="#d3dfe2"/>
+          </linearGradient>
+          <filter id="blurBig" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
+          <pattern id="streaks" width="11" height="100" patternUnits="userSpaceOnUse" patternTransform="rotate(3)">
+            <rect x="1" width="2.5" height="100" fill="#ffffff" opacity=".38"/>
+            <rect x="7" width="1.2" height="100" fill="#9fb4ba" opacity=".3"/>
+          </pattern>
+          <radialGradient id="vignette" cx=".5" cy=".45" r=".75">
+            <stop offset=".55" stop-color="#7d949b" stop-opacity="0"/>
+            <stop offset="1" stop-color="#7d949b" stop-opacity=".38"/>
+          </radialGradient>
+          <filter id="fogGrain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+            <feColorMatrix in="n" type="saturate" values="0"/>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope=".55" intercept="0"/>
+            </feComponentTransfer>
+          </filter>
+          <filter id="softEdge" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="1.4"/>
+          </filter>
+          <mask id="wipeMask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+            <rect width="100" height="100" fill="#fff"/>
+            <g filter="url(#softEdge)">
+              <path id="wipePath" d="" fill="none" stroke="#000" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+            </g>
+          </mask>
+        </defs>
+        <g mask="url(#wipeMask)">
+          <rect width="100" height="100" fill="url(#fogGrad)"/>
+          <rect width="100" height="100" fill="url(#streaks)"/>
+          <ellipse cx="24" cy="30" rx="30" ry="21" fill="#a3b7bd" opacity=".38" filter="url(#blurBig)"/>
+          <ellipse cx="76" cy="74" rx="26" ry="17" fill="#9db1b7" opacity=".32" filter="url(#blurBig)"/>
+          <rect width="100" height="100" filter="url(#fogGrain)" opacity=".7"/>
+          <rect width="100" height="100" fill="url(#vignette)"/>
+        </g>
+      </svg>
+      <span class="glass__hint" aria-hidden="true"><i></i>проведите</span>
+      <div class="glass__bar" aria-hidden="true">
+        <span>протёрто</span>
+        <i></i>
+        <b id="glassPct">0%</b>
+      </div>
+    </div>
+
+    <div class="hero__side">
+      <div class="tile tile--price">
+        <span class="tile__cap">квартира, поддерживающая</span>
+        <p class="tile__big">2 900 <small>₽</small></p>
+        <p class="tile__note">Пыль, полы, кухня снаружи, санузел, мусор. Выезд в день заявки.</p>
+      </div>
+      <div class="tile">
+        <span class="tile__cap">зоны на выбор</span>
+        <div class="tile__zones">
+          <span>окна</span><span>балкон</span><span>холодильник</span><span>духовка</span>
+        </div>
+        <p class="tile__note">Сумма пересчитывается в калькуляторе сразу, без уточнений по телефону.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="tarify" aria-labelledby="h-tarify">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <h2 id="h-tarify">Три вида уборки, цены для квартиры до 55 м²</h2>
+        <p>Список работ одинаковый для всех клиентов, он ниже. Что не входит в цену — в разделе «Что входит, а что нет».</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan rv">
+          <div class="plan__top"><h3>Поддерживающая</h3><span class="plan__time">≈ 2 ч</span></div>
+          <p class="plan__price">2 900 <small>квартира до 55 м²</small></p>
+          <ul>
+            <li>Пыль со всех открытых поверхностей</li>
+            <li>Полы и плинтусы</li>
+            <li>Санузел: сантехника, плитка, зеркала</li>
+            <li>Кухня снаружи: фасады, плита, раковина</li>
+            <li>Вынос мусора</li>
+          </ul>
+          <p class="plan__cta"><a href="#calc">Собрать в калькуляторе <span class="ar" aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="plan rv rv-d1">
+          <div class="plan__top"><h3>Генеральная</h3><span class="plan__time">≈ 4 ч</span></div>
+          <p class="plan__price">5 400 <small>квартира до 55 м²</small></p>
+          <ul>
+            <li>Всё из поддерживающей</li>
+            <li>Двери, рамы и радиаторы</li>
+            <li>Шкафы внутри, по договорённости</li>
+            <li>Вытяжка, плитка, люстры по доступу</li>
+            <li>Плинтусы и углы вручную</li>
+          </ul>
+          <p class="plan__cta"><a href="#calc">Собрать в калькуляторе <span class="ar" aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="plan rv rv-d2">
+          <div class="plan__top"><h3>После ремонта</h3><span class="plan__time">≈ 6 ч</span></div>
+          <p class="plan__price">8 900 <small>квартира до 55 м²</small></p>
+          <ul>
+            <li>Пыль со стен и потолка</li>
+            <li>Следы затирки и клея</li>
+            <li>Стёкла от краски и плёнки</li>
+            <li>Вентиляция и подоконники</li>
+            <li>Полы в два прохода</li>
+          </ul>
+          <p class="plan__cta"><a href="#calc">Собрать в калькуляторе <span class="ar" aria-hidden="true">→</span></a></p>
+        </article>
+      </div>
+
+      <p class="note rv">
+        <span class="note__i">честно</span>
+        <span><b>На итог влияют площадь, степень загрязнения, животные и число санузлов.</b> Точную сумму называем до начала работ — по телефону или по вашим фото. Если по ходу станет ясно, что работы больше, звоним и спрашиваем, а не добавляем в счёт.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="sec" id="calc" aria-labelledby="h-calc">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <h2 id="h-calc">Калькулятор уборки</h2>
+        <p>Считает по площади, типу и допам. Скидка за регулярность берётся от суммы уборки, допы — без скидки.</p>
+      </div>
+
+      <div class="calc">
+        <div class="calc__form">
+          <div class="field">
+            <div class="field__top">
+              <label for="area">Площадь</label>
+              <output class="field__out" id="areaOut" for="area">55 м²</output>
+            </div>
+            <input id="area" type="range" min="20" max="200" step="5" value="55" style="--fill:19.5%">
+            <div class="scale"><span>20 м²</span><span>200 м²</span></div>
+          </div>
+
+          <div class="field">
+            <span class="field__label" id="typeLabel">Тип уборки</span>
+            <div class="chips" role="group" aria-labelledby="typeLabel">
+              <button type="button" class="chip is-on" data-type="pod" aria-pressed="true">Поддерживающая</button>
+              <button type="button" class="chip" data-type="gen" aria-pressed="false">Генеральная</button>
+              <button type="button" class="chip" data-type="rem" aria-pressed="false">После ремонта</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field__label">Как часто</span>
+            <div class="sel" id="freqSel" data-sel>
+              <button type="button" class="sel__btn" aria-haspopup="listbox" aria-expanded="false">
+                <span class="sel__val">Разово</span><i class="sel__ar" aria-hidden="true"></i>
+              </button>
+              <ul class="sel__list" role="listbox" tabindex="-1" aria-label="Как часто">
+                <li role="option" data-v="1" aria-selected="true">Разово</li>
+                <li role="option" data-v="0.92" aria-selected="false">Раз в две недели <em>−8%</em></li>
+                <li role="option" data-v="0.96" aria-selected="false">Раз в месяц <em>−4%</em></li>
+              </ul>
+              <noscript>
+                <select name="freq" aria-label="Как часто">
+                  <option value="1">Разово</option>
+                  <option value="0.92">Раз в две недели</option>
+                  <option value="0.96">Раз в месяц</option>
+                </select>
+              </noscript>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field__label">Дополнительно</span>
+            <div class="checks">
+              <label class="check"><input type="checkbox" data-add="600" value="Окна, 2 шт"><span>Окна, 2 шт</span><b>+600</b></label>
+              <label class="check"><input type="checkbox" data-add="800" value="Балкон"><span>Балкон</span><b>+800</b></label>
+              <label class="check"><input type="checkbox" data-add="500" value="Холодильник"><span>Холодильник</span><b>+500</b></label>
+              <label class="check"><input type="checkbox" data-add="600" value="Духовка"><span>Духовка</span><b>+600</b></label>
+            </div>
+          </div>
+        </div>
+
+        <aside class="calc__out">
+          <p class="calc__cap">примерно</p>
+          <p class="calc__price"><span id="price">2 900</span><i>₽</i></p>
+          <p class="calc__time">около <b id="time">2 ч</b> работы, один человек</p>
+          <a class="btn" href="#zayavka">Оставить заявку <span class="btn__ar" aria-hidden="true">→</span></a>
+          <p class="calc__fine">Минимальный выезд — 2 900 ₽. Скидка за регулярность считается от суммы уборки, допы — без скидки.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="kak" aria-labelledby="h-kak">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <h2 id="h-kak">Как проходит уборка</h2>
+      </div>
+
+      <div class="steps" id="steps">
+        <div class="steps__rail" aria-hidden="true"><i id="stepsFill"></i></div>
+        <ol>
+          <li class="rv"><span class="steps__n">01</span><h3>Заявка</h3><p>Звонок или сообщение. Спрашиваем площадь, тип уборки и что важно не трогать.</p></li>
+          <li class="rv rv-d1"><span class="steps__n">02</span><h3>Цена</h3><p>Называем сумму до начала. Если объём неясен — просим два-три фото, это быстрее разговора.</p></li>
+          <li class="rv rv-d2"><span class="steps__n">03</span><h3>Уборка</h3><p>Приезжаем в согласованное окно, работаем по списку. Фото «до» делаем при вас.</p></li>
+          <li class="rv rv-d3"><span class="steps__n">04</span><h3>Приёмка</h3><p>Проходим по квартире вместе. Что не так — переделываем сразу, а не «в следующий раз».</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="vhodit" aria-labelledby="h-vhodit">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <h2 id="h-vhodit">Что входит в цену, а что нет</h2>
+        <p>Чтобы не платить дважды за одно и то же и не выяснять это на месте.</p>
+      </div>
+
+      <div class="scope">
+        <div class="scope__col scope__col--yes rv">
+          <h3>Входит в любую уборку <span>без доплат</span></h3>
+          <ul>
+            <li>Пыль со всех открытых поверхностей</li>
+            <li>Полы, плинтусы, углы</li>
+            <li>Санузел: сантехника, плитка, зеркала</li>
+            <li>Кухня снаружи: фасады, плита, раковина</li>
+            <li>Вынос мусора из квартиры</li>
+            <li>Своя химия и инвентарь</li>
+          </ul>
+        </div>
+        <div class="scope__col scope__col--no rv rv-d1">
+          <h3>Считается отдельно <span>и только по согласию</span></h3>
+          <ul>
+            <li>Химчистка диванов, матрасов и ковров</li>
+            <li>Вынос строительного мусора и крупногабарита</li>
+            <li>Запах от животных — нужен озонатор</li>
+            <li>Окна выше второго этажа без безопасного доступа</li>
+            <li>Балкон и лоджия</li>
+            <li>Уборка ночью, после 22:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="voprosy" aria-labelledby="h-faq">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <h2 id="h-faq">Вопросы и ответы</h2>
+      </div>
+
+      <div class="faq rv">
+        <details>
+          <summary>Нужно ли быть дома во время уборки?</summary>
+          <p>Можно без вас, если есть чем открыть дверь и куда вернуть ключ. Тогда фотоотчёт «до и после» приходит в мессенджер, а замечания принимаем в тот же день. Ключи без договора не берём.</p>
+        </details>
+        <details>
+          <summary>Сколько по времени идёт уборка?</summary>
+          <p>Двушка поддерживающая — около двух часов, генеральная — четыре, после ремонта — шесть-восемь. Точнее скажем, когда узнаем площадь и состояние. Время в калькуляторе — тоже пример.</p>
+        </details>
+        <details>
+          <summary>Какие средства вы используете?</summary>
+          <p>Профессиональная химия, разводим по инструкции производителя. Если в доме аллергия или маленький ребёнок — скажите заранее, возьмём гипоаллергенный набор. Свои средства можно принести, тогда вычтем из суммы.</p>
+        </details>
+        <details>
+          <summary>Что будет, если что-то повредите?</summary>
+          <p>Состояние хрупких вещей фиксируем на фото до начала работ. Если разбили или поцарапали — чиним или компенсируем, не уходим от разговора. Поэтому и просим убрать в шкафы то, что дорого как память.</p>
+        </details>
+        <details>
+          <summary>Работаете с офисами и юрлицами?</summary>
+          <p>Да, но отдельно: по договору, счёту и закрывающим документам. Цена за квадрат ниже, чем для квартиры, график — по согласованию. Пришлите площадь и адрес, посчитаем и привезём договор на подпись.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="zayavka" aria-labelledby="h-form">
+    <div class="wrap form-wrap">
+      <div class="form-head">
+        <h2 id="h-form">Оставить заявку</h2>
+        <p>Перезвоним в течение пятнадцати минут, с 8:00 до 22:00. Если окно свободно — приедем сегодня.</p>
+        <ul>
+          <li>Сначала цена, потом работа — не наоборот</li>
+          <li>Оплата после приёмки, наличными или переводом</li>
+          <li>Не звоним повторно, если не попали в удобное время</li>
+        </ul>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <p class="form__from" id="formFrom" hidden></p>
+        <div class="row2">
+          <label class="inp"><span>Как вас зовут</span>
+            <input name="name" type="text" autocomplete="name" placeholder="Имя" required>
+            <em class="err">Напишите имя, чтобы знать, как обращаться</em>
+          </label>
+          <label class="inp"><span>Телефон</span>
+            <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
+            <em class="err">Нужен номер — иначе не перезвоним</em>
+          </label>
+        </div>
+
+        <div class="row2">
+          <div class="inp inp--sel">
+            <span>Тип уборки</span>
+            <div class="sel" id="formSel" data-sel>
+              <button type="button" class="sel__btn" aria-haspopup="listbox" aria-expanded="false">
+                <span class="sel__val">Поддерживающая</span><i class="sel__ar" aria-hidden="true"></i>
+              </button>
+              <ul class="sel__list" role="listbox" tabindex="-1" aria-label="Тип уборки">
+                <li role="option" data-v="Поддерживающая" aria-selected="true">Поддерживающая</li>
+                <li role="option" data-v="Генеральная" aria-selected="false">Генеральная</li>
+                <li role="option" data-v="После ремонта" aria-selected="false">После ремонта</li>
+                <li role="option" data-v="Не знаю, подскажите" aria-selected="false">Не знаю, подскажите</li>
+              </ul>
+              <noscript>
+                <select name="type" aria-label="Тип уборки">
+                  <option>Поддерживающая</option>
+                  <option>Генеральная</option>
+                  <option>После ремонта</option>
+                  <option>Не знаю, подскажите</option>
+                </select>
+              </noscript>
+            </div>
+            <input type="hidden" name="type" value="Поддерживающая">
+          </div>
+          <label class="inp"><span>Площадь, м²</span>
+            <input name="area" type="number" inputmode="numeric" min="10" max="500" value="55">
+            <em class="err">Цифрой, примерно</em>
+          </label>
+        </div>
+
+        <label class="inp"><span>Что важно знать <i>· не обязательно</i></span>
+          <textarea name="note" rows="3" placeholder="Животные, ремонт, что не трогать, удобное время"></textarea>
+        </label>
+
+        <div class="hp" aria-hidden="true"><input name="company" type="text" tabindex="-1" autocomplete="off"></div>
+
+        <label class="agree"><input type="checkbox" name="agree" required>
+          <span>Согласен на обработку персональных данных — <a href="privacy.html">политика</a></span>
+        </label>
+        <em class="err err--agree" id="agreeErr"></em>
+
+        <button class="btn btn--wide" type="submit">Узнать точную цену</button>
+        <p class="form__fine">В демо-макете форма ничего не отправляет: она показывает, как это работает у клиента.</p>
+      </form>
+
+      <div class="thanks" id="thanks" hidden>
+        <h3>Заявка ушла</h3>
+        <p>Спасибо. Перезвоним в ближайшие пятнадцать минут, с 8:00 до 22:00. Если удобнее переписка — скажите, напишем в мессенджер.</p>
+        <p>Дальше от вас нужно только одно: адрес и удобное время.</p>
+        <div class="thanks__acts">
+          <a class="btn" href="tel:+79000000000" data-phone-link>Позвонить: +7 900 000-00-00</a>
+          <a class="btn btn--line" href="#top">Наверх</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__in">
+        <div>
+          <a class="logo" href="#top" style="margin-bottom:14px">
+            <span class="logo__txt"><b data-name>Чистовик</b><i>клининг · йошкар-ола</i></span>
+          </a>
+          <p style="max-width:38ch">Уборка квартир, домов и офисов в Йошкар-Оле и Волжске.</p>
+        </div>
+        <div>
+          <h4>Связаться</h4>
+          <div class="foot__list">
+            <a href="tel:+79000000000" data-phone>+7 900 000-00-00</a>
+            <span style="font-size:14.5px;color:var(--ink-2)">ежедневно, 8:00–22:00</span>
+            <span style="font-size:14.5px;color:var(--ink-2)" data-addr>Йошкар-Ола</span>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <div class="foot__list">
+            <a href="#tarify">Тарифы</a>
+            <a href="#calc">Калькулятор</a>
+            <a href="#kak">Как это работает</a>
+            <a href="#voprosy">Вопросы</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot__bottom">
+        <span>Демонстрационный макет. Название, телефон и цены — пример, а не прайс действующей компании.</span>
+        <a href="privacy.html">Политика обработки данных</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- шапка ---------- */
+  var topbar = document.getElementById("topbar");
+  function onScroll() {
+    if (window.scrollY > 8) topbar.classList.add("is-stuck");
+    else topbar.classList.remove("is-stuck");
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- появление блоков ---------- */
+  var rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var rv = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window && !rm) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- курсор: капля с хвостом, цвета инвертируются ---------- */
+  var gooEl = document.createElement("div");
+  gooEl.className = "goo";
+  gooEl.setAttribute("aria-hidden", "true");
+  var GOO_N = 16, GOO_R = 14, gooPts = [], gooDots = [], gooScale = [], gooMax = [];
+  for (var gi = 0; gi < GOO_N; gi++) {
+    var gsc = 1 - gi * 0.0625;
+    var gdot = document.createElement("span");
+    gdot.style.transform = "translate3d(0,0,0) translate(-50%,-50%) scale(" + gsc.toFixed(3) + ")";
+    gdot.style.animationDelay = (-gi * 0.17).toFixed(2) + "s";
+    gooEl.appendChild(gdot);
+    gooDots.push(gdot);
+    gooScale.push(gsc);
+    gooMax.push(GOO_R * (gooScale[gi] + (gi ? gooScale[gi - 1] : 1)) * 0.55);
+    gooPts.push({ x: 0, y: 0 });
+  }
+  document.body.appendChild(gooEl);
+  if (!rm && !window.matchMedia("(pointer: coarse)").matches) {
+    var gmx = 0, gmy = 0, gSeen = false;
+    window.addEventListener("pointermove", function (e) {
+      gmx = e.clientX; gmy = e.clientY;
+      if (!gSeen) {
+        gSeen = true;
+        for (var i = 0; i < GOO_N; i++) { gooPts[i].x = gmx; gooPts[i].y = gmy; }
+        gooEl.classList.add("on");
+      }
+    }, { passive: true });
+
+    (function gooTick() {
+      var ox = gmx - 210, oy = gmy - 210;
+      gooEl.style.transform = "translate3d(" + ox.toFixed(1) + "px," + oy.toFixed(1) + "px,0)";
+      gooPts[0].x = gmx;
+      gooPts[0].y = gmy;
+      gooDots[0].style.transform = "translate3d(210px,210px,0) translate(-50%,-50%) scale(1)";
+      var px = gmx, py = gmy;
+      for (var i = 1; i < GOO_N; i++) {
+        var p = gooPts[i];
+        p.x += (px - p.x) * 0.5;
+        p.y += (py - p.y) * 0.5;
+        var dx = p.x - px, dy = p.y - py;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > gooMax[i]) {
+          var kk = gooMax[i] / (dist || 1);
+          p.x = px + dx * kk;
+          p.y = py + dy * kk;
+        }
+        gooDots[i].style.transform = "translate3d(" + (p.x - ox).toFixed(1) + "px," + (p.y - oy).toFixed(1) +
+          "px,0) translate(-50%,-50%) scale(" + gooScale[i].toFixed(3) + ")";
+        px = p.x;
+        py = p.y;
+      }
+      requestAnimationFrame(gooTick);
+    })();
+  }
+
+  /* ---------- стекло: стираем налёт ---------- */
+  var glass = document.getElementById("glass");
+  var path = document.getElementById("wipePath");
+  var pct = document.getElementById("glassPct");
+  var bar = glass ? glass.querySelector(".glass__bar i") : null;
+  var cx = 14, cy = 9, cells = new Set(), d = "", lastCell = "";
+  var done = false;
+
+  function wipe(x, y) {
+    if (!glass || done) return;
+    var nx = Math.max(0, Math.min(100, (x / glass.clientWidth) * 100));
+    var ny = Math.max(0, Math.min(100, (y / glass.clientHeight) * 100));
+    d += (d ? " L" : "M") + nx.toFixed(2) + " " + ny.toFixed(2);
+    path.setAttribute("d", d);
+
+    var gx = Math.min(cx - 1, Math.floor((nx / 100) * cx));
+    var gy = Math.min(cy - 1, Math.floor((ny / 100) * cy));
+    var key = gx + ":" + gy;
+    if (key !== lastCell) {
+      lastCell = key;
+      cells.add(key);
+      /* соседние клетки тоже считаем протёртыми — иначе полоса уже 11 px */
+      for (var dx = -1; dx <= 1; dx++) {
+        for (var dy = -1; dy <= 1; dy++) {
+          var k = (gx + dx) + ":" + (gy + dy);
+          if (gx + dx >= 0 && gx + dx < cx && gy + dy >= 0 && gy + dy < cy) cells.add(k);
+        }
+      }
+      var p = Math.min(100, Math.round((cells.size / (cx * cy)) * 100));
+      if (bar) bar.style.setProperty("--w", p / 100);
+      if (pct) pct.textContent = p + "%";
+      if (p >= 92) {
+        done = true;
+        glass.classList.add("is-clean");
+        if (pct) pct.textContent = "100%";
+      }
+    }
+  }
+
+  if (glass) {
+    var drawing = false;
+    glass.addEventListener("pointerdown", function (e) {
+      drawing = true;
+      glass.classList.add("is-touched");
+      glass.setPointerCapture && glass.setPointerCapture(e.pointerId);
+      var r = glass.getBoundingClientRect();
+      wipe(e.clientX - r.left, e.clientY - r.top);
+    });
+    glass.addEventListener("pointermove", function (e) {
+      if (!drawing) return;
+      var r = glass.getBoundingClientRect();
+      wipe(e.clientX - r.left, e.clientY - r.top);
+    });
+    window.addEventListener("pointerup", function () { drawing = false; });
+    window.addEventListener("pointercancel", function () { drawing = false; });
+    /* клавиатура: пробел/Enter стирает половину и открывает надпись */
+    glass.addEventListener("keydown", function (e) {
+      if (e.key !== " " && e.key !== "Enter") return;
+      e.preventDefault();
+      glass.classList.add("is-touched", "is-clean");
+      done = true;
+      if (pct) pct.textContent = "100%";
+    });
+  }
+
+  /* ---------- калькулятор ---------- */
+  var TYPES = {
+    pod: { m2: 45, min: 2900, hours: 2 },
+    gen: { m2: 85, min: 5400, hours: 4 },
+    rem: { m2: 140, min: 8900, hours: 6 }
+  };
+  var area = document.getElementById("area");
+  var areaOut = document.getElementById("areaOut");
+  var priceEl = document.getElementById("price");
+  var timeEl = document.getElementById("time");
+  var chips = document.querySelectorAll(".chip");
+  var adds = document.querySelectorAll(".checks input");
+  var freq = 1;
+  var type = "pod";
+  var shown = 2900;
+  var lastTotal = 2900;
+
+  function money(n) {
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
+  function calc() {
+    var a = Number(area.value);
+    var t = TYPES[type];
+    var base = Math.max(t.min, a * t.m2);
+    base = Math.round((base * freq) / 100) * 100;
+    var extra = 0;
+    adds.forEach(function (c) { if (c.checked) extra += Number(c.dataset.add); });
+    var total = base + extra;
+    lastTotal = total;
+    var hours = t.hours + (Math.max(0, a - 55) / 55) * 1.2 + extra / 2500;
+    if (areaOut) areaOut.textContent = a + " м²";
+    if (timeEl) timeEl.textContent = Math.max(2, Math.round(hours * 2) / 2).toString().replace(".", ",") + " ч";
+    countTo(total);
+    if (area) {
+      var fill = ((a - 20) / 180) * 100;
+      area.style.setProperty("--fill", fill.toFixed(1) + "%");
+    }
+  }
+
+  function countTo(target) {
+    if (!priceEl) return;
+    if (rm) {
+      priceEl.textContent = money(target);
+      shown = target;
+      return;
+    }
+    var from = shown, start = performance.now(), dur = 420;
+    function step(now) {
+      var k = Math.min(1, (now - start) / dur);
+      var e = 1 - Math.pow(1 - k, 3);
+      priceEl.textContent = money(Math.round((from + (target - from) * e) / 10) * 10);
+      if (k < 1) requestAnimationFrame(step);
+      else { priceEl.textContent = money(target); shown = target; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (area) area.addEventListener("input", calc);
+  chips.forEach(function (c) {
+    c.addEventListener("click", function () {
+      chips.forEach(function (o) { o.classList.remove("is-on"); o.setAttribute("aria-pressed", "false"); });
+      c.classList.add("is-on");
+      c.setAttribute("aria-pressed", "true");
+      type = c.dataset.type;
+      calc();
+    });
+  });
+  adds.forEach(function (c) { c.addEventListener("change", calc); });
+
+  /* ---------- калькулятор → заявка: переносим тип, площадь и допы ---------- */
+  var calcCta = document.querySelector(".calc__out .btn");
+  var formEl = document.getElementById("form");
+  var formFrom = document.getElementById("formFrom");
+  if (calcCta && formEl && formFrom) {
+    calcCta.addEventListener("click", function () {
+      var names = { pod: "Поддерживающая", gen: "Генеральная", rem: "После ремонта" };
+      var typeOpt = document.querySelector('#formSel [data-v="' + names[type] + '"]');
+      if (typeOpt) typeOpt.click();
+      var areaIn = formEl.querySelector("[name=area]");
+      if (areaIn) areaIn.value = area.value;
+      var picked = [];
+      adds.forEach(function (c) { if (c.checked) picked.push(c.value.toLowerCase()); });
+      var noteIn = formEl.querySelector("[name=note]");
+      if (noteIn && !noteIn.value.trim() && picked.length) noteIn.value = "Допы: " + picked.join(", ");
+      formFrom.hidden = false;
+      formFrom.innerHTML = "Из калькулятора: <b>" + names[type].toLowerCase() + "</b>, " + area.value + " м²" +
+        (picked.length ? ", " + picked.join(", ") : "") + " · примерно <b>" + money(lastTotal) + " ₽</b>";
+    });
+  }
+
+  /* ---------- телефон: маска на лету ---------- */
+  var phoneIn = formEl ? formEl.querySelector("[name=phone]") : null;
+  if (phoneIn) {
+    phoneIn.addEventListener("input", function () {
+      var d = phoneIn.value.replace(/\D/g, "");
+      if (!d) { phoneIn.value = ""; return; }
+      if (d.charAt(0) === "8") d = "7" + d.slice(1);
+      if (d.charAt(0) !== "7") d = "7" + d;
+      d = d.slice(0, 11);
+      var out = "+7";
+      if (d.length > 1) out += " " + d.slice(1, 4);
+      if (d.length > 4) out += " " + d.slice(4, 7);
+      if (d.length > 7) out += "-" + d.slice(7, 9);
+      if (d.length > 9) out += "-" + d.slice(9, 11);
+      phoneIn.value = out;
+    });
+  }
+
+  /* ---------- свои выпадашки ---------- */
+  document.querySelectorAll("[data-sel]").forEach(function (sel) {
+    var btn = sel.querySelector(".sel__btn");
+    var val = sel.querySelector(".sel__val");
+    var list = sel.querySelector(".sel__list");
+    var opts = Array.prototype.slice.call(list.querySelectorAll("[role=option]"));
+    var hidden = sel.parentElement.querySelector('input[type=hidden]');
+    var act = opts.findIndex(function (o) { return o.getAttribute("aria-selected") === "true"; });
+    if (act < 0) act = 0;
+
+    function paint() {
+      opts.forEach(function (o, i) { o.classList.toggle("is-act", i === act); o.setAttribute("aria-selected", i === act ? "true" : "false"); });
+    }
+    function open() {
+      sel.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+      var r = list.getBoundingClientRect();
+      var room = window.innerHeight - btn.getBoundingClientRect().bottom;
+      if (room < r.height + 20) list.classList.add("sel__list--up");
+      else list.classList.remove("sel__list--up");
+      paint();
+      list.focus({ preventScroll: true });
+    }
+    function close() {
+      sel.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    function pick(i) {
+      act = i;
+      paint();
+      var text = opts[i].childNodes[0].nodeValue.trim();
+      val.textContent = text;
+      close();
+      btn.focus({ preventScroll: true });
+      if (sel.id === "freqSel") {
+        freq = Number(opts[i].dataset.v) || 1;
+        calc();
+      }
+      if (hidden) hidden.value = text;
+    }
+
+    btn.addEventListener("click", function () {
+      if (sel.classList.contains("is-open")) close();
+      else open();
+    });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        open();
+      }
+    });
+    list.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); act = (act + 1) % opts.length; paint(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); act = (act - 1 + opts.length) % opts.length; paint(); }
+      else if (e.key === "Home") { e.preventDefault(); act = 0; paint(); }
+      else if (e.key === "End") { e.preventDefault(); act = opts.length - 1; paint(); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(act); }
+      else if (e.key === "Escape") { e.preventDefault(); close(); btn.focus(); }
+      else if (e.key === "Tab") { close(); }
+    });
+    opts.forEach(function (o, i) {
+      o.addEventListener("click", function () { pick(i); });
+      o.addEventListener("mouseenter", function () { act = i; paint(); });
+    });
+    document.addEventListener("click", function (e) {
+      if (!sel.contains(e.target)) close();
+    });
+  });
+
+  /* ---------- прогресс шагов ---------- */
+  var steps = document.getElementById("steps");
+  var fill = document.getElementById("stepsFill");
+  function paintSteps() {
+    if (!steps || !fill || window.innerWidth < 901) return;
+    var r = steps.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var k = (vh * 0.78 - r.top) / (r.height * 0.9);
+    k = Math.max(0, Math.min(1, k));
+    fill.style.setProperty("--p", k.toFixed(3));
+  }
+  window.addEventListener("scroll", paintSteps, { passive: true });
+  paintSteps();
+
+  /* ---------- форма ---------- */
+  var form = document.getElementById("form");
+  var thanks = document.getElementById("thanks");
+  var agreeErr = document.getElementById("agreeErr");
+
+  function setErr(input, on) {
+    var wrap = input.closest(".inp") || input.closest(".agree");
+    if (wrap) wrap.classList.toggle("has-err", on);
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      var name = form.querySelector('[name=name]');
+      var phone = form.querySelector('[name=phone]');
+      var agree = form.querySelector('[name=agree]');
+      var hp = form.querySelector('[name=company]');
+
+      if (hp && hp.value.trim() !== "") return; /* бот */
+
+      if (name.value.trim().length < 2) { setErr(name, true); ok = false; } else setErr(name, false);
+      if (phone.value.replace(/\D/g, "").length < 10) { setErr(phone, true); ok = false; } else setErr(phone, false);
+      if (!agree.checked) {
+        agree.classList.add("has-err");
+        if (agreeErr) agreeErr.textContent = "Без согласия отправить нельзя — это требование закона о персональных данных";
+        ok = false;
+      } else {
+        agree.classList.remove("has-err");
+        if (agreeErr) agreeErr.textContent = "";
+      }
+      if (!ok) return;
+
+      form.hidden = true;
+      if (thanks) {
+        thanks.hidden = false;
+        thanks.scrollIntoView({ block: "center" });
+      }
+    });
+
+    form.querySelectorAll("input,textarea").forEach(function (i) {
+      i.addEventListener("input", function () { setErr(i, false); if (i === form.querySelector('[name=agree]')) i.classList.remove("has-err"); });
+    });
+  }
+
+  calc();
+
+  /* ---------- персонализация для обхода: ?n=&p=&a=&clean=1 ---------- */
+  var q = new URLSearchParams(location.search);
+  function setAll(sel, val) {
+    if (!val) return;
+    document.querySelectorAll(sel).forEach(function (el) { el.textContent = val; });
+  }
+  var nm = q.get("n"), ph = q.get("p"), ad = q.get("a");
+  if (nm) {
+    setAll("[data-name]", nm);
+    document.querySelectorAll(".logo b").forEach(function (el) { el.textContent = nm; });
+    document.title = nm + " - клининг в Йошкар-Оле";
+    var og = document.querySelector('meta[property="og:title"]');
+    if (og) og.setAttribute("content", nm + " - клининг в Йошкар-Оле");
+  }
+  if (ph) {
+    var tel = ph.replace(/[^\d+]/g, "");
+    document.querySelectorAll("[data-phone]").forEach(function (el) {
+      el.href = "tel:" + tel;
+      if (el.classList.contains("btn")) return;
+      var inner = el.querySelector("span");
+      if (inner) { inner.textContent = ph; return; }
+      el.textContent = ph;
+    });
+    document.querySelectorAll("[data-phone-link]").forEach(function (el) {
+      el.href = "tel:" + tel;
+      el.textContent = "Позвонить: " + ph;
+    });
+  }
+  if (ad) setAll("[data-addr]", ad);
+  if (q.get("clean") === "1") {
+    var svc = document.querySelector(".svcbar");
+    if (svc) svc.remove();
+  }
+})();
+</script>
+</body>
+</html>
