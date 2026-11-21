@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ремонт бытовой техники в Йошкар-Оле — выезд мастера | Почин</title>
+<meta name="description" content="Ремонт стиральных машин, холодильников, посудомоек и плит на дому. Диагностика 500 ₽, при ремонте — бесплатно. Скажите код ошибки — покажу вероятную причину и цену.">
+<link rel="canonical" href="https://mensori-dev.github.io/demos/remont/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Почин — ремонт бытовой техники в Йошкар-Оле">
+<meta property="og:description" content="Скажите код ошибки — покажу причину и цену. Выезд мастера в день звонка, диагностика 500 ₽.">
+<meta property="og:url" content="https://mensori-dev.github.io/demos/remont/">
+<meta property="og:image" content="https://mensori-dev.github.io/demos/remont/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Почин — ремонт бытовой техники: витрина техники и разбор кода ошибки">
+<meta name="theme-color" content="#fbfbfa">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b45c0'/%3E%3Ccircle cx='16' cy='17.5' r='7.6' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3Cpath d='M16 7v7' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Golos Text';src:url('fonts/golos-cyrillic.woff2') format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Golos Text';src:url('fonts/golos-latin.woff2') format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --ink:#14181f; --ink-2:#2b3442; --mute:#495565;
+  --bg:#fbfbfa; --panel:#f2f3ef; --panel-2:#e8eae4;
+  --line:#d0d6db; --line-2:#a4afb9;
+  --cobalt:#1b45c0; --cobalt-d:#123186; --sand:#f5ecd6;
+  --r:14px; --wrap:1180px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.55 'Golos Text',system-ui,'Segoe UI',Roboto,sans-serif;
+  font-feature-settings:"ss01" 1}
+h1,h2,h3{line-height:1.08;margin:0;letter-spacing:-.025em;font-weight:800;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+img,svg{display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+::selection{background:#c9d5ff;color:#0d1a3d}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── верхняя полоса ── */
+.strip{background:var(--ink);color:#e8ecf3;font-size:13.5px}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:38px;flex-wrap:wrap}
+.strip b{color:#fff;font-weight:600}
+.strip__dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5ee08a;margin-right:7px;vertical-align:1px}
+
+/* ── шапка ── */
+.head{position:sticky;top:0;z-index:40;background:rgba(251,251,250,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head .wrap{display:flex;align-items:center;gap:18px;min-height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.03em}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--cobalt);color:#fff;
+  font-style:normal;font-size:15px;font-weight:800}
+.logo i svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.head nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.head nav a{text-decoration:none;color:var(--mute);padding:6px 0;border-bottom:2px solid transparent}
+.head nav a:hover{color:var(--ink);border-bottom-color:var(--cobalt)}
+.head__tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;
+  background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;font-size:15.5px;white-space:nowrap}
+.head__tel:hover{background:var(--cobalt-d)}
+
+/* ── витрина техники ── */
+.board{padding:clamp(26px,4vw,48px) 0 clamp(34px,5vw,60px)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--cobalt);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--cobalt)}
+.board h1{font-size:clamp(34px,6vw,58px);max-width:20ch}
+.board__intro{margin-top:16px;font-size:clamp(16.5px,2vw,19px);line-height:1.5;color:var(--ink-2);max-width:56ch}
+.board__intro b{font-weight:700;color:var(--ink)}
+
+.techs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(24px,3.6vw,36px)}
+.tech{position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:2px 14px;
+  align-items:center;text-align:left;min-width:0;padding:20px 92px 20px 18px;border-radius:var(--r);
+  border:1.5px solid var(--line);background:#fff;box-shadow:0 1px 0 rgba(20,24,31,.03)}
+.tech:hover{border-color:var(--line-2);transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(20,24,31,.5)}
+.tech:active{transform:none}
+.tech svg{grid-row:1/3;width:46px;height:46px;stroke:var(--cobalt);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tech b{font-size:18px;font-weight:700;letter-spacing:-.01em;overflow-wrap:anywhere}
+.tech span{font-size:14px;color:var(--mute);overflow-wrap:anywhere}
+.tech__sum{position:absolute;right:16px;top:16px;font-size:12.5px;font-weight:700;color:var(--cobalt);
+  background:var(--sand);border-radius:999px;padding:3px 9px}
+@media (hover:hover){.tech{transition:border-color .18s,transform .18s,box-shadow .18s}}
+
+.board__foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:22px;font-size:15px;color:var(--mute)}
+.board__foot a{display:inline-flex;align-items:center;gap:7px;min-height:44px;font-weight:700;color:var(--cobalt);
+  text-decoration:none;border-bottom:2px solid transparent}
+.board__foot a:hover{border-bottom-color:var(--cobalt)}
+.board__marks{display:flex;flex-wrap:wrap;gap:8px 20px}
+.board__marks span{display:inline-flex;align-items:center;gap:7px}
+.board__marks svg{width:17px;height:17px;stroke:var(--cobalt);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── секции ── */
+.sec{padding:clamp(44px,6vw,76px) 0;border-top:1px solid var(--line)}
+.sec--panel{background:var(--panel)}
+.sec__head{max-width:62ch;margin-bottom:clamp(22px,3vw,32px)}
+.sec__head h2{font-size:clamp(26px,4vw,40px)}
+.sec__head p{margin-top:12px;color:var(--ink-2);font-size:16.5px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cobalt);margin-bottom:12px}
+
+/* коды ошибок */
+.finder{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:560px}
+.finder__field{display:flex;align-items:center;gap:10px;min-height:58px;padding:0 16px;border:1.5px solid var(--line-2);
+  border-radius:12px;background:#fff}
+.finder__field:focus-within{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(27,69,192,.14)}
+.finder__field svg{width:20px;height:20px;stroke:var(--mute);fill:none;stroke-width:2;flex:none}
+.finder input{border:0;outline:0;background:transparent;font:inherit;font-size:19px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;width:100%;color:var(--ink);padding:0}
+.finder input::placeholder{color:#5f6b7a;font-weight:500;letter-spacing:.02em;text-transform:none;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:0 24px;
+  border-radius:12px;border:1.5px solid transparent;background:var(--cobalt);color:#fff;font-weight:700;
+  font-size:16.5px;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--cobalt-d)}
+.btn:disabled{opacity:.55;cursor:not-allowed;background:var(--cobalt)}
+.btn:disabled:hover{background:var(--cobalt)}
+.btn--line{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn--line:hover{background:#fff;border-color:var(--ink)}
+.btn--sm{min-height:46px;font-size:15px;padding:0 18px}
+.hints{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;font-size:14px;color:var(--mute)}
+.hints button{min-height:38px;padding:0 12px;border-radius:8px;border:1.5px solid var(--line-2);
+  background:#fff;font-size:13.5px;font-weight:700;letter-spacing:.04em}
+.hints button:hover{border-color:var(--cobalt);color:var(--cobalt)}
+
+.codeout{margin-top:22px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;max-width:760px}
+.codeout[hidden]{display:none!important}
+.codeout__top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;padding:16px 20px 14px;
+  background:var(--ink);color:#fff}
+.codeout__top b{font-size:22px;letter-spacing:.04em}
+.codeout__top span{font-size:14.5px;color:#c3ccd9}
+.codeout__body{padding:18px 20px 20px}
+.codeout__body p{font-size:16px;color:var(--ink-2);margin-bottom:14px}
+.codeout__list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.codeout__list li{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.codeout__list li:last-child{border-bottom:0}
+.codeout__list em{font-style:normal;color:var(--mute);font-size:14px;white-space:nowrap}
+.codeout__list b{font-weight:700;white-space:nowrap}
+.codeout__note{margin-top:12px;font-size:13.5px;line-height:1.5;color:var(--mute)}
+.codeout__err{margin-top:16px;padding:14px 16px;border-radius:12px;background:#fff4f2;border:1.5px solid #e6b8ae;
+  color:#7a2418;font-size:15.5px;max-width:760px}
+
+/* калькулятор */
+.calc{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(16px,2.4vw,28px);align-items:start}
+.calc__card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:clamp(18px,2.6vw,26px)}
+.calc__row{margin-bottom:18px}
+.calc__row:last-child{margin-bottom:0}
+.calc__label{display:block;font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:9px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{min-height:46px;padding:0 15px;border-radius:10px;border:1.5px solid var(--line-2);
+  background:var(--panel);font-size:15px;font-weight:600}
+.chips button[aria-pressed="true"]{background:var(--cobalt);border-color:var(--cobalt);color:#fff;
+  box-shadow:0 8px 18px -12px rgba(27,69,192,.9)}
+.chips button:hover:not([aria-pressed="true"]){border-color:var(--ink);background:#fff}
+
+/* свой список вместо системного select */
+.sel{position:relative}
+.sel__btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:52px;
+  padding:0 14px;border-radius:10px;border:1.5px solid var(--line-2);background:#fff;text-align:left;
+  font-size:16px;font-weight:600}
+.sel__btn:hover{border-color:var(--ink)}
+.sel__btn svg{width:16px;height:16px;stroke:var(--mute);fill:none;stroke-width:2.4;flex:none}
+.sel__list{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;padding:6px;margin:0;list-style:none;
+  border:1.5px solid var(--line-2);border-radius:12px;background:#fff;
+  box-shadow:0 24px 44px -24px rgba(20,24,31,.55);max-height:286px;overflow:auto;display:none}
+.sel--open .sel__list{display:block}
+.sel__list li{padding:11px 12px;border-radius:8px;font-size:15.5px;cursor:pointer}
+.sel__list li:hover,.sel__list li.is-active{background:var(--panel)}
+.sel__list li[aria-selected="true"]{background:var(--cobalt);color:#fff;font-weight:600}
+
+.calc__sum{position:sticky;top:84px;background:var(--ink);color:#fff;border-radius:18px;
+  padding:clamp(20px,2.6vw,26px)}
+.calc__sum > p:first-of-type{font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:#a8b4c4;font-weight:700}
+.calc__big{font-size:clamp(34px,5vw,46px);font-weight:800;letter-spacing:-.03em;margin:6px 0 2px}
+.calc__meta{font-size:15px;color:#c3ccd9;line-height:1.5}
+.calc__meta b{color:#fff;font-weight:600}
+.calc__line{height:1px;background:rgba(255,255,255,.16);margin:18px 0}
+.calc__sum .btn{width:100%;margin-top:18px;background:#fff;color:var(--ink)}
+.calc__sum .btn:hover{background:var(--sand)}
+.calc__hint{font-size:13.5px;color:#a8b4c4;margin-top:12px;line-height:1.5}
+
+/* прайс */
+.ptable{width:100%;border-collapse:collapse;margin-top:6px;font-size:15.5px}
+.ptable caption{text-align:left;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--mute);padding-bottom:10px}
+.ptable th{text-align:left;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);
+  font-weight:700;padding:0 0 10px;border-bottom:1.5px solid var(--line-2)}
+.ptable td{padding:13px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.ptable td:last-child,.ptable th:last-child{text-align:right;white-space:nowrap}
+.ptable td:nth-child(2),.ptable th:nth-child(2){text-align:right;white-space:nowrap;padding-left:12px}
+.ptable b{font-weight:700}
+
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:10px}
+.step{border-top:2px solid var(--ink);padding-top:16px}
+.step b{display:block;font-size:19px;margin-bottom:6px}
+.step p{color:var(--ink-2);font-size:15.5px}
+.step em{display:block;font-style:normal;font-size:13.5px;color:var(--cobalt);font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
+
+/* форма */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;max-width:760px}
+.form .fld{display:block}
+.form .fld--wide{grid-column:1/-1}
+.fld span{display:block;font-size:14px;font-weight:600;margin-bottom:7px;color:var(--ink-2)}
+.fld input,.fld textarea,.fld .sel__btn{width:100%;border:1.5px solid var(--line-2);border-radius:10px;
+  background:#fff;font:inherit;font-size:16px;padding:13px 14px;min-height:52px}
+.fld textarea{min-height:92px;resize:vertical}
+.fld input::placeholder,.fld textarea::placeholder{color:#5f6b7a}
+.fld input:focus,.fld textarea:focus,.fld .sel__btn:focus{outline:0;border-color:var(--cobalt);
+  box-shadow:0 0 0 3px rgba(27,69,192,.14)}
+.fld--bad input,.fld--bad textarea,.fld--bad .sel__btn{border-color:#b3261e;background:#fff8f7}
+.err{font-size:13.5px;color:#a3221a;margin-top:6px;font-weight:600}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.check{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.check input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:1px 0 0;flex:none;
+  border:2px solid #6f7c8b;border-radius:6px;background:#fff;display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--cobalt);border-color:var(--cobalt)}
+.check input:checked::after{content:"";width:13px;height:7px;border-left:2.5px solid #fff;
+  border-bottom:2.5px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.check input:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.check--bad input{border-color:#b3261e;background:#fff8f7}
+.check a{color:var(--cobalt);font-weight:600}
+.form__foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:4px}
+.form__foot .btn{flex:0 1 auto}
+.form__hint{font-size:13.5px;color:var(--mute);max-width:34ch;line-height:1.5}
+
+.thanks{grid-column:1/-1;border:1.5px solid var(--cobalt);background:#eff2ff;border-radius:16px;
+  padding:26px 24px;display:grid;gap:12px}
+.thanks[hidden]{display:none!important}
+.thanks h3{font-size:22px}
+.thanks p{color:var(--ink-2);font-size:15.5px}
+.thanks__btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+
+/* FAQ */
+.faq{max-width:820px;display:grid;gap:0;margin-top:8px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;
+  font-size:18px;font-weight:700;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:2.5px solid var(--cobalt);
+  border-bottom:2.5px solid var(--cobalt);transform:rotate(45deg);transition:transform .18s}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq p{padding:0 0 20px;color:var(--ink-2);font-size:16px;max-width:70ch}
+
+/* футер */
+.foot{background:var(--ink);color:#c3ccd9;padding:clamp(34px,4.6vw,54px) 0 30px;font-size:14.5px}
+.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+.foot b{display:block;color:#fff;font-size:16.5px;margin-bottom:8px}
+.foot a{color:#c3ccd9;text-decoration:none;display:inline-block;min-height:32px}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot__disc{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);
+  font-size:13px;line-height:1.6;color:#9dabbd;grid-column:1/-1}
+.foot__tel{color:#fff;font-weight:700;font-size:19px;text-decoration:none}
+
+/* липкая кнопка на телефоне */
+.callbar{display:none}
+
+@media (max-width:960px){
+  .head nav{display:none}
+  .techs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .calc{grid-template-columns:1fr}
+  .calc__sum{position:static}
+  .steps{grid-template-columns:1fr}
+  .foot .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .board{padding-top:22px}
+  .finder{grid-template-columns:1fr}
+  .finder .btn{width:100%}
+  .techs{gap:10px}
+  .tech{padding:15px 13px;grid-template-columns:auto 1fr;gap:0 11px}
+  .tech svg{width:34px;height:34px}
+  .tech b{font-size:15.5px;line-height:1.2}
+  .tech span{font-size:12.5px}
+  .tech__sum{position:static;grid-column:1/-1;justify-self:start;margin-top:8px;font-size:11.5px}
+  .form{grid-template-columns:1fr}
+  .ptable{font-size:14.5px}
+  .ptable td:nth-child(2),.ptable th:nth-child(2){display:none}
+  .foot .wrap{grid-template-columns:1fr}
+  .foot{padding-bottom:96px}
+  .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px 12px;
+    background:rgba(20,24,31,.96);backdrop-filter:blur(8px)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border-radius:12px;
+    background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;font-size:16.5px}
+  .calc__sum .btn{min-height:54px}
+}
+@media (max-width:420px){
+  .techs{gap:8px}
+  .tech{padding:13px 12px;grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:5px}
+  .tech svg{grid-row:auto;width:30px;height:30px;margin-bottom:2px}
+  .tech b{font-size:15px}
+  .tech span{font-size:12.5px}
+  .tech__sum{grid-column:auto;margin-top:4px}
+  .wrap{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <span><i class="strip__dot"></i><b>Мастер свободен сегодня</b> — приедет с 9:00 до 20:00</span>
+    <span>Йошкар-Ола и пригород · <b>без выходных</b></span>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <a class="logo" href="./"><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13.4" r="7.4"/><path d="M12 5.2v6.4"/></svg></i><span data-name>Почин</span></a>
+    <nav aria-label="Разделы">
+      <a href="#techs">Техника</a>
+      <a href="#codes">Коды ошибок</a>
+      <a href="#price">Цены</a>
+      <a href="#zayavka">Заявка</a>
+    </nav>
+    <a class="head__tel" href="tel:+79000000000" data-phone-link>
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 3h3l1.6 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.6v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z"/></svg>
+      <span data-phone>+7 900 000-00-00</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ─────────── первый экран: витрина техники ─────────── -->
+<section class="board" id="techs">
+  <div class="wrap">
+    <p class="eyebrow">Ремонт бытовой техники на дому</p>
+    <h1>Что сломалось?</h1>
+    <p class="board__intro">
+      Выберите технику — покажу цену работы и срок, без «уточним по телефону».
+      Диагностика <b>500 ₽</b>, при ремонте не берём. Выезд по городу <b>бесплатный</b>.
+    </p>
+
+    <div class="techs">
+      <button class="tech" type="button" data-tech="washer">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="5" width="32" height="38" rx="4"/><circle cx="24" cy="27" r="9"/><path d="M21 27c1.6 2.4 4.4 2.4 6 0"/><path d="M13 11h6"/><circle cx="33" cy="11" r="1.6" fill="currentColor" stroke="none"/></svg>
+        <b>Стиральная машина</b>
+        <span>не сливает, не отжимает, течёт</span>
+        <span class="tech__sum">от 900 ₽</span>
+      </button>
+
+      <button class="tech" type="button" data-tech="fridge">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="11" y="4" width="26" height="40" rx="4"/><path d="M11 21h26"/><path d="M17 12v4M17 27v5"/></svg>
+        <b>Холодильник</b>
+        <span>не морозит, намерзает лёд, шумит</span>
+        <span class="tech__sum">от 1 400 ₽</span>
+      </button>
+
+      <button class="tech" type="button" data-tech="dishwasher">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="5" width="34" height="38" rx="4"/><path d="M7 15h34"/><path d="M14 10h6"/><circle cx="24" cy="29" r="8"/><path d="M19 29h10"/></svg>
+        <b>Посудомоечная машина</b>
+        <span>не набирает воду, не греет</span>
+        <span class="tech__sum">от 1 300 ₽</span>
+      </button>
+
+      <button class="tech" type="button" data-tech="stove">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="3"/><circle cx="15" cy="19" r="4"/><circle cx="33" cy="19" r="4"/><circle cx="15" cy="30" r="4"/><circle cx="33" cy="30" r="4"/><path d="M5 9h38"/></svg>
+        <b>Плита и духовка</b>
+        <span>не греет конфорка, не включается</span>
+        <span class="tech__sum">от 1 100 ₽</span>
+      </button>
+
+      <button class="tech" type="button" data-tech="microwave">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="11" width="40" height="26" rx="3"/><rect x="8" y="15" width="26" height="18" rx="2"/><path d="M39 19v6M39 29h.01"/></svg>
+        <b>Микроволновка</b>
+        <span>не греет, искрит, не включается</span>
+        <span class="tech__sum">от 1 200 ₽</span>
+      </button>
+
+      <button class="tech" type="button" data-tech="vacuum">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="17" cy="36" rx="9" ry="5"/><path d="M24 32l6-18"/><rect x="27" y="6" width="14" height="10" rx="3"/><path d="M34 16v6"/></svg>
+        <b>Пылесос</b>
+        <span>не всасывает, не держит заряд</span>
+        <span class="tech__sum">от 900 ₽</span>
+      </button>
+    </div>
+
+    <div class="board__foot">
+      <a href="#codes">
+        Не знаете, что именно сломалось? Введите код ошибки
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="board__marks">
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>диагностика 500 ₽</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>гарантия 12 месяцев</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>запчасти в наличии</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── код ошибки ─────────── -->
+<section class="sec sec--panel" id="codes">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Разбор по коду</p>
+      <h2>Скажите код — отвечу, что менять</h2>
+      <p>На дисплее машины мигает код: <b>E02</b>, <b>F21</b>, <b>E4</b>. Введите его — покажу вероятные причины, цену работы и сколько это займёт. Без звонка и без «приезжайте, посмотрим».</p>
+    </div>
+
+    <form class="finder" id="codeForm" novalidate>
+      <label class="finder__field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l4.5 4.5"/></svg>
+        <span class="sr">Код ошибки</span>
+        <input id="codeInput" inputmode="text" maxlength="6" placeholder="например, E02" autocomplete="off">
+      </label>
+      <button class="btn" type="submit">Что это значит</button>
+    </form>
+
+    <div class="hints">
+      <span>Частые:</span>
+      <button type="button" data-code="E01">E01</button>
+      <button type="button" data-code="E02">E02</button>
+      <button type="button" data-code="E03">E03</button>
+      <button type="button" data-code="E04">E04</button>
+      <button type="button" data-code="F2">F2</button>
+      <button type="button" data-code="E4">E4</button>
+    </div>
+
+    <div class="codeout" id="codeOut" hidden aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ─────────── цена ─────────── -->
+<section class="sec" id="price">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Цена до выезда</p>
+      <h2>Соберите свой ремонт</h2>
+      <p>Выберите технику и что с ней происходит — увидите цену работы. Диагностика входит в неё, отдельно платить не нужно, если ремонт делаем мы.</p>
+    </div>
+
+    <div class="calc">
+      <div class="calc__card">
+        <div class="calc__row">
+          <span class="calc__label" id="lblTech">Техника</span>
+          <div class="sel" data-sel="tech">
+            <button class="sel__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="lblTech">
+              <span data-sel-out>Стиральная машина</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="sel__list" role="listbox" tabindex="-1">
+              <li role="option" data-v="washer" aria-selected="true">Стиральная машина</li>
+              <li role="option" data-v="fridge">Холодильник</li>
+              <li role="option" data-v="dishwasher">Посудомоечная машина</li>
+              <li role="option" data-v="stove">Плита и духовка</li>
+              <li role="option" data-v="microwave">Микроволновка</li>
+              <li role="option" data-v="vacuum">Пылесос</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="calc__row">
+          <span class="calc__label">Что происходит</span>
+          <div class="chips" id="jobChips" role="group" aria-label="Что происходит"></div>
+        </div>
+
+        <div class="calc__row">
+          <span class="calc__label">Когда удобно</span>
+          <div class="chips" id="whenChips" role="group" aria-label="Когда удобно">
+            <button type="button" data-when="today" aria-pressed="true">Сегодня</button>
+            <button type="button" data-when="tomorrow" aria-pressed="false">Завтра</button>
+            <button type="button" data-when="any" aria-pressed="false">Как получится</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="calc__sum" aria-live="polite">
+        <p>Работа</p>
+        <div class="calc__big" id="sumBig">от 1 200 ₽</div>
+        <div class="calc__meta" id="sumMeta">Течёт · стиральная машина · <b>1–2 часа</b></div>
+        <div class="calc__line"></div>
+        <div class="calc__meta">Диагностика <b>0 ₽</b> · выезд <b>0 ₽</b><br><span id="sumWhen">Приедем сегодня</span></div>
+        <button class="btn" type="button" id="toForm">Перенести в заявку</button>
+        <p class="calc__hint">Цены примерные, для демо. Точную назову после осмотра — но назову до работы, а не после.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── прайс ─────────── -->
+<section class="sec sec--panel" id="works">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Типовые работы</p>
+      <h2>За что берём и сколько</h2>
+      <p>Это работа мастера без стоимости запчасти. Запчасть покажу в чеке по закупке, наценки на неё нет.</p>
+    </div>
+    <table class="ptable">
+      <caption>Стиральные машины</caption>
+      <thead><tr><th>Работа</th><th>Цена</th><th>Срок</th></tr></thead>
+      <tbody>
+        <tr><td>Замена помпы (не сливает)</td><td><b>1 200 ₽</b></td><td>1 час</td></tr>
+        <tr><td>Замена ТЭНа (не греет)</td><td><b>1 400 ₽</b></td><td>1–1,5 часа</td></tr>
+        <tr><td>Подшипник и сальник барабана</td><td><b>3 200 ₽</b></td><td>3–4 часа</td></tr>
+        <tr><td>Замок дверцы</td><td><b>1 100 ₽</b></td><td>40 минут</td></tr>
+        <tr><td>Чистка фильтра и патрубков</td><td><b>900 ₽</b></td><td>30–40 минут</td></tr>
+      </tbody>
+    </table>
+
+    <table class="ptable" style="margin-top:34px">
+      <caption>Холодильники и морозильники</caption>
+      <thead><tr><th>Работа</th><th>Цена</th><th>Срок</th></tr></thead>
+      <tbody>
+        <tr><td>Заправка фреоном с поиском утечки</td><td><b>3 500 ₽</b></td><td>2–3 часа</td></tr>
+        <tr><td>Пусковое реле компрессора</td><td><b>1 600 ₽</b></td><td>1 час</td></tr>
+        <tr><td>ТЭН оттайки, датчик</td><td><b>2 200 ₽</b></td><td>2 часа</td></tr>
+        <tr><td>Вентилятор No Frost</td><td><b>1 800 ₽</b></td><td>1,5 часа</td></tr>
+      </tbody>
+    </table>
+
+    <table class="ptable" style="margin-top:34px">
+      <caption>Посудомойки, плиты, микроволновки</caption>
+      <thead><tr><th>Работа</th><th>Цена</th><th>Срок</th></tr></thead>
+      <tbody>
+        <tr><td>Насос посудомоечной машины</td><td><b>1 600 ₽</b></td><td>1,5 часа</td></tr>
+        <tr><td>ТЭН посудомойки</td><td><b>1 700 ₽</b></td><td>2 часа</td></tr>
+        <tr><td>Конфорка или нагреватель духовки</td><td><b>1 400 ₽</b></td><td>1 час</td></tr>
+        <tr><td>Магнетрон микроволновки</td><td><b>2 400 ₽</b></td><td>1,5 часа</td></tr>
+        <tr><td>Блок управления (пайка или замена)</td><td><b>от 1 500 ₽</b></td><td>от 2 часов</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ─────────── как работаем ─────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Как это устроено</p>
+      <h2>Три шага, без сюрпризов в конце</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <em>01 · звонок</em>
+        <b>Говорите код или симптом</b>
+        <p>По коду часто ясно, что менять. Сразу называю вилку цены и время — до выезда, а не после.</p>
+      </div>
+      <div class="step">
+        <em>02 · выезд</em>
+        <b>Мастер приезжает с запчастями</b>
+        <p>Ходовые помпы, ТЭНы, реле и датчики везу с собой. Если деталь редкая — закажу и приеду второй раз, повторный выезд бесплатный.</p>
+      </div>
+      <div class="step">
+        <em>03 · ремонт</em>
+        <b>Платите после проверки</b>
+        <p>Включаем, проверяем на ваших программах, отдаю чек и гарантию на 12 месяцев. Не починили — не платите ничего.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── заявка ─────────── -->
+<section class="sec sec--panel" id="zayavka">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Заявка</p>
+      <h2>Оставьте номер — перезвоню в течение 15 минут</h2>
+      <p>Если удобнее написать, чем говорить: опишите симптом своими словами, этого хватит для первой оценки.</p>
+    </div>
+
+    <form class="form" id="leadForm" novalidate>
+      <label class="fld">
+        <span>Как вас зовут</span>
+        <input type="text" name="name" id="fName" autocomplete="name" placeholder="Имя" maxlength="40">
+      </label>
+      <label class="fld">
+        <span>Телефон</span>
+        <input type="tel" name="phone" id="fPhone" inputmode="tel" autocomplete="tel" placeholder="+7 900 123-45-67" maxlength="18">
+      </label>
+      <div class="fld fld--wide">
+        <span id="lblTechForm">Техника</span>
+        <div class="sel" data-sel="formtech">
+          <button class="sel__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="lblTechForm">
+            <span data-sel-out>Стиральная машина</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="sel__list" role="listbox" tabindex="-1">
+            <li role="option" data-v="washer" aria-selected="true">Стиральная машина</li>
+            <li role="option" data-v="fridge">Холодильник</li>
+            <li role="option" data-v="dishwasher">Посудомоечная машина</li>
+            <li role="option" data-v="stove">Плита и духовка</li>
+            <li role="option" data-v="microwave">Микроволновка</li>
+            <li role="option" data-v="vacuum">Пылесос</li>
+          </ul>
+        </div>
+      </div>
+      <label class="fld fld--wide">
+        <span>Что случилось</span>
+        <textarea name="problem" id="fProblem" placeholder="Например: стиралка останавливается на отжиме, в барабане вода" maxlength="400"></textarea>
+      </label>
+
+      <label class="hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+
+      <label class="check" id="fAgreeWrap">
+        <input type="checkbox" id="fAgree" name="agree">
+        <span>Согласен на обработку персональных данных — <a href="privacy.html" target="_blank" rel="noopener">политика</a>. Звоню только по этой заявке.</span>
+      </label>
+
+      <div class="form__foot">
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p class="form__hint">Демо-сайт: форма ничего не отправляет и никуда не звонит.</p>
+      </div>
+
+      <div class="thanks" id="thanks" hidden>
+        <h3>Заявка принята</h3>
+        <p id="thanksText">Перезвоню в течение 15 минут в рабочее время. Если срочно — звоните сами, номер ниже.</p>
+        <div class="thanks__btns">
+          <a class="btn btn--sm" href="tel:+79000000000" data-phone-link>Позвонить: <span data-phone>+7 900 000-00-00</span></a>
+          <a class="btn btn--line btn--sm" href="#techs">Наверх</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ─────────── FAQ ─────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Вопросы</p>
+      <h2>Что спрашивают чаще всего</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Диагностика правда бесплатная?</summary>
+        <p>Она стоит 500 ₽ и входит в стоимость ремонта — то есть отдельно вы её не платите, если работу делаю я. Если от ремонта откажетесь, остаются только эти 500 ₽ за выезд и разбор.</p>
+      </details>
+      <details>
+        <summary>А если после ремонта снова сломалось?</summary>
+        <p>Гарантия 12 месяцев на работу и деталь. Приезжаю по гарантии бесплатно, повторный выезд не оплачивается. Если поломка другая — скажу честно, что это уже другой ремонт.</p>
+      </details>
+      <details>
+        <summary>Выезжаете за город?</summary>
+        <p>По Йошкар-Оле — бесплатно. До 20 км от города — 300 ₽ за дорогу, дальше считаем по километрам и говорим сумму до выезда.</p>
+      </details>
+      <details>
+        <summary>Запчасти ваши или покупать самому?</summary>
+        <p>Ходовые везу с собой. Редкие заказываю у поставщика — обычно 1–3 дня. Показываю закупочную цену и чек, своей наценки на деталь нет.</p>
+      </details>
+      <details>
+        <summary>Коды ошибок одинаковые у всех марок?</summary>
+        <p>Нет. У Bosch, LG, Samsung и Indesit одни и те же буквы могут означать разное. В демо база условная — на реальном сайте она собирается под те марки, которые вы обслуживаете.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <b data-name>Почин</b>
+      <p>Ремонт бытовой техники на дому. Йошкар-Ола и пригород, ежедневно с 9:00 до 20:00.</p>
+      <p style="margin-top:10px"><a class="foot__tel" href="tel:+79000000000" data-phone-link><span data-phone>+7 900 000-00-00</span></a></p>
+    </div>
+    <div>
+      <b>Разделы</b>
+      <a href="#techs">Техника</a><br>
+      <a href="#codes">Коды ошибок</a><br>
+      <a href="#price">Цены</a><br>
+      <a href="#zayavka">Заявка</a>
+    </div>
+    <div>
+      <b>Адрес</b>
+      <p data-addr>Йошкар-Ола, ул. Первомайская, 100</p>
+      <p style="margin-top:8px"><a href="privacy.html">Политика обработки данных</a></p>
+    </div>
+    <p class="foot__disc">
+      Это демонстрационный сайт. «Почин» — вымышленная мастерская, телефон, адрес, цены и гарантия приведены как пример.
+      Форма ничего не отправляет. Настоящий сайт собирается под ваш бизнес: ваши услуги, цены, телефон и город.
+    </p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+79000000000" data-phone-link>
+    <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 3h3l1.6 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.6v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z"/></svg>
+    Позвонить мастеру
+  </a>
+</div>
+
+<script>
+document.documentElement.classList.remove('no-js');
+
+/* ── персонализация: ?n=Название&p=+7…&a=адрес&clean=1 ── */
+(() => {
+  const q = new URLSearchParams(location.search);
+  const n = (q.get('n') || '').trim();
+  const raw = (q.get('p') || '').trim();
+  const p = raw ? (raw.startsWith('+') ? raw : '+' + raw.replace(/^8/, '7')) : '';
+  const a = (q.get('a') || '').trim();
+  if (n) document.querySelectorAll('[data-name]').forEach(el => { el.textContent = n; });
+  if (p) {
+    const digits = p.replace(/\D/g, '');
+    document.querySelectorAll('[data-phone]').forEach(el => { el.textContent = p; });
+    document.querySelectorAll('[data-phone-link]').forEach(el => { el.href = 'tel:+' + digits; });
+  }
+  if (a) document.querySelectorAll('[data-addr]').forEach(el => { el.textContent = a; });
+})();
+
+/* ── данные ── */
+const TECHS = {
+  washer:     { name: 'стиральная машина', jobs: {
+    leak:   ['Течёт', 1500, '1–2 часа'],
+    drain:  ['Не сливает', 1200, '1 час'],
+    water:  ['Не набирает воду', 1100, '1 час'],
+    heat:   ['Не греет', 1400, '1–1,5 часа'],
+    spin:   ['Не отжимает', 1800, '2 часа'],
+    dead:   ['Не включается', 1000, '40 минут'] } },
+  fridge:     { name: 'холодильник', jobs: {
+    cold:   ['Не морозит', 2200, '2–3 часа'],
+    ice:    ['Намерзает лёд', 1800, '2 часа'],
+    leak:   ['Течёт', 1500, '1–2 часа'],
+    noise:  ['Шумит', 1600, '1 час'],
+    dead:   ['Не включается', 1400, '1 час'] } },
+  dishwasher: { name: 'посудомоечная машина', jobs: {
+    drain:  ['Не сливает', 1400, '1,5 часа'],
+    water:  ['Не набирает воду', 1300, '1,5 часа'],
+    heat:   ['Не греет', 1600, '2 часа'],
+    leak:   ['Течёт', 1500, '1,5 часа'],
+    dead:   ['Не включается', 1200, '1 час'] } },
+  stove:      { name: 'плита', jobs: {
+    burner: ['Не греет конфорка', 1200, '1 час'],
+    oven:   ['Не работает духовка', 1800, '1,5 часа'],
+    spark:  ['Искрит', 1100, '1 час'],
+    dead:   ['Не включается', 1500, '1,5 часа'] } },
+  microwave:  { name: 'микроволновка', jobs: {
+    heat:   ['Не греет', 1600, '1,5 часа'],
+    spark:  ['Искрит', 1400, '1 час'],
+    dead:   ['Не включается', 1200, '1 час'] } },
+  vacuum:     { name: 'пылесос', jobs: {
+    suck:   ['Не всасывает', 900, '40 минут'],
+    battery:['Не держит заряд', 1400, '1,5 часа'],
+    dead:   ['Не включается', 1000, '1 час'] } },
+};
+
+/* ── код ошибки ── */
+const CODES = {
+  e01: { tech: 'стиральная машина', title: 'не набирает воду', why: 'Машина видит, что вода не пришла за отведённое время.',
+    jobs: [['Засор фильтра-сетки или шланга', 900, '30–40 минут'], ['Впускной клапан', 1100, '1 час'], ['Датчик уровня воды (прессостат)', 1300, '1 час']] },
+  e02: { tech: 'стиральная машина', title: 'не сливает воду', why: 'Насос не может выгнать воду из бака.',
+    jobs: [['Засор сливного фильтра', 900, '30 минут'], ['Сливной насос (помпа)', 1200, '1 час'], ['Сливной шланг или гофра', 1000, '40 минут']] },
+  e03: { tech: 'стиральная машина', title: 'не греет воду', why: 'Нагрев не набирает температуру за отведённое время.',
+    jobs: [['ТЭН', 1400, '1–1,5 часа'], ['Термостат или датчик температуры', 1200, '1 час'], ['Блок управления (реле нагрева)', 1500, '2 часа']] },
+  e04: { tech: 'стиральная машина', title: 'не отжимает', why: 'Барабан не выходит на обороты отжима.',
+    jobs: [['Дисбаланс белья — не ремонт', 0, 'на месте'], ['Подшипник барабана', 3200, '3–4 часа'], ['Щётки двигателя или ремень', 1800, '2 часа']] },
+  e10: { tech: 'стиральная машина', title: 'дверца не закрывается', why: 'Замок не видит закрытую дверцу.',
+    jobs: [['Замок дверцы (УБЛ)', 1100, '40 минут'], ['Проводка замка', 900, '1 час'], ['Ответная часть замка', 800, '30 минут']] },
+  e20: { tech: 'стиральная машина', title: 'вода не уходит', why: 'Тот же слив, но машина уже успела набрать воду и встала.',
+    jobs: [['Засор сливного фильтра', 900, '30 минут'], ['Помпа', 1200, '1 час'], ['Проверка канализационного отвода', 700, '20 минут']] },
+  f1:  { tech: 'холодильник', title: 'неисправен датчик температуры', why: 'Контроллер не получает температуру из камеры.',
+    jobs: [['Датчик температуры', 1500, '1 час'], ['Проводка датчика', 1200, '1–2 часа'], ['Блок управления', 2000, '2 часа']] },
+  f2:  { tech: 'холодильник', title: 'сбой оттайки', why: 'Испаритель не размораживается, лёд перекрывает холод.',
+    jobs: [['ТЭН оттайки', 2200, '2 часа'], ['Датчик оттайки', 1800, '1,5 часа'], ['Таймер или блок управления', 2000, '2 часа']] },
+  f3:  { tech: 'холодильник', title: 'компрессор не запускается', why: 'Пусковое реле щёлкает, но мотор не стартует.',
+    jobs: [['Пусковое реле', 1600, '1 час'], ['Компрессор (замена)', 4500, '3–4 часа'], ['Проверка обмоток и проводки', 1200, '1 час']] },
+  e1:  { tech: 'посудомоечная машина', title: 'не набирает воду', why: 'Машина не получила нужный объём воды.',
+    jobs: [['Фильтр-сетка на впуске', 900, '30 минут'], ['Впускной клапан', 1400, '1,5 часа'], ['Прессостат', 1500, '1,5 часа']] },
+  e2:  { tech: 'посудомоечная машина', title: 'не сливает воду', why: 'Насос не откачивает воду из поддона.',
+    jobs: [['Засор фильтра и патрубков', 1000, '40 минут'], ['Сливной насос', 1400, '1,5 часа'], ['Проверка шланга', 900, '30 минут']] },
+  e3:  { tech: 'посудомоечная машина', title: 'не греет воду', why: 'Нагрев не срабатывает, посуда выходит холодной.',
+    jobs: [['ТЭН', 1700, '2 часа'], ['Датчик температуры', 1400, '1,5 часа'], ['Реле нагрева на плате', 1600, '2 часа']] },
+  e4:  { tech: 'посудомоечная машина', title: 'протечка', why: 'Датчик в поддоне поймал воду и остановил программу.',
+    jobs: [['Уплотнитель двери', 1200, '1 час'], ['Патрубок или хомут', 1300, '1–2 часа'], ['Поиск протечки по корпусу', 1500, 'от 2 часов']] },
+};
+
+const codeOut = document.getElementById('codeOut');
+const codeInput = document.getElementById('codeInput');
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = (n) => n === 0 ? 'бесплатно' : n.toLocaleString('ru-RU') + ' ₽';
+
+function showCode(raw) {
+  const key = String(raw || '').trim().toLowerCase().replace(/[^a-zа-я0-9]/g, '');
+  const hit = CODES[key];
+  if (!hit) {
+    codeOut.hidden = false;
+    codeOut.innerHTML = `<div class="codeout__err">Кода «${esc(raw)}» нет в демо-базе. Коды различаются по маркам: напишите марку и код в заявке — разберу. Или посмотрите <a href="#price">цены</a>.</div>`;
+    return;
+  }
+  const rows = hit.jobs.map(([w, p, t]) => `<li><span>${esc(w)}</span><em>${esc(t)}</em><b>${money(p)}</b></li>`).join('');
+  codeOut.hidden = false;
+  codeOut.innerHTML = `
+    <div class="codeout__top"><b>${esc(raw.toUpperCase())}</b><span>${esc(hit.tech)} · ${esc(hit.title)}</span></div>
+    <div class="codeout__body">
+      <p>${esc(hit.why)} Вероятные причины и что это стоит:</p>
+      <ul class="codeout__list">${rows}</ul>
+      <p class="codeout__note">База демонстрационная: у разных марок один код значит разное. Точный диагноз — после проверки мультиметром на месте, она входит в ремонт.</p>
+    </div>`;
+}
+
+document.getElementById('codeForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!codeInput.value.trim()) { codeInput.focus(); return; }
+  showCode(codeInput.value);
+  codeOut.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+});
+document.querySelectorAll('[data-code]').forEach(b => b.addEventListener('click', () => {
+  codeInput.value = b.dataset.code;
+  showCode(b.dataset.code);
+}));
+
+/* ── свои выпадашки ── */
+document.querySelectorAll('.sel').forEach(sel => {
+  const btn = sel.querySelector('.sel__btn');
+  const list = sel.querySelector('.sel__list');
+  const out = sel.querySelector('[data-sel-out]');
+  const items = [...list.querySelectorAll('li')];
+  let i = 0;
+
+  const open = () => {
+    sel.classList.add('sel--open');
+    btn.setAttribute('aria-expanded', 'true');
+    i = Math.max(0, items.findIndex(el => el.getAttribute('aria-selected') === 'true'));
+    mark();
+  };
+  const close = () => {
+    sel.classList.remove('sel--open');
+    btn.setAttribute('aria-expanded', 'false');
+    list.removeAttribute('aria-activedescendant');
+  };
+  const mark = () => {
+    items.forEach((el, k) => {
+      el.classList.toggle('is-active', k === i);
+      if (k === i) el.id = sel.dataset.sel + '-opt-' + k; else el.removeAttribute('id');
+    });
+    if (items[i]) list.setAttribute('aria-activedescendant', items[i].id);
+  };
+  const pick = (el) => {
+    items.forEach(x => x.setAttribute('aria-selected', String(x === el)));
+    out.textContent = el.textContent;
+    sel.dataset.value = el.dataset.v;
+    close();
+    btn.focus();
+    sel.dispatchEvent(new CustomEvent('sel:change', { bubbles: true, detail: { value: el.dataset.v } }));
+  };
+
+  btn.addEventListener('click', () => (sel.classList.contains('sel--open') ? close() : open()));
+  btn.addEventListener('keydown', (e) => {
+    if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); open(); }
+  });
+  list.addEventListener('click', (e) => {
+    const el = e.target.closest('li');
+    if (el) pick(el);
+  });
+  list.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { close(); btn.focus(); return; }
+    if (e.key === 'Enter') { e.preventDefault(); if (items[i]) pick(items[i]); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); i = Math.min(items.length - 1, i + 1); mark(); }
+    if (e.key === 'ArrowUp') { e.preventDefault(); i = Math.max(0, i - 1); mark(); }
+    if (e.key === 'Home') { e.preventDefault(); i = 0; mark(); }
+    if (e.key === 'End') { e.preventDefault(); i = items.length - 1; mark(); }
+  });
+  document.addEventListener('click', (e) => { if (!sel.contains(e.target)) close(); });
+  sel.dataset.value = items[0].dataset.v;
+
+  sel._set = (v) => {
+    const el = items.find(x => x.dataset.v === v);
+    if (el) { items.forEach(x => x.setAttribute('aria-selected', String(x === el))); out.textContent = el.textContent; sel.dataset.value = v; }
+  };
+});
+
+const selTech = document.querySelector('[data-sel="tech"]');
+const selFormTech = document.querySelector('[data-sel="formtech"]');
+
+/* ── калькулятор ── */
+let curTech = 'washer';
+let curJob = 'leak';
+let curWhen = 'today';
+
+const chipsBox = document.getElementById('jobChips');
+const sumBig = document.getElementById('sumBig');
+const sumMeta = document.getElementById('sumMeta');
+const sumWhen = document.getElementById('sumWhen');
+
+function renderJobs() {
+  const jobs = TECHS[curTech].jobs;
+  const keys = Object.keys(jobs);
+  if (!keys.includes(curJob)) curJob = keys[0];
+  chipsBox.innerHTML = keys.map(k =>
+    `<button type="button" data-job="${k}" aria-pressed="${k === curJob}">${esc(jobs[k][0])}</button>`).join('');
+  chipsBox.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    curJob = b.dataset.job;
+    chipsBox.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    updateSum();
+  }));
+  updateSum();
+}
+
+function updateSum() {
+  const [label, price, time] = TECHS[curTech].jobs[curJob];
+  sumBig.textContent = price ? 'от ' + price.toLocaleString('ru-RU') + ' ₽' : '0 ₽';
+  sumMeta.innerHTML = `${esc(label)} · ${esc(TECHS[curTech].name)} · <b>${esc(time)}</b>`;
+  sumWhen.textContent = curWhen === 'today' ? 'Приедем сегодня' : curWhen === 'tomorrow' ? 'Приедем завтра' : 'Приедем, когда скажете';
+}
+
+document.querySelectorAll('#whenChips button').forEach(b => {
+  b.addEventListener('click', () => {
+    curWhen = b.dataset.when;
+    document.querySelectorAll('#whenChips button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    updateSum();
+  });
+});
+
+selTech.addEventListener('sel:change', (e) => {
+  curTech = e.detail.value;
+  renderJobs();
+});
+
+document.querySelectorAll('.tech').forEach(card => {
+  card.addEventListener('click', () => {
+    selTech._set(card.dataset.tech);
+    curTech = card.dataset.tech;
+    renderJobs();
+    document.getElementById('price').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+renderJobs();
+
+document.getElementById('toForm').addEventListener('click', () => {
+  selFormTech._set(curTech);
+  const [label] = TECHS[curTech].jobs[curJob];
+  const ta = document.getElementById('fProblem');
+  if (!ta.value.trim()) ta.value = `${TECHS[curTech].name}: ${label.toLowerCase()}.`;
+  document.getElementById('zayavka').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => document.getElementById('fName').focus({ preventScroll: true }), 500);
+});
+
+/* ── форма ── */
+const form = document.getElementById('leadForm');
+const fName = document.getElementById('fName');
+const fPhone = document.getElementById('fPhone');
+const fAgree = document.getElementById('fAgree');
+const fAgreeWrap = document.getElementById('fAgreeWrap');
+const thanks = document.getElementById('thanks');
+
+function fieldOf(input) { return input.closest('.fld'); }
+function setErr(input, msg) {
+  const fld = fieldOf(input);
+  if (!fld) return;
+  fld.classList.toggle('fld--bad', !!msg);
+  let e = fld.querySelector('.err');
+  if (!msg) { if (e) e.remove(); return; }
+  if (!e) { e = document.createElement('p'); e.className = 'err'; fld.appendChild(e); }
+  e.textContent = msg;
+}
+
+fPhone.addEventListener('input', () => {
+  let d = fPhone.value.replace(/\D/g, '');
+  if (d.startsWith('8')) d = '7' + d.slice(1);
+  if (!d.startsWith('7')) d = '7' + d;
+  d = d.slice(0, 11);
+  let out = '+7';
+  if (d.length > 1) out += ' ' + d.slice(1, 4);
+  if (d.length >= 5) out += ' ' + d.slice(4, 7);
+  if (d.length >= 8) out += '-' + d.slice(7, 9);
+  if (d.length >= 10) out += '-' + d.slice(9, 11);
+  fPhone.value = out;
+  setErr(fPhone, '');
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let ok = true;
+  setErr(fName, '');
+  setErr(fPhone, '');
+  fAgreeWrap.classList.remove('check--bad');
+
+  if (fName.value.trim().length < 2) { setErr(fName, 'Напишите, как вас зовут'); ok = false; }
+  const digits = fPhone.value.replace(/\D/g, '');
+  if (digits.length < 11) { setErr(fPhone, 'Номер целиком: +7 и десять цифр'); ok = false; }
+  if (!fAgree.checked) { fAgreeWrap.classList.add('check--bad'); ok = false; }
+
+  if (!ok) {
+    const first = form.querySelector('.fld--bad input, .check--bad input');
+    if (first) first.focus();
+    return;
+  }
+  const hp = form.querySelector('input[name="website"]');
+  if (hp && hp.value) { form.reset(); thanks.hidden = true; return; }
+
+  const name = fName.value.trim();
+  document.getElementById('thanksText').textContent =
+    `${name}, заявка записана. Перезвоню в течение 15 минут в рабочее время — с 9:00 до 20:00. Если срочно, звоните сами, номер ниже.`;
+  thanks.hidden = false;
+  thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  form.querySelector('button[type="submit"]').disabled = true;
+});
+
+fAgree.addEventListener('change', () => fAgreeWrap.classList.remove('check--bad'));
+</script>
+</body>
+</html>

@@ -1408,7 +1408,8 @@
     if (!val) return;
     document.querySelectorAll(sel).forEach(function (el) { el.textContent = val; });
   }
-  var nm = q.get("n"), ph = q.get("p"), ad = q.get("a");
+  var nm = q.get("n"), ph = (q.get("p") || "").trim(), ad = q.get("a");
+  if (ph && ph.charAt(0) !== "+") ph = "+" + ph.replace(/^8/, "7");
   if (nm) {
     setAll("[data-name]", nm);
     document.querySelectorAll(".logo b").forEach(function (el) { el.textContent = nm; });
