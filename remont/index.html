@@ -43,6 +43,17 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+/* ── плашка «это демо» ── */
+.svcbar{display:block;background:var(--cobalt);color:#fff;text-align:center;text-decoration:none;
+  font-size:13px;font-weight:600;line-height:1.4;padding:9px 16px}
+.svcbar:hover{background:var(--cobalt-d)}
+.svcbar b{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.svcbar__short{display:none}
+@media (max-width:620px){
+  .svcbar__full{display:none}
+  .svcbar__short{display:inline}
+}
+
 /* ── верхняя полоса ── */
 .strip{background:var(--ink);color:#e8ecf3;font-size:13.5px}
 .strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:38px;flex-wrap:wrap}
@@ -301,6 +312,11 @@ button{font:inherit;color:inherit;cursor:pointer}
   .tech__sum{grid-column:auto;margin-top:4px}
   .wrap{padding:0 16px}
 }
+@media (max-width:620px){
+  .strip{font-size:12.5px}
+  .strip .wrap{flex-direction:column;align-items:flex-start;gap:3px;padding:9px 16px}
+  .strip__more{display:none}
+}
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
@@ -308,9 +324,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 </head>
 <body>
 
+<a class="svcbar" href="https://wa.me/79020153104?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%92%D0%B8%D0%B4%D0%B5%D0%BB%20%D0%B4%D0%B5%D0%BC%D0%BE-%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B6%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%B5%D0%BB%D0%B0" target="_blank" rel="noopener">
+  <span class="svcbar__full">Это демо-пример. Свой сайт — 2 дня, 3 000 ₽. <b>Написать →</b></span>
+  <span class="svcbar__short">Демо. Свой сайт — 3 000 ₽. <b>Написать →</b></span>
+</a>
+
 <div class="strip">
   <div class="wrap">
-    <span><i class="strip__dot"></i><b>Мастер свободен сегодня</b> — приедет с 9:00 до 20:00</span>
+    <span><i class="strip__dot"></i><b>Мастер свободен сегодня</b><span class="strip__more"> — приедет с 9:00 до 20:00</span></span>
     <span>Йошкар-Ола и пригород · <b>без выходных</b></span>
   </div>
 </div>
@@ -710,6 +731,10 @@ document.documentElement.classList.remove('no-js');
     document.querySelectorAll('[data-phone-link]').forEach(el => { el.href = 'tel:+' + digits; });
   }
   if (a) document.querySelectorAll('[data-addr]').forEach(el => { el.textContent = a; });
+  if (q.get('clean') === '1') {
+    const bar = document.querySelector('.svcbar');
+    if (bar) bar.remove();
+  }
 })();
 
 /* ── данные ── */
