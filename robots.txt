@@ -4,3 +4,5 @@ Allow: /
 # Страница для ручной отправки сообщений — служебная, в поиске не нужна
 Disallow: /p7k2m/
 Disallow: /zvonok/
+
+Sitemap: https://mensori-dev.github.io/demos/sitemap.xml
