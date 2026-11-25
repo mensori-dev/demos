@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Звонки 25 ноября</title>
+<style>
+  :root { --bg:#0a0a0b; --fg:#f4f3ef; --dim:#9a9a98; --line:#252527; --wa:#25d366; --tg:#2aabee; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:20px 16px 60px; background:var(--bg); color:var(--fg);
+         font:16px/1.5 "Segoe UI",system-ui,sans-serif; max-width:640px; margin-inline:auto; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .sub { color:var(--dim); font-size:14px; margin:0 0 24px; }
+  .card { border:1px solid var(--line); border-radius:12px; padding:16px; margin:0 0 14px; position:relative; }
+  .num { position:absolute; top:12px; right:14px; color:var(--dim); font-size:13px; }
+  h2 { font-size:17px; margin:0 0 2px; }
+  .phone { color:var(--dim); margin:0 0 12px; font-variant-numeric:tabular-nums; }
+  .go { display:block; text-align:center; padding:14px; border-radius:10px; font-weight:600;
+        text-decoration:none; color:#08120c; background:var(--wa); }
+  .tg .go { color:#04121c; background:var(--tg); }
+  .hint { color:var(--dim); font-size:13px; margin:8px 0 10px; }
+  textarea { width:100%; background:#111113; color:var(--fg); border:1px solid var(--line);
+             border-radius:10px; padding:10px; font:14px/1.5 inherit; resize:vertical; }
+  .copy { width:100%; margin-top:8px; padding:12px; border-radius:10px; cursor:pointer;
+          background:transparent; color:var(--fg); border:1px solid var(--line); font:inherit; font-size:14px; }
+  .copy:active { background:#1a1a1c; }
+  .copy.ok { border-color:var(--wa); color:var(--wa); }
+  .demo { font-size:13px; color:var(--dim); margin:10px 0 8px; }
+  .demo a { color:var(--fg); }
+  .copy2 { background:#111113; border:1px solid var(--line); color:var(--dim); border-radius:8px;
+           padding:4px 8px; font:inherit; font-size:12px; cursor:pointer; }
+  .copy2.ok { border-color:var(--wa); color:var(--wa); }
+  .ans { border:1px solid var(--line); border-radius:12px; padding:14px; margin:0 0 12px; }
+  .ans-t { margin:0 0 6px; font-size:14px; font-weight:600; }
+  .ans-x { margin:0 0 10px; font-size:14px; color:var(--dim); }
+  .day.plain { position:static; }
+  .mark button[data-ch="call"].on { border-color:#8f8f98; color:#f4f3ef; background:rgba(255,255,255,.06); }
+  .tglink { display:block; text-align:center; padding:12px; margin:0 0 10px; border-radius:10px; font-size:14px;
+            text-decoration:none; color:var(--tg); border:1px solid #1d3a4d; }
+  .mark { display:flex; gap:6px; margin:10px 0 12px; }
+  .mark button { flex:1; min-height:44px; padding:4px; border-radius:10px; cursor:pointer; font:inherit;
+                 font-size:13px; line-height:1.25; background:#111113; color:var(--fg); border:1px solid var(--line); }
+  .mark button[data-ch="wa"].on { border-color:var(--wa); color:var(--wa); background:rgba(37,211,102,.10); }
+  .mark button[data-ch="tg"].on { border-color:var(--tg); color:var(--tg); background:rgba(42,171,238,.10); }
+  .mark button[data-s="no"].on { border-color:#e0a341; color:#e0a341; background:rgba(224,163,65,.10); }
+  .card.sent-wa { border-color:#20523a; }
+  .card.sent-tg { border-color:#1d3a4d; }
+  .card.sent-call { border-color:#4a4a52; }
+  .card.call .go { color:#0a0a0b; background:var(--fg); }
+  .card.sent-call h2, .card.sent-call .phone { color:var(--dim); }
+  .card.sent-wa h2, .card.sent-tg h2 { color:var(--dim); }
+  .card.noacc { border-color:#4c3c22; }
+  .card.noacc h2, .card.noacc .phone { color:var(--dim); }
+  .tool { border:1px solid var(--line); border-radius:12px; padding:12px; margin:0 0 20px; }
+  .tool p { margin:0 0 10px; font-size:14px; color:var(--dim); }
+  .tool .stat { color:var(--fg); font-variant-numeric:tabular-nums; }
+  .tool div { display:flex; gap:8px; }
+  .tool button { flex:1; min-height:44px; border-radius:10px; cursor:pointer; font:inherit;
+                 font-size:14px; background:#111113; color:var(--fg); border:1px solid var(--line); }
+  .tool button.ok { border-color:var(--wa); color:var(--wa); }
+  .days { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; }
+  .days a { color:var(--fg); text-decoration:none; font-size:13px; padding:6px 10px;
+            border:1px solid var(--line); border-radius:999px; }
+  .days a span { color:var(--dim); }
+  .day { position:sticky; top:0; z-index:1; background:var(--bg); margin:30px 0 14px; padding:10px 0 8px;
+         font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fg); }
+  .day span { color:var(--dim); font-weight:400; letter-spacing:0; }
+</style>
+</head>
+<body>
+<h1>Звонки 25 ноября</h1>
+<p class="sub">21 номер для звонка · порядок: сначала те, кто закрывается раньше (городские и мебель), потом салоны и кафе. Отметки живут в этом браузере.</p>
+<nav class="days"><a href="#answers">Ответы <span>7</span></a><a href="#d1">Звонки · городские <span>21</span></a></nav>
+<div class="tool">
+  <p id="stat" class="stat"></p>
+  <div>
+    <button id="copyStat">Скопировать итог</button>
+    <button id="reset">Сбросить отметки</button>
+  </div>
+</div>
+<section id="answers">
+<h2 class="day plain">Ответы на ходу <span>7</span></h2>
+<div class="ans">
+  <p class="ans-t">Сколько стоит</p>
+  <p class="ans-x">3 000 ₽ под ключ. Одна страница: услуги, цены, фото, форма заявки, мобильная версия. Домен и хостинг оформляем на вас, это ваша собственность. Половина вперёд, половина после того, как покажу готовый. Два рабочих дня с момента, когда дадите тексты и фото.</p>
+  <button class="copy2" data-copy="3 000 ₽ под ключ. Одна страница: услуги, цены, фото, форма заявки, мобильная версия. Домен и хостинг оформляем на вас, это ваша собственность. Половина вперёд, половина после того, как покажу готовый. Два рабочих дня с момента, когда дадите тексты и фото.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: автосервис</p>
+  <p class="ans-x">Вот пример, как это выглядит для автосервиса: https://mensori-dev.github.io/demos/auto/ — название и телефон там уже ваши. Это шаблон, город и адрес будут ваши. Откройте с телефона и скажите, что поменять.</p>
+  <button class="copy2" data-copy="Вот пример, как это выглядит для автосервиса: https://mensori-dev.github.io/demos/auto/ — название и телефон там уже ваши. Это шаблон, город и адрес будут ваши. Откройте с телефона и скажите, что поменять.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: барбершоп</p>
+  <p class="ans-x">Пример для барбершопа: https://mensori-dev.github.io/demos/barber/ — название и телефон уже ваши, это шаблон, город и адрес будут ваши. Посмотрите с телефона, что бы добавили?</p>
+  <button class="copy2" data-copy="Пример для барбершопа: https://mensori-dev.github.io/demos/barber/ — название и телефон уже ваши, это шаблон, город и адрес будут ваши. Посмотрите с телефона, что бы добавили?">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Пример: цветы</p>
+  <p class="ans-x">Пример для цветочной: https://mensori-dev.github.io/demos/flowers/ — с вашим названием и номером. Это шаблон, город и адрес будут ваши. Что бы поменяли под свой магазин?</p>
+  <button class="copy2" data-copy="Пример для цветочной: https://mensori-dev.github.io/demos/flowers/ — с вашим названием и номером. Это шаблон, город и адрес будут ваши. Что бы поменяли под свой магазин?">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Сам в нейросети сделаю</p>
+  <p class="ans-x">Можно, и получится картинка сайта. Дальше начинается то, из-за чего такие сайты не доходят до публикации: что написать, какие цены, как это выглядит на телефоне, куда положить и как назвать. Нейросеть ускоряет работу, но кто-то должен сесть и довести до конца. Я за это и беру три тысячи. Хотите — покажу, что выходит с одного запроса, и рядом свой вариант.</p>
+  <button class="copy2" data-copy="Можно, и получится картинка сайта. Дальше начинается то, из-за чего такие сайты не доходят до публикации: что написать, какие цены, как это выглядит на телефоне, куда положить и как назвать. Нейросеть ускоряет работу, но кто-то должен сесть и довести до конца. Я за это и беру три тысячи. Хотите — покажу, что выходит с одного запроса, и рядом свой вариант.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Не надо</p>
+  <p class="ans-x">Понял, спасибо. Если понадобится — я на связи.</p>
+  <button class="copy2" data-copy="Понял, спасибо. Если понадобится — я на связи.">Скопировать</button>
+</div>
+<div class="ans">
+  <p class="ans-t">Сколько вам лет</p>
+  <p class="ans-x">Мне шестнадцать. Поэтому и цена три тысячи, а не тридцать: я работаю сам, без студии и без наценки за офис. Я самозанятый, чек выдам. Если из-за возраста неудобно — скажите прямо, я не обижусь.</p>
+  <button class="copy2" data-copy="Мне шестнадцать. Поэтому и цена три тысячи, а не тридцать: я работаю сам, без студии и без наценки за офис. Я самозанятый, чек выдам. Если из-за возраста неудобно — скажите прямо, я не обижусь.">Скопировать</button>
+</div>
+</section>
+<section id="d1">
+<h2 class="day">Звонки · городские <span>21</span></h2>
+<article class="card call" data-key="78352226300">
+  <div class="num">1</div>
+  <h2>ДомБаза · ремонт квартир · городской</h2>
+  <p class="phone">+7 835 222-63-00</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+78352226300">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="78352308136">
+  <div class="num">2</div>
+  <h2>Минерал · ремонт квартир · городской</h2>
+  <p class="phone">+7 835 230-81-36</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+78352308136">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="78352683114">
+  <div class="num">3</div>
+  <h2>Стройремсервис · ремонт квартир · городской</h2>
+  <p class="phone">+7 835 268-31-14</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+78352683114">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="78352459929">
+  <div class="num">4</div>
+  <h2>СМУ-59 · ремонт квартир · городской</h2>
+  <p class="phone">+7 835 245-99-29</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+78352459929">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79063879525">
+  <div class="num">5</div>
+  <h2>Moda Mebel · мебель</h2>
+  <p class="phone">+7 906 387-95-25</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79063879525">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79373724422">
+  <div class="num">6</div>
+  <h2>Сантех Рай · мебель</h2>
+  <p class="phone">+7 937 372-44-22</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79373724422">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79956363279">
+  <div class="num">7</div>
+  <h2>Наслада · мебель</h2>
+  <p class="phone">+7 995 636-32-79</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79956363279">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79279960021">
+  <div class="num">8</div>
+  <h2>Мебель плюс · мебель</h2>
+  <p class="phone">+7 927 996-00-21</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79279960021">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79196796296">
+  <div class="num">9</div>
+  <h2>Чик-Чик · парикмахерская</h2>
+  <p class="phone">+7 919 679-62-96</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79196796296">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79196538799">
+  <div class="num">10</div>
+  <h2>Ника · парикмахерская</h2>
+  <p class="phone">+7 919 653-87-99</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79196538799">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79020196873">
+  <div class="num">11</div>
+  <h2>Элит · парикмахерская</h2>
+  <p class="phone">+7 902 019-68-73</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79020196873">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79026633310">
+  <div class="num">12</div>
+  <h2>Николь · парикмахерская</h2>
+  <p class="phone">+7 902 663-33-10</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79026633310">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79527587575">
+  <div class="num">13</div>
+  <h2>Tiara · парикмахерская</h2>
+  <p class="phone">+7 952 758-75-75</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79527587575">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79278663379">
+  <div class="num">14</div>
+  <h2>Сияй · парикмахерская</h2>
+  <p class="phone">+7 927 866-33-79</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79278663379">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79004515900">
+  <div class="num">15</div>
+  <h2>Волшебные ножницы · парикмахерская</h2>
+  <p class="phone">+7 900 451-59-00</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79004515900">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79530114422">
+  <div class="num">16</div>
+  <h2>Лето · парикмахерская</h2>
+  <p class="phone">+7 953 011-44-22</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79530114422">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79677903525">
+  <div class="num">17</div>
+  <h2>Sun · парикмахерская</h2>
+  <p class="phone">+7 967 790-35-25</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79677903525">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79991951415">
+  <div class="num">18</div>
+  <h2>Рафанова · парикмахерская</h2>
+  <p class="phone">+7 999 195-14-15</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79991951415">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79953850889">
+  <div class="num">19</div>
+  <h2>Сахар · кафе · без WhatsApp</h2>
+  <p class="phone">+7 995 385-08-89</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79953850889">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79279969077">
+  <div class="num">20</div>
+  <h2>Золотые ножницы · парикмахерская · без WhatsApp</h2>
+  <p class="phone">+7 927 996-90-77</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79279969077">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+<article class="card call" data-key="79956357293">
+  <div class="num">21</div>
+  <h2>Мани ди фата · барбершоп · без WhatsApp</h2>
+  <p class="phone">+7 995 635-72-93</p>
+  <p class="hint">звонок с телефона. Скрипт — docs/outreach/call-self.txt, возраст не упоминаем первым.</p>
+  <a class="go" href="tel:+79956357293">Позвонить</a>
+  <div class="mark">
+    <button data-s="sent" data-ch="call">дозвонился</button>
+    <button data-s="no">не дозвонился</button>
+  </div>
+</article>
+</section>
+<script>
+const KEY = 'obhod-status';
+let st = {};
+try { st = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { st = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const cards = [...document.querySelectorAll('.card')];
+const stat = document.getElementById('stat');
+
+function paint(c) {
+  const v = st[c.dataset.key];
+  c.classList.toggle('sent-wa', v === 'wa');
+  c.classList.toggle('sent-tg', v === 'tg');
+  c.classList.toggle('sent-call', v === 'call');
+  c.classList.toggle('noacc', v === 'no');
+  for (const b of c.querySelectorAll('.mark button')) {
+    const mine = b.dataset.s === 'no' ? v === 'no' : v === b.dataset.ch;
+    b.classList.toggle('on', mine);
+  }
+}
+
+function update() {
+  let wa = 0, tg = 0, no = 0, calls = 0;
+  for (const c of cards) {
+    paint(c);
+    const v = st[c.dataset.key];
+    if (v === 'wa') wa++;
+    else if (v === 'tg') tg++;
+    else if (v === 'call') calls++;
+    else if (v === 'no') no++;
+  }
+  stat.textContent = 'WhatsApp ' + wa + ' · Telegram ' + tg + ' · звонки ' + calls + ' · нет аккаунта ' + no + ' · осталось ' + (cards.length - wa - tg - calls - no);
+  for (const sec of document.querySelectorAll('section')) {
+    const cs = [...sec.querySelectorAll('.card')];
+    const done = cs.filter((c) => !!st[c.dataset.key]).length;
+    const el = sec.querySelector('.day span');
+    if (el) el.textContent = done + '/' + cs.length;
+  }
+}
+
+for (const c of cards) {
+  for (const b of c.querySelectorAll('.mark button')) {
+    b.addEventListener('click', () => {
+      const k = c.dataset.key;
+      const v = b.dataset.s === 'no' ? 'no' : b.dataset.ch;
+      st[k] = st[k] === v ? undefined : v;
+      if (!st[k]) delete st[k];
+      save();
+      update();
+    });
+  }
+}
+
+for (const b of document.querySelectorAll('.copy')) {
+  b.addEventListener('click', async () => {
+    const t = b.previousElementSibling;
+    t.select();
+    try { await navigator.clipboard.writeText(t.value); } catch { document.execCommand('copy'); }
+    const was = b.textContent;
+    b.textContent = 'Скопировано';
+    b.classList.add('ok');
+    setTimeout(() => { b.textContent = was; b.classList.remove('ok'); }, 1500);
+  });
+}
+
+for (const b of document.querySelectorAll('[data-copy]')) {
+  b.addEventListener('click', async () => {
+    const txt = b.dataset.copy;
+    try { await navigator.clipboard.writeText(txt); } catch { document.execCommand('copy'); }
+    const was = b.textContent;
+    b.textContent = 'скопировано';
+    b.classList.add('ok');
+    setTimeout(() => { b.textContent = was; b.classList.remove('ok'); }, 1400);
+  });
+}
+
+document.getElementById('copyStat').addEventListener('click', async () => {
+  const names = { wa: 'отправил в WhatsApp', tg: 'отправил в Telegram', call: 'дозвонился', no: 'нет аккаунта' };
+  const lines = cards
+    .filter((c) => st[c.dataset.key])
+    .map((c) => c.dataset.key + ' ' + names[st[c.dataset.key]] + ' — ' + c.querySelector('h2').textContent);
+  const out = lines.length ? lines.join(String.fromCharCode(10)) : 'пока ничего не отмечено';
+  try { await navigator.clipboard.writeText(out); } catch { document.execCommand('copy'); }
+  const b = document.getElementById('copyStat');
+  const was = b.textContent;
+  b.textContent = lines.length ? 'Скопировано: ' + lines.length : 'Отмечать пока нечего';
+  b.classList.add('ok');
+  setTimeout(() => { b.textContent = was; b.classList.remove('ok'); }, 1800);
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  if (!confirm('Сбросить все отметки?')) return;
+  st = {};
+  save();
+  update();
+});
+
+update();
+</script>
+</body>
+</html>
